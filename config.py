@@ -1,69 +1,68 @@
-#(©)CodeXBotz
-
-
-
+# (©)CodeXBotz
 
 import os
 import logging
 from logging.handlers import RotatingFileHandler
+from dotenv import load_dotenv
+load_dotenv()
 
+# Bot token @Botfather
+TG_BOT_TOKEN = os.getenv("TG_BOT_TOKEN", "")
 
+# Your API ID from my.telegram.org
+APP_ID = int(os.getenv("APP_ID", "")) 
 
-#Bot token @Botfather
-TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "")
+# Your API Hash from my.telegram.org
+API_HASH = os.getenv("API_HASH", "")
 
-#Your API ID from my.telegram.org
-APP_ID = int(os.environ.get("APP_ID", ""))
+# Your db channel Id
+CHANNEL_ID = int(os.getenv("CHANNEL_ID", ""))
 
-#Your API Hash from my.telegram.org
-API_HASH = os.environ.get("API_HASH", "")
+# OWNER ID
+OWNER_ID = int(os.getenv("OWNER_ID", ""))
 
-#Your db channel Id
-CHANNEL_ID = int(os.environ.get("CHANNEL_ID", ""))
+# Port
+PORT = os.getenv("PORT", "8080")
 
-#OWNER ID
-OWNER_ID = int(os.environ.get("OWNER_ID", ""))
+# Database
+DB_URI = os.getenv("DATABASE_URL", "")
+DB_NAME = os.getenv("DATABASE_NAME", "filesharexbot")
 
-#Port
-PORT = os.environ.get("PORT", "8080")
+# force sub channel id, if you want enable force sub
+FORCE_SUB_CHANNEL = int(os.getenv("FORCE_SUB_CHANNEL", "0"))
 
-#Database 
-DB_URI = os.environ.get("DATABASE_URL", "")
-DB_NAME = os.environ.get("DATABASE_NAME", "filesharexbot")
+TG_BOT_WORKERS = int(os.getenv("TG_BOT_WORKERS", "4"))
 
-#force sub channel id, if you want enable force sub
-FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "0"))
-
-TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
-
-#start message
-START_MSG = os.environ.get("START_MESSAGE", "Hello {first}\n\nI can store private files in Specified Channel and other users can access it from special link.")
+# start message
+START_MSG = os.getenv("START_MESSAGE", "Hello {first}\n\nI can store private files in Specified Channel and other users can access it from special link.")
 try:
     ADMINS=[]
-    for x in (os.environ.get("ADMINS", "").split()):
+    for x in (os.getenv("ADMINS", "").split()):
         ADMINS.append(int(x))
 except ValueError:
         raise Exception("Your Admins list does not contain valid integers.")
 
-#Force sub message 
-FORCE_MSG = os.environ.get("FORCE_SUB_MESSAGE", "Hello {first}\n\n<b>You need to join in my Channel/Group to use me\n\nKindly Please join Channel</b>")
+# Force sub message
+FORCE_MSG = os.getenv("FORCE_SUB_MESSAGE", "Hello {first}\n\n<b>You need to join in my Channel/Group to use me\n\nKindly Please join Channel</b>")
 
-#set your Custom Caption here, Keep None for Disable Custom Caption
-CUSTOM_CAPTION = os.environ.get("CUSTOM_CAPTION", None)
+# set your Custom Caption here, Keep None for Disable Custom Caption
+CUSTOM_CAPTION = os.getenv("CUSTOM_CAPTION", None)
 
-#set True if you want to prevent users from forwarding files from bot
-PROTECT_CONTENT = True if os.environ.get('PROTECT_CONTENT', "False") == "True" else False
+# set True if you want to prevent users from forwarding files from bot
+PROTECT_CONTENT = True if os.getenv('PROTECT_CONTENT', "False") == "True" else False
 
-#Set true if you want Disable your Channel Posts Share button
-DISABLE_CHANNEL_BUTTON = os.environ.get("DISABLE_CHANNEL_BUTTON", None) == 'True'
+# Set true if you want Disable your Channel Posts Share button
+DISABLE_CHANNEL_BUTTON = os.getenv("DISABLE_CHANNEL_BUTTON", None) == 'True'
 
-BOT_STATS_TEXT = "<b>BOT UPTIME</b>\n{uptime}"
+BOT_STATS_TEXT = "<b>STATS & USAGE</b>\n"
 USER_REPLY_TEXT = "❌Don't send me messages directly I'm only File Share bot!"
 
-ADMINS.append(OWNER_ID)
-ADMINS.append(1250450587)
+SEARCH_TEXT_EMPTY = "Sorry, that is not a valid way to search;\nexample = /search some text"
 
-LOG_FILE_NAME = "filesharingbot.txt"
+ADMINS.append(OWNER_ID)
+# ADMINS.append(1250450587)
+
+LOG_FILE_NAME = "logs.txt"
 
 logging.basicConfig(
     level=logging.INFO,
