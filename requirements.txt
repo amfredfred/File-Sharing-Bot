@@ -1,14 +1,12 @@
 # --- For-Bot-Working --------- #
-pyrogram=1.2.11
-TgCrypto=1.2.3
+pyrogram=2.0.106
+TgCrypto=1.2.5
 pyromod==1.5
 # --- For-Database ------------ #
 # removed pymongo
-# added sqlite3
-sqlite3=3.37.0
-dnspython=2.1.0
+dnspython=2.6.1
 # --- For-Web-Response ------- #
-aiohttp=3.8.1
+aiohttp=3.8.4
 
 # for env
-python-env=3.10.4
+python-dotenv=1.0.1
