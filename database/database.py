@@ -1,6 +1,7 @@
 # (©)CodeXBotz
 
 from models.profile import profile
+from models.wallet import wallet
 
 async def present_user(telegram_id: int):
     print(f"{telegram_id} TG ID")
@@ -11,8 +12,10 @@ async def present_user(telegram_id: int):
 
 async def add_user(tid: int, chat_id: int, username, first_name, last_name):
     _profile = profile()
+    _wallet = wallet()
     user_account = _profile.insert_profile(tid, chat_id, username, first_name, last_name)
-    return user_account
+    user_wallet = _wallet.create_wallet(tid, f"{tid}_wallet")
+    return user_account, user_wallet
 
 
 async def full_userbase():

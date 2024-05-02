@@ -6,6 +6,12 @@ from logging.handlers import RotatingFileHandler
 from dotenv import load_dotenv
 load_dotenv()
 
+SQLITE_DB_FILE = os.getenv("SQLITE_DB_FILE")
+
+PLAYABLE_FILE_EXTENSIONS = ('.mp4', '.mp3', '.avi', '.mkv', '.jpg', '.jpeg', '.png', '.gif', '.ogg')
+ZIP_FILE_EXTENSIONS = ('.zip', '.rar', '.7z')
+NON_HARMFUL_FILE_EXTENSIONS = ('.txt', '.pdf', '.doc', '.docx', '.xls', '.xlsx', '.ppt', '.pptx')
+
 # Bot token @Botfather
 TG_BOT_TOKEN = os.getenv("TG_BOT_TOKEN", "")
 

@@ -1,13 +1,15 @@
-#(©)Codexbotz
+# (©)Codexbotz
 
 import base64
 import re
 import asyncio
 from pyrogram import filters
 from pyrogram.enums import ChatMemberStatus
-from config import FORCE_SUB_CHANNEL, ADMINS
+from config import FORCE_SUB_CHANNEL, ADMINS, PLAYABLE_FILE_EXTENSIONS,ZIP_FILE_EXTENSIONS,NON_HARMFUL_FILE_EXTENSIONS
 from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant
 from pyrogram.errors import FloodWait
+from urllib.parse import urlparse
+
 
 async def is_subscribed(filter, client, update):
     if not FORCE_SUB_CHANNEL:
@@ -108,3 +110,33 @@ def get_readable_time(seconds: int) -> str:
 
 
 subscribed = filters.create(is_subscribed)
+
+def is_url(text =''):
+    prefixes = ['http://', 'https://', 'www.']
+    extensions = PLAYABLE_FILE_EXTENSIONS+ ZIP_FILE_EXTENSIONS+ NON_HARMFUL_FILE_EXTENSIONS
+    urls = []
+    for prefix in prefixes:
+        if text.startswith(prefix):
+            urls.append(text)
+    for ext in extensions:
+        if text.endswith(ext):
+            urls.append(text)
+    try:
+        result = urlparse(text)
+        if all([result.scheme, result.netloc]): 
+            urls.append(text)
+    except ValueError:
+        pass
+    return bool(urls), urls
+
+def extract_url(text):
+    parts = text.split()
+    for part in parts:
+        if is_url(part)[0]:
+            return clean_file_url(part)
+    return None
+
+def clean_file_url(file_url):
+    # Use regular expressions to remove everything after the file extension
+    cleaned_url = re.sub(r'(\.mp4|\.mp3|\.avi|\.mkv|\.jpg|\.jpeg|\.png|\.gif|\.ogg).*$', lambda x: x.group(1), file_url)
+    return cleaned_url

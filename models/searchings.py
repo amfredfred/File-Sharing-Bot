@@ -1,11 +1,5 @@
 import sqlite3
-
-from dotenv import load_dotenv
-
-load_dotenv()
-import os
-
-SQLITE_DB_FILE = os.getenv("SQLITE_DB_FILE")
+from config import SQLITE_DB_FILE
 
 
 class searching:

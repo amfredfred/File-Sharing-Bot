@@ -1,12 +1,8 @@
 import sqlite3
-
-from dotenv import load_dotenv
-load_dotenv()
-import os
-
-SQLITE_DB_FILE = os.getenv("SQLITE_DB_FILE")
+from config import SQLITE_DB_FILE
 
 class profile:
+
     def __init__(self, db_file=SQLITE_DB_FILE):
         self.conn = sqlite3.connect(db_file)
         self.create_table()

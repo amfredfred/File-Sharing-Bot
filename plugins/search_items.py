@@ -13,9 +13,9 @@ def search(query):
     results = scraper.search()
     return scraper.filter_links(results)
 
-
 @Bot.on_message(filters.command("search") & filters.private & subscribed)
 async def search_command(bot: Bot, message: Message):
+    query = ''
     if not message.text or len(message.text.split()) < 2:
         lsg_msg = await message.reply_text(SEARCH_TEXT_EMPTY)
         sleep(0.5)

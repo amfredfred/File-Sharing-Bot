@@ -14,6 +14,7 @@ class ScrapeTheWeb:
             f"https://netnaija.xyz/?s={self.search_query}",
             f"https://netnaijatv.com/?s={self.search_query}",
             f"https://ww16.0123movie.net/search.html?q={self.search_query}",
+            f"https://parrotvibes.com/?s={self.search_query}",
         ]
 
         all_search_results = []
