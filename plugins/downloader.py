@@ -37,7 +37,7 @@ async def progress(msg: Message, total_size, downloaded):
     downloaded_mb = downloaded / (1024 * 1024)
     message = f"<b>Downloading</b>\n<b>Total Size:</b> {total_size_mb:.2f} MB\n<b>Downloaded:</b> {downloaded_mb:.2f} MB"
     await msg.edit_text(message)
-
+ 
 
 @Bot.on_message(filters.command(COMMAND_START))
 async def download_link(bot: Bot, message: Message):
