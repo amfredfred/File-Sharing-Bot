@@ -3,13 +3,8 @@ import requests
 from urllib.parse import urlparse, urljoin
 import os
 import tempfile
-import asyncio
-
-from config import (
-    PLAYABLE_FILE_EXTENSIONS,
-    ZIP_FILE_EXTENSIONS,
-    NON_HARMFUL_FILE_EXTENSIONS,
-)
+from helper_func import if_only_path
+from config import ALL_EXTENTIONS
 
 
 class DownloadManager:
@@ -17,25 +12,11 @@ class DownloadManager:
         self.should_cancel_download = False
         pass
 
-    async def download_file(self, link, chat_id):
-        file_info = self._parse_link(link)
-        if file_info:
-            if file_info["type"] == "media":
-                await self.send_video(chat_id, video=file_info["url"])
-            elif file_info["type"] == "telegram":
-                await self.send_document(chat_id, document=file_info["url"])
-            else:
-                await self.send_download_options(file_info["urls"])
-        else:
-            await self.app.send_message(chat_id, "Invalid l+ink.")
-
     def _parse_link(self, link):
         parsed_url = urlparse(link)
         if parsed_url.scheme == "https" and parsed_url.netloc == "t.me":
             return {"type": "telegram", "url": link}
-        elif parsed_url.path.endswith(
-            PLAYABLE_FILE_EXTENSIONS + ZIP_FILE_EXTENSIONS + NON_HARMFUL_FILE_EXTENSIONS
-        ):
+        elif parsed_url.path.endswith(ALL_EXTENTIONS):
             return {"type": "media", "url": link}
         else:
             return {
@@ -50,10 +31,8 @@ class DownloadManager:
             soup = BeautifulSoup(response.text, "html.parser")
             base_url = urlparse(link).scheme + "://" + urlparse(link).netloc
             for a_tag in soup.find_all("a", href=True):
-                href = a_tag["href"]
-                if href.startswith("/"):
-                    href = urljoin(base_url, href)  # Prepend base URL to href
-                if href.endswith(PLAYABLE_FILE_EXTENSIONS + ZIP_FILE_EXTENSIONS + NON_HARMFUL_FILE_EXTENSIONS):
+                href = if_only_path(base_url, a_tag["href"])
+                if href.endswith(ALL_EXTENTIONS):
                     downloadable_links.append(href)
         except Exception as e:
             print(f"Error while fetching links: {e}")
@@ -64,11 +43,13 @@ class DownloadManager:
             with tempfile.TemporaryDirectory() as temp_dir:
                 file_name = os.path.join(temp_dir, os.path.basename(url))
                 response = requests.get(url, stream=True)
-                total_size = int(response.headers.get('content-length', 0))
+                total_size = int(response.headers.get("content-length", 0))
                 if response.status_code == 200:
                     with open(file_name, "wb") as file:
                         downloaded_size = 0
-                        chunk_size = max(total_size // 10, 1024)  # Calculate chunk size (approximately 10%)
+                        chunk_size = max(
+                            total_size // 10, 1024
+                        )  # Calculate chunk size (approximately 10%)
                         for chunk in response.iter_content(chunk_size=chunk_size):
                             if self.should_cancel_download:
                                 os.remove(file_name)
@@ -96,3 +77,12 @@ class DownloadManager:
 
     async def cancel_download(self):
         self.should_cancel_download = True
+
+    def download_options(self, urls):
+        message = "<b>Choose a file to download:</b>\n"
+        for idx, dl_link in enumerate(urls, start=1):
+            file_name = urlparse(dl_link).path.split("/")[-1]
+            button_text = f"{idx}. {file_name}"
+            message += f"<b>{button_text}</b>\n"
+        message += "\nPlease select a number to download."
+        return message

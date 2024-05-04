@@ -3,15 +3,13 @@ from pyrogram.types import Message, InputMedia
 from pyrogram.enums import ChatAction
 from pyrogram import filters
 from bot import Bot
-from helper_func import extract_url, get_readable_time
-from datetime import datetime
-from tqdm import tqdm
+from helper_func import extract_url
 
 dm = DownloadManager()
 
 # Define command names
 COMMAND_START = "download"
-COMMAND_END = "cancel_end"
+COMMAND_END = "cancel_download"
 
 
 async def callback(msg: Message, media_url: str, file_name: str):
@@ -31,19 +29,16 @@ async def callback(msg: Message, media_url: str, file_name: str):
 
 
 async def progress(msg: Message, total_size, downloaded):
-    current_timestamp = datetime.now().timestamp()
-    readable_date = get_readable_time(current_timestamp)
     total_size_mb = total_size / (1024 * 1024)
     downloaded_mb = downloaded / (1024 * 1024)
     message = f"<b>Downloading</b>\n<b>Total Size:</b> {total_size_mb:.2f} MB\n<b>Downloaded:</b> {downloaded_mb:.2f} MB"
-    await msg.edit_text(message)
- 
+    return await msg.edit_text(message)
 
-@Bot.on_message(filters.command(COMMAND_START))
+@Bot.on_message(filters.private and filters.command(COMMAND_START))
 async def download_link(bot: Bot, message: Message):
     expect_link = message.text.strip()
     msg = await message.reply_text("<strong><u>Checking Link...</ul></strong>")
-    expect_link = extract_url(expect_link)
+    expect_link,_ = extract_url(expect_link)
     if expect_link:
         link = dm._parse_link(expect_link)
         url = link.get("url")
@@ -59,4 +54,5 @@ async def download_link(bot: Bot, message: Message):
             urls = link.get("urls")
             urls_message = dm.download_options(urls)
             return await msg.edit_text(f"<b><u>Nicely Scraped</u><b>\n{urls_message}")
-    await message.delete()
+    else:
+        return msg.edit_text("")

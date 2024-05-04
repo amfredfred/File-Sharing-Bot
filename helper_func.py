@@ -5,10 +5,11 @@ import re
 import asyncio
 from pyrogram import filters
 from pyrogram.enums import ChatMemberStatus
-from config import FORCE_SUB_CHANNEL, ADMINS, PLAYABLE_FILE_EXTENSIONS,ZIP_FILE_EXTENSIONS,NON_HARMFUL_FILE_EXTENSIONS
+from config import FORCE_SUB_CHANNEL, ADMINS, ALL_EXTENTIONS
 from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant
 from pyrogram.errors import FloodWait
 from urllib.parse import urlparse
+from urllib.parse import urlparse, urljoin
 
 
 async def is_subscribed(filter, client, update):
@@ -18,14 +19,21 @@ async def is_subscribed(filter, client, update):
     if user_id in ADMINS:
         return True
     try:
-        member = await client.get_chat_member(chat_id = FORCE_SUB_CHANNEL, user_id = user_id)
+        member = await client.get_chat_member(
+            chat_id=FORCE_SUB_CHANNEL, user_id=user_id
+        )
     except UserNotParticipant:
         return False
 
-    if not member.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR, ChatMemberStatus.MEMBER]:
+    if not member.status in [
+        ChatMemberStatus.OWNER,
+        ChatMemberStatus.ADMINISTRATOR,
+        ChatMemberStatus.MEMBER,
+    ]:
         return False
     else:
         return True
+
 
 async def encode(string):
     string_bytes = string.encode("ascii")
@@ -33,34 +41,37 @@ async def encode(string):
     base64_string = (base64_bytes.decode("ascii")).strip("=")
     return base64_string
 
+
 async def decode(base64_string):
-    base64_string = base64_string.strip("=") # links generated before this commit will be having = sign, hence striping them to handle padding errors.
+    base64_string = base64_string.strip(
+        "="
+    )  # links generated before this commit will be having = sign, hence striping them to handle padding errors.
     base64_bytes = (base64_string + "=" * (-len(base64_string) % 4)).encode("ascii")
-    string_bytes = base64.urlsafe_b64decode(base64_bytes) 
+    string_bytes = base64.urlsafe_b64decode(base64_bytes)
     string = string_bytes.decode("ascii")
     return string
+
 
 async def get_messages(client, message_ids):
     messages = []
     total_messages = 0
     while total_messages != len(message_ids):
-        temb_ids = message_ids[total_messages:total_messages+200]
+        temb_ids = message_ids[total_messages : total_messages + 200]
         try:
             msgs = await client.get_messages(
-                chat_id=client.db_channel.id,
-                message_ids=temb_ids
+                chat_id=client.db_channel.id, message_ids=temb_ids
             )
         except FloodWait as e:
             await asyncio.sleep(e.x)
             msgs = await client.get_messages(
-                chat_id=client.db_channel.id,
-                message_ids=temb_ids
+                chat_id=client.db_channel.id, message_ids=temb_ids
             )
         except:
             pass
         total_messages += len(temb_ids)
         messages.extend(msgs)
     return messages
+
 
 async def get_message_id(client, message):
     if message.forward_from_chat:
@@ -72,7 +83,7 @@ async def get_message_id(client, message):
         return 0
     elif message.text:
         pattern = "https://t.me/(?:c/)?(.*)/(\d+)"
-        matches = re.match(pattern,message.text)
+        matches = re.match(pattern, message.text)
         if not matches:
             return 0
         channel_id = matches.group(1)
@@ -111,9 +122,10 @@ def get_readable_time(seconds: int) -> str:
 
 subscribed = filters.create(is_subscribed)
 
-def is_url(text =''):
-    prefixes = ['http://', 'https://', 'www.']
-    extensions = PLAYABLE_FILE_EXTENSIONS+ ZIP_FILE_EXTENSIONS+ NON_HARMFUL_FILE_EXTENSIONS
+
+def is_url(text: str):
+    prefixes = ["http://", "https://", "www."]
+    extensions = ALL_EXTENTIONS
     urls = []
     for prefix in prefixes:
         if text.startswith(prefix):
@@ -123,20 +135,55 @@ def is_url(text =''):
             urls.append(text)
     try:
         result = urlparse(text)
-        if all([result.scheme, result.netloc]): 
+        if all([result.scheme, result.netloc]):
             urls.append(text)
     except ValueError:
         pass
     return bool(urls), urls
 
-def extract_url(text):
+
+def extract_url(text: str):
     parts = text.split()
     for part in parts:
         if is_url(part)[0]:
-            return clean_file_url(part)
-    return None
+            isDownloadable, _ = is_downloadable(part)
+            return clean_file_url(part), isDownloadable
+    return None, False
 
-def clean_file_url(file_url):
+
+def clean_file_url(file_url: str):
     # Use regular expressions to remove everything after the file extension
-    cleaned_url = re.sub(r'(\.mp4|\.mp3|\.avi|\.mkv|\.jpg|\.jpeg|\.png|\.gif|\.ogg).*$', lambda x: x.group(1), file_url)
-    return cleaned_url
+    # cleaned_url = re.sub(r'(\.mp4|\.mp3|\.avi|\.mkv|\.jpg|\.jpeg|\.png|\.gif|\.ogg).*$', lambda x: x.group(1), file_url)
+    # return cleaned_url
+    return file_url
+
+
+def is_downloadable(link: str):
+    parsed_url = urlparse(link)
+    if parsed_url.path.endswith(ALL_EXTENTIONS):
+        return True, {"type": "media", "url": link}
+    return False, {}
+
+
+def extract_link_title(link: str):
+    cleaned_url = clear_url(link)
+    path_segments = urlparse(cleaned_url).path.split("/")
+    if path_segments:
+        last_segment = path_segments[-1] if path_segments[-1] else path_segments[1]
+        title = last_segment.replace("-", " ")
+        return title
+    else:
+        return None
+
+def if_only_path(link: str, href: str) -> str:
+    if link is None or href is None:
+        return href
+    base_url = urlparse(link).scheme + "://" + urlparse(link).netloc
+    if href.startswith("/"):
+        href = urljoin(base_url, href)
+    return href
+
+
+def clear_url(link: str):
+    cleared = link.replace("https://", "").replace("http://", "").replace("www.", "")
+    return cleared

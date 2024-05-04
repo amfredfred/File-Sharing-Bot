@@ -11,6 +11,7 @@ SQLITE_DB_FILE = os.getenv("SQLITE_DB_FILE")
 PLAYABLE_FILE_EXTENSIONS = ('.mp4', '.mp3', '.avi', '.mkv', '.jpg', '.jpeg', '.png', '.gif', '.ogg')
 ZIP_FILE_EXTENSIONS = ('.zip', '.rar', '.7z')
 NON_HARMFUL_FILE_EXTENSIONS = ('.txt', '.pdf', '.doc', '.docx', '.xls', '.xlsx', '.ppt', '.pptx')
+ALL_EXTENTIONS = (PLAYABLE_FILE_EXTENSIONS+ZIP_FILE_EXTENSIONS+NON_HARMFUL_FILE_EXTENSIONS)
 
 # Bot token @Botfather
 TG_BOT_TOKEN = os.getenv("TG_BOT_TOKEN", "")
@@ -64,6 +65,9 @@ BOT_STATS_TEXT = "<b>STATS & USAGE</b>\n"
 USER_REPLY_TEXT = "❌Don't send me messages directly I'm only File Share bot!"
 
 SEARCH_TEXT_EMPTY = "Sorry, that is not a valid way to search;\nexample = /search some text"
+
+BOT_URL= os.getenv('BOT_URL', 't.me/pointsspeakbot')
+BOT_USERNAME = os.getenv("BOT_USERNAME", "t.me/pointsspeakbot")
 
 ADMINS.append(OWNER_ID)
 # ADMINS.append(1250450587)
