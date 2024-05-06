@@ -5,11 +5,146 @@ import re
 import asyncio
 from pyrogram import filters
 from pyrogram.enums import ChatMemberStatus
-from config import FORCE_SUB_CHANNEL, ADMINS, ALL_EXTENTIONS
+from config import (
+    FORCE_SUB_CHANNEL,
+    ADMINS,
+    ALL_EXTENTIONS,
+    DISABLE_CHANNEL_BUTTON,
+    PROTECT_CONTENT,
+    START_MSG,
+    CUSTOM_CAPTION,
+    COMMANDS_LIST,
+)
 from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant
 from pyrogram.errors import FloodWait
 from urllib.parse import urlparse
 from urllib.parse import urlparse, urljoin
+from database.database import present_user, add_user
+from pyrogram.enums import ParseMode
+from pyrogram.types import (
+    Message,
+    InlineKeyboardMarkup,
+    InlineKeyboardButton,
+    InlineQueryResultArticle,
+    InputTextMessageContent,
+)
+
+
+async def get_caption(msg):
+    if bool(CUSTOM_CAPTION) & bool(msg.document):
+        return CUSTOM_CAPTION.format(
+            previouscaption="" if not msg.caption else msg.caption.html,
+            filename=msg.document.file_name,
+        )
+    else:
+        return "" if not msg.caption else msg.caption.html
+
+
+async def send_start_message(message: Message):
+    reply_markup = InlineKeyboardMarkup(
+        [
+            [
+                InlineKeyboardButton("😊 About Me", callback_data="about"),
+                InlineKeyboardButton("🔒 Close", callback_data="close"),
+            ]
+        ]
+    )
+    await message.reply_text(
+        text=START_MSG.format(
+            first=message.from_user.first_name,
+            last=message.from_user.last_name,
+            username=(
+                None
+                if not message.from_user.username
+                else "@" + message.from_user.username
+            ),
+            mention=message.from_user.mention,
+            id=message.from_user.id,
+        ),
+        reply_markup=reply_markup,
+        disable_web_page_preview=True,
+        quote=True,
+    )
+
+
+async def copy_messages(client, message: Message, messages):
+    for msg in messages:
+        caption = await get_caption(msg)
+
+        if DISABLE_CHANNEL_BUTTON:
+            reply_markup = msg.reply_markup
+        else:
+            reply_markup = None
+
+        try:
+            await msg.copy(
+                chat_id=message.from_user.id,
+                caption=caption,
+                parse_mode=ParseMode.HTML,
+                reply_markup=reply_markup,
+                protect_content=PROTECT_CONTENT,
+            )
+            await asyncio.sleep(0.5)
+        except FloodWait as e:
+            await asyncio.sleep(e.x)
+            await msg.copy(
+                chat_id=message.from_user.id,
+                caption=caption,
+                parse_mode=ParseMode.HTML,
+                reply_markup=reply_markup,
+                protect_content=PROTECT_CONTENT,
+            )
+        except:
+            pass
+
+
+async def extract_ids(client, text):
+    try:
+        base64_string = text.split(" ", 1)[1]
+    except:
+        return []
+
+    string = await decode(base64_string)
+    argument = string.split("-")
+
+    if len(argument) == 3:
+        try:
+            start = int(int(argument[1]) / abs(client.db_channel.id))
+            end = int(int(argument[2]) / abs(client.db_channel.id))
+        except:
+            return []
+
+        if start <= end:
+            ids = range(start, end + 1)
+        else:
+            ids = []
+            i = start
+            while True:
+                ids.append(i)
+                i -= 1
+                if i < end:
+                    break
+    elif len(argument) == 2:
+        try:
+            ids = [int(int(argument[1]) / abs(client.db_channel.id))]
+        except:
+            return []
+
+    return ids
+
+
+async def check_and_add_user(id, chat, msg_from):
+    if not await present_user(telegram_id=id):
+        try:
+            await add_user(
+                tid=msg_from.id,
+                chat_id=chat.id,
+                username=msg_from.username,
+                first_name=msg_from.first_name,
+                last_name=msg_from.last_name,
+            )
+        except:
+            pass
 
 
 async def is_subscribed(filter, client, update):
@@ -73,7 +208,7 @@ async def get_messages(client, message_ids):
     return messages
 
 
-async def get_message_id(client, message):
+async def get_message_id(client, message: Message):
     if message.forward_from_chat:
         if message.forward_from_chat.id == client.db_channel.id:
             return message.forward_from_message_id
@@ -142,6 +277,15 @@ def is_url(text: str):
     return bool(urls), urls
 
 
+def extract_urls(text: str):
+    parts = text.split()
+    urls = []
+    for part in parts:
+        if is_url(part)[0]:
+            urls.append(part)
+    return urls
+
+
 def extract_url(text: str):
     parts = text.split()
     for part in parts:
@@ -175,6 +319,7 @@ def extract_link_title(link: str):
     else:
         return None
 
+
 def if_only_path(link: str, href: str) -> str:
     if link is None or href is None:
         return href
@@ -187,3 +332,26 @@ def if_only_path(link: str, href: str) -> str:
 def clear_url(link: str):
     cleared = link.replace("https://", "").replace("http://", "").replace("www.", "")
     return cleared
+
+
+def has_path(url):
+    parsed_url = urlparse(url)
+    _is_not_empty = parsed_url.path != "\\"
+    return bool(_is_not_empty) and not parsed_url.path.endswith("/")
+
+def starts_with_bot_username(bot_username: str, message_text: str) -> bool:
+    return message_text.startswith(f"@{bot_username}")
+
+def is_second_message_command(message_text: str) -> bool:
+    if message_text.startswith("/"):
+        return True
+    elif message_text.split()[0] in COMMANDS_LIST:
+        return True
+    else:
+        return False
+    
+def command_clean(text:str):
+    words = text.split()
+    words_without_command = [word for word in words if not word.startswith("/") or word.startswith('@')]
+    result = " ".join(words_without_command)
+    return result

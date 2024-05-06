@@ -1,10 +1,9 @@
-# (©)CodeXBotz
+# (©)CodeXBotz and @EditorFred on Telegram
 
 from models.profile import profile
 from models.wallet import wallet
 
 async def present_user(telegram_id: int):
-    print(f"{telegram_id} TG ID")
     _profile = profile()
     found = _profile.get_profile_by_telegram_id(telegram_id=telegram_id)
     return bool(found)

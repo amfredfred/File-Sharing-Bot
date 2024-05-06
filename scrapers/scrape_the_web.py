@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import datetime
-from helper_func import if_only_path, extract_link_title
+from helper_func import if_only_path, extract_link_title, has_path
 
 
 class ScrapeTheWeb:
@@ -13,9 +13,9 @@ class ScrapeTheWeb:
         search_urls = [
             f"https://netnaija.uk/?s={self.search_query}",
             f"https://9jarocks.net/?s={self.search_query}",
-            f"https://netnaija.xyz/?s={self.search_query}",
-            f"https://netnaijatv.com/?s={self.search_query}",
-            f"https://ww16.0123movie.net/search.html?q={self.search_query}",
+            # f"https://netnaija.xyz/?s={self.search_query}",
+            # f"https://netnaijatv.com/?s={self.search_query}",
+            # f"https://ww16.0123movie.net/search.html?q={self.search_query}",
             f"https://parrotvibes.com/?s={search_query}",
         ]
         all_search_results = []
@@ -69,7 +69,7 @@ class ScrapeTheWeb:
         search_query_words = self.search_query.lower().split()
         for link in links:
             link_text_lower = link["text"].lower()
-            if any(word in link_text_lower for word in search_query_words):
+            if any(word in link_text_lower for word in search_query_words) and has_path(link["url"]):
                 if str(current_year) in link["url"]:
                     matched_links_with_current_year.append(link)
                 else:

@@ -5,6 +5,9 @@ import os
 import tempfile
 from helper_func import if_only_path
 from config import ALL_EXTENTIONS
+import aiofiles
+import aiohttp
+import shutil
 
 
 class DownloadManager:
@@ -40,40 +43,43 @@ class DownloadManager:
 
     async def download_and_send_media(self, msg, url, callback, progress):
         try:
-            with tempfile.TemporaryDirectory() as temp_dir:
-                file_name = os.path.join(temp_dir, os.path.basename(url))
-                response = requests.get(url, stream=True)
-                total_size = int(response.headers.get("content-length", 0))
-                if response.status_code == 200:
-                    with open(file_name, "wb") as file:
-                        downloaded_size = 0
-                        chunk_size = max(
-                            total_size // 10, 1024
-                        )  # Calculate chunk size (approximately 10%)
-                        for chunk in response.iter_content(chunk_size=chunk_size):
-                            if self.should_cancel_download:
-                                os.remove(file_name)
-                                return "Download canceled."
-                            file.write(chunk)
-                            try:
-                                if downloaded_size >= total_size // 10:
-                                    await progress(msg, total_size, downloaded_size)
-                                    downloaded_size = 0
-                            except Exception as e:
-                                print(f"Error updating progress: {e}")
-                            downloaded_size += len(chunk)
-                    await callback(msg, url, file_name)
-                    os.remove(file_name)
-                    return True
-                elif response.status_code == 404:
-                    return "The requested file was not found."
-                elif response.status_code == 403:
-                    return "Access to the requested file is forbidden."
-                else:
-                    return f"Error downloading media: HTTP error {str(response.status_code)}"
+            temp_dir = tempfile.mkdtemp()
+            async with aiohttp.ClientSession() as session:
+                async with session.get(url) as response:
+                    total_size = int(response.headers.get("content-length", 0))
+                    previous_progress_percentage = 0
+                    if response.status == 200:
+                        file_name = os.path.join(temp_dir, os.path.basename(url))
+                        async with aiofiles.open(file_name, "wb") as file:
+                            downloaded_size = 0
+                            async for chunk in response.content.iter_any():
+                                if self.should_cancel_download:
+                                    await aiofiles.os.remove(file_name)
+                                    return "Download canceled."
+                                await file.write(chunk)
+                                downloaded_size += len(chunk)
+                                current_progress_percentage = (downloaded_size / total_size) * 100
+                                if current_progress_percentage - previous_progress_percentage >= 2:
+                                    try:
+                                        await progress(msg, total_size, downloaded_size)
+                                    except Exception as e:
+                                        pass
+                                    finally:
+                                       previous_progress_percentage = current_progress_percentage
+                                       downloaded_size = 0
+                        await callback(msg, url, file_name, f">>>> ✅✅✅ <<<<")
+                        return True
+                    elif response.status == 404:
+                        return "The requested file was not found."
+                    elif response.status == 403:
+                        return "Access to the requested file is forbidden."
+                    else:
+                        return f"Error downloading media: HTTP error {response.status}"
         except Exception as e:
             print(f"Error downloading media. {e}")
             return f"Error downloading media."
+        finally:
+            shutil.rmtree(temp_dir, ignore_errors=True)
 
     async def cancel_download(self):
         self.should_cancel_download = True

@@ -11,3 +11,4 @@ aiohttp==3.8.4
 BeautifulSoup==
 # for env
 python-dotenv==1.0.1
+aiofiles==23.2.1

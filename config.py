@@ -65,6 +65,8 @@ BOT_STATS_TEXT = "<b>STATS & USAGE</b>\n"
 USER_REPLY_TEXT = "❌Don't send me messages directly I'm only File Share bot!"
 
 SEARCH_TEXT_EMPTY = "Sorry, that is not a valid way to search;\nexample = /search some text"
+LOOKING_UP_TEXT = "<code><b>Looking up</b> <u>{query}</u><code>"
+INVALID_URL_TEXT = "NO URL, Only send a valid url or a file link. You sent {text}"
 
 BOT_URL= os.getenv('BOT_URL', 't.me/pointsspeakbot')
 BOT_USERNAME = os.getenv("BOT_USERNAME", "t.me/pointsspeakbot")
@@ -92,3 +94,6 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 def LOGGER(name: str) -> logging.Logger:
     return logging.getLogger(name)
+
+
+COMMANDS_LIST=['/start', '/stats']
