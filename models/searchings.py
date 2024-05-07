@@ -1,13 +1,13 @@
 import psycopg2
-from config import POSTGRESQL_CONNECTION_STRING
-
+from database.connection import DBConnection
 
 class Searching:
-    def __init__(self, connection_string=POSTGRESQL_CONNECTION_STRING):
-        self.conn = psycopg2.connect(connection_string)
-        self.create_table()
+    def __init__(self):
+        db_connect = DBConnection()
+        self.conn = db_connect.conneciton()
+        self._create_table()
 
-    def create_table(self):
+    def _create_table(self):
         query = """
             CREATE TABLE IF NOT EXISTS searchings (
                 id SERIAL PRIMARY KEY,

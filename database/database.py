@@ -8,7 +8,6 @@ async def present_user(telegram_id: int):
     found = _profile.get_profile_by_telegram_id(telegram_id=telegram_id)
     return bool(found)
 
-
 async def add_user(tid: int, chat_id: int, username, first_name, last_name):
     _profile = Profile()
     _wallet = Wallet()

@@ -3,15 +3,14 @@
 import asyncio
 from pyrogram import filters, Client
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
-from pyrogram.errors import FloodWait
+from pyrogram.errors import FloodWait 
 
 from bot import Bot
 from config import ADMINS, CHANNEL_ID, DISABLE_CHANNEL_BUTTON
 from helper_func import encode, extract_urls
 from responses.index import ResponseMessage
 from managers.command.manager import CommandManager, command_names, command_list
-
-from  middlewares.ensure_user_indb import ensure_user_indb
+ 
 
 OFF_COMMANDS = [
     "start",
@@ -25,13 +24,8 @@ OFF_COMMANDS = [
     "account",
 ]
 
-rspmsg = ResponseMessage()
 
-
-@Bot.on_message(filters.all)
-def middleware_wrapper(client: Client, message: Message):
-    ensure_user_indb(client, message)
-
+rspmsg = ResponseMessage() 
 @Bot.on_message(filters.private & filters.user(ADMINS) & ~filters.command(OFF_COMMANDS))
 async def channel_post(client: Client, message: Message):
 
@@ -49,7 +43,8 @@ async def channel_post(client: Client, message: Message):
             print("Invalid Command supplied")
         else:
             print(f"No Commadn Supplied, Proceed")
-
+            
+        return
         urls = extract_urls(msg_text)
         if urls:
             try:

@@ -1,13 +1,14 @@
 import psycopg2
-from config import POSTGRESQL_CONNECTION_STRING
+from database.connection import DBConnection
 
 class Profile:
 
-    def __init__(self, connection_string=POSTGRESQL_CONNECTION_STRING):
-        self.conn = psycopg2.connect(connection_string)
-        self.create_table()
+    def __init__(self):
+        db_connect = DBConnection()
+        self.conn = db_connect.conneciton()
+        self._create_table()
 
-    def create_table(self):
+    def _create_table(self):
         query = """
             CREATE TABLE IF NOT EXISTS profiles (
                 id SERIAL PRIMARY KEY,
@@ -71,7 +72,9 @@ class Profile:
             return False
 
     def get_profile_by_telegram_id(self, telegram_id):
-        query = "SELECT * FROM profiles WHERE telegram_id = %s"
+        query = (
+            f"SELECT * FROM profiles WHERE telegram_id = CAST({telegram_id} AS TEXT)"
+        )
         with self.conn.cursor() as cursor:
             cursor.execute(query, (telegram_id,))
             return cursor.fetchone()
@@ -83,7 +86,7 @@ class Profile:
             return cursor.fetchall()
 
     def delete_profile(self, telegram_id):
-        query = "DELETE FROM profiles WHERE telegram_id = %s"
+        query = f"DELETE FROM profiles WHERE telegram_id = CAST({telegram_id} AS TEXT)"
         with self.conn.cursor() as cursor:
             cursor.execute(query, (telegram_id,))
             self.conn.commit()

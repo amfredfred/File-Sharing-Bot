@@ -19,3 +19,275 @@ https://t.me/stilloid
 Created by 
 https://t.me/stilloid
 [07-May-24 08:20:45 - INFO] - bot - Lets roll
+[07-May-24 08:24:57 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[07-May-24 08:24:57 - INFO] - bot - Bot stopped.
+[07-May-24 08:25:06 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[07-May-24 08:25:06 - INFO] - bot - Lets roll
+[07-May-24 08:25:07 - ERROR] - pyrogram.dispatcher - object NoneType can't be used in 'await' expression
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+TypeError: object NoneType can't be used in 'await' expression
+[07-May-24 08:25:58 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[07-May-24 08:25:58 - INFO] - bot - Bot stopped.
+[07-May-24 08:26:06 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[07-May-24 08:26:06 - INFO] - bot - Lets roll
+[07-May-24 08:30:01 - ERROR] - pyrogram.dispatcher - object NoneType can't be used in 'await' expression
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+TypeError: object NoneType can't be used in 'await' expression
+[07-May-24 08:33:33 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[07-May-24 08:33:33 - INFO] - bot - Bot stopped.
+[07-May-24 08:33:41 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[07-May-24 08:33:41 - INFO] - bot - Lets roll
+[07-May-24 08:34:06 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[07-May-24 08:34:06 - INFO] - bot - Bot stopped.
+[07-May-24 08:34:13 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[07-May-24 08:34:13 - INFO] - bot - Lets roll
+[07-May-24 08:40:23 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[07-May-24 08:40:23 - INFO] - bot - Bot stopped.
+[07-May-24 08:43:30 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[07-May-24 08:43:30 - INFO] - bot - Lets roll
+[07-May-24 08:44:24 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[07-May-24 08:44:24 - INFO] - bot - Bot stopped.
+[07-May-24 08:55:38 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[07-May-24 08:55:38 - INFO] - bot - Lets roll
+[07-May-24 08:56:35 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[07-May-24 08:56:35 - INFO] - bot - Bot stopped.
+[07-May-24 08:56:44 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[07-May-24 08:56:44 - INFO] - bot - Lets roll
+[07-May-24 08:57:34 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[07-May-24 08:57:34 - INFO] - bot - Bot stopped.
+[07-May-24 08:57:41 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[07-May-24 08:57:41 - INFO] - bot - Lets roll
+[07-May-24 08:59:34 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[07-May-24 08:59:34 - INFO] - bot - Bot stopped.
+[07-May-24 08:59:43 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[07-May-24 08:59:43 - INFO] - bot - Lets roll
+[07-May-24 09:00:28 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[07-May-24 09:00:28 - INFO] - bot - Bot stopped.
+[07-May-24 09:02:23 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[07-May-24 09:02:23 - INFO] - bot - Lets roll
+[07-May-24 09:02:29 - ERROR] - pyrogram.dispatcher - object NoneType can't be used in 'await' expression
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+TypeError: object NoneType can't be used in 'await' expression
+[07-May-24 09:04:15 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[07-May-24 09:04:15 - INFO] - bot - Bot stopped.
+[07-May-24 09:04:23 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[07-May-24 09:04:23 - INFO] - bot - Lets roll
+[07-May-24 09:04:54 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[07-May-24 09:04:54 - INFO] - bot - Bot stopped.
+[07-May-24 09:05:02 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[07-May-24 09:05:02 - INFO] - bot - Lets roll
+[07-May-24 09:05:41 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[07-May-24 09:05:41 - INFO] - bot - Bot stopped.
+[07-May-24 09:05:48 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[07-May-24 09:05:48 - INFO] - bot - Lets roll
+[07-May-24 09:08:43 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[07-May-24 09:08:43 - INFO] - bot - Bot stopped.
+[07-May-24 09:08:51 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[07-May-24 09:08:51 - INFO] - bot - Lets roll
+[07-May-24 09:08:53 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[07-May-24 09:08:53 - INFO] - bot - Bot stopped.
+[07-May-24 09:09:01 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[07-May-24 09:09:01 - INFO] - bot - Lets roll
+[07-May-24 09:09:18 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[07-May-24 09:09:18 - INFO] - bot - Bot stopped.
+[07-May-24 09:09:25 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[07-May-24 09:09:25 - INFO] - bot - Lets roll
+[07-May-24 09:09:43 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[07-May-24 09:09:43 - INFO] - bot - Bot stopped.
+[07-May-24 09:09:51 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[07-May-24 09:09:51 - INFO] - bot - Lets roll
+[07-May-24 09:11:06 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[07-May-24 09:11:06 - INFO] - bot - Bot stopped.
+[07-May-24 09:11:16 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[07-May-24 09:11:16 - INFO] - bot - Lets roll
+[07-May-24 09:11:50 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[07-May-24 09:11:50 - INFO] - bot - Bot stopped.
+[07-May-24 09:11:58 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[07-May-24 09:11:58 - INFO] - bot - Lets roll
+[07-May-24 09:12:16 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[07-May-24 09:12:16 - INFO] - bot - Bot stopped.
+[07-May-24 09:12:27 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[07-May-24 09:12:27 - INFO] - bot - Lets roll
+[07-May-24 09:12:40 - ERROR] - pyrogram.dispatcher - Task cannot await on itself: <Task pending name='Task-48' coro=<Dispatcher.handler_worker() running at C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py:240>>
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\middlewares\ensure_user_indb.py", line 9, in ensure_user_indb
+    await client.stop()
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\bot.py", line 71, in stop
+    await super().stop()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\methods\utilities\stop.py", line 65, in stop
+    await do_it()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\methods\utilities\stop.py", line 61, in do_it
+    await self.terminate()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\methods\auth\terminate.py", line 47, in terminate
+    await self.dispatcher.stop()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 162, in stop
+    await i
+RuntimeError: Task cannot await on itself: <Task pending name='Task-48' coro=<Dispatcher.handler_worker() running at C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py:240>>
+[07-May-24 09:15:15 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[07-May-24 09:15:15 - INFO] - bot - Bot stopped.
+[07-May-24 09:15:23 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[07-May-24 09:15:23 - INFO] - bot - Lets roll
+[07-May-24 09:16:49 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[07-May-24 09:16:49 - INFO] - bot - Bot stopped.
+[07-May-24 09:17:47 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[07-May-24 09:17:47 - INFO] - bot - Lets roll
+[07-May-24 09:18:19 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[07-May-24 09:18:19 - INFO] - bot - Bot stopped.
+[07-May-24 09:18:27 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[07-May-24 09:18:27 - INFO] - bot - Lets roll
+[07-May-24 09:18:29 - ERROR] - pyrogram.dispatcher - operator does not exist: text = integer
+LINE 1: SELECT * FROM profiles WHERE telegram_id = 1497831921
+                                                 ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\middlewares\ensure_user_indb.py", line 11, in ensure_user_indb
+    if not await present_user(msg.from_user.id):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\database\database.py", line 8, in present_user
+    found = _profile.get_profile_by_telegram_id(telegram_id=telegram_id)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\models\profile.py", line 76, in get_profile_by_telegram_id
+    cursor.execute(query, (telegram_id,))
+psycopg2.errors.UndefinedFunction: operator does not exist: text = integer
+LINE 1: SELECT * FROM profiles WHERE telegram_id = 1497831921
+                                                 ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+
+[07-May-24 09:19:53 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[07-May-24 09:19:53 - INFO] - bot - Bot stopped.
+[07-May-24 09:20:01 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[07-May-24 09:20:01 - INFO] - bot - Lets roll
+[07-May-24 09:21:46 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[07-May-24 09:21:46 - INFO] - bot - Bot stopped.
+[07-May-24 09:21:54 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[07-May-24 09:21:54 - INFO] - bot - Lets roll
+[07-May-24 10:59:59 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[07-May-24 10:59:59 - INFO] - bot - Bot stopped.
+[07-May-24 11:00:10 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[07-May-24 11:00:10 - INFO] - bot - Lets roll
+[07-May-24 11:01:36 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[07-May-24 11:01:36 - INFO] - bot - Bot stopped.
+[07-May-24 11:01:44 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[07-May-24 11:01:44 - INFO] - bot - Lets roll
+[07-May-24 11:41:12 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[07-May-24 11:41:12 - INFO] - bot - Bot stopped.
+[07-May-24 11:41:20 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[07-May-24 11:41:20 - INFO] - bot - Lets roll
+[07-May-24 11:41:42 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[07-May-24 11:41:43 - INFO] - bot - Bot stopped.
+[07-May-24 11:41:51 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[07-May-24 11:41:51 - INFO] - bot - Lets roll
+[07-May-24 11:46:40 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[07-May-24 11:46:40 - INFO] - bot - Bot stopped.
+[07-May-24 11:46:49 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[07-May-24 11:46:49 - INFO] - bot - Lets roll

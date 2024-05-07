@@ -20,8 +20,7 @@ from config import (
 
 from helper_func import (
     subscribed,
-    get_messages,
-    check_and_add_user,
+    get_messages, 
     extract_ids,
     copy_messages,
     send_start_message,
@@ -35,8 +34,7 @@ command = 'start'
 async def start_command(client: Client, message: Message):
     id = message.from_user.id
     chat = message.chat
-    msg_from = message.from_user
-    await check_and_add_user(id, chat, msg_from)
+    msg_from = message.from_user 
     text = message.text
     if len(text) > 7 and not starts_with_bot_username(client.me.username, text):
         ids = await extract_ids(client, text)

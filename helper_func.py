@@ -133,8 +133,8 @@ async def extract_ids(client, text):
     return ids
 
 
-async def check_and_add_user(id, chat, msg_from):
-    if not await present_user(telegram_id=id):
+async def check_and_add_user(chat, msg_from):
+    if not await present_user(telegram_id=msg_from.id):
         try:
             await add_user(
                 tid=msg_from.id,
@@ -143,7 +143,8 @@ async def check_and_add_user(id, chat, msg_from):
                 first_name=msg_from.first_name,
                 last_name=msg_from.last_name,
             )
-        except:
+        except Exception as e:
+            print(f"Exception: {e}")
             pass
 
 
@@ -349,7 +350,7 @@ def is_second_message_command(message_text: str) -> bool:
         return True
     else:
         return False
-    
+
 def command_clean(text:str):
     words = text.split()
     words_without_command = [word for word in words if not word.startswith("/") or word.startswith('@')]
