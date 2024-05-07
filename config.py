@@ -7,6 +7,13 @@ from dotenv import load_dotenv
 load_dotenv()
 
 SQLITE_DB_FILE = os.getenv("SQLITE_DB_FILE")
+POSTGRESQL_DB = os.getenv("POSTGRESQL_DB")
+POSTGRESQL_USERNAME = os.getenv("POSTGRESQL_USERNAME")
+POSTGRESQL_PASSWORD = os.getenv("POSTGRESQL_PASSWORD")
+POSTGRESQL_HOST = os.getenv("POSTGRESQL_HOST", 'localhost')
+POSTGRESQL_PORT = os.getenv("POSTGRESQL_PORT", "5432")
+POSTGRESQL_CONNECTION_STRING = f"dbname={POSTGRESQL_DB} user={POSTGRESQL_USERNAME} password={POSTGRESQL_PASSWORD} host={POSTGRESQL_HOST} port={POSTGRESQL_PORT}"
+
 
 PLAYABLE_FILE_EXTENSIONS = ('.mp4', '.mp3', '.avi', '.mkv', '.jpg', '.jpeg', '.png', '.gif', '.ogg')
 ZIP_FILE_EXTENSIONS = ('.zip', '.rar', '.7z')

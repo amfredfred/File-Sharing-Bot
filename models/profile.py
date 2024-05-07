@@ -1,16 +1,16 @@
-import sqlite3
-from config import SQLITE_DB_FILE
+import psycopg2
+from config import POSTGRESQL_CONNECTION_STRING
 
-class profile:
+class Profile:
 
-    def __init__(self, db_file=SQLITE_DB_FILE):
-        self.conn = sqlite3.connect(db_file)
+    def __init__(self, connection_string=POSTGRESQL_CONNECTION_STRING):
+        self.conn = psycopg2.connect(connection_string)
         self.create_table()
 
     def create_table(self):
         query = """
             CREATE TABLE IF NOT EXISTS profiles (
-                id INTEGER PRIMARY KEY,
+                id SERIAL PRIMARY KEY,
                 chat_id INTEGER,
                 telegram_id TEXT UNIQUE,
                 username TEXT UNIQUE,
@@ -21,13 +21,14 @@ class profile:
                 location TEXT,
                 avatar TEXT,
                 website TEXT,
-                deleted_at TEXT,
-                created_at TEXT,
-                updated_at TEXT
+                deleted_at TIMESTAMPTZ,
+                created_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
+                updated_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP
             )
         """
-        self.conn.execute(query)
-        self.conn.commit()
+        with self.conn.cursor() as cursor:
+            cursor.execute(query)
+            self.conn.commit()
 
     def insert_profile(
         self,
@@ -47,7 +48,7 @@ class profile:
             INSERT INTO profiles
                 (chat_id, telegram_id, username, first_name, last_name, level, bio, location, avatar, website)
             VALUES
-                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
             """
             values = (
                 chat_id,
@@ -61,25 +62,29 @@ class profile:
                 avatar,
                 website,
             )
-            self.conn.execute(query, values)
-            account = self.conn.commit()
-            return account
+            with self.conn.cursor() as cursor:
+                cursor.execute(query, values)
+                self.conn.commit()
+                return True
         except Exception as e:
             self.conn.rollback()
             return False
 
     def get_profile_by_telegram_id(self, telegram_id):
-        query = "SELECT * FROM profiles WHERE telegram_id = ?"
-        cursor = self.conn.execute(query, (telegram_id,))
-        return cursor.fetchone()
+        query = "SELECT * FROM profiles WHERE telegram_id = %s"
+        with self.conn.cursor() as cursor:
+            cursor.execute(query, (telegram_id,))
+            return cursor.fetchone()
 
     def get_all_users(self):
         query = "SELECT * FROM profiles"
-        cursor = self.conn.execute(query)
-        return cursor.fetchall()
+        with self.conn.cursor() as cursor:
+            cursor.execute(query)
+            return cursor.fetchall()
 
     def delete_profile(self, telegram_id):
-        query = "DELETE FROM profiles WHERE telegram_id = ?"
-        self.conn.execute(query, (telegram_id,))
-        self.conn.commit()
-        return self.cursor.rowcount
+        query = "DELETE FROM profiles WHERE telegram_id = %s"
+        with self.conn.cursor() as cursor:
+            cursor.execute(query, (telegram_id,))
+            self.conn.commit()
+            return cursor.rowcount

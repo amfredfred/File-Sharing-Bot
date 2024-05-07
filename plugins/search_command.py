@@ -5,7 +5,7 @@ from helper_func import subscribed, command_clean
 from bot import Bot
 from config import SEARCH_TEXT_EMPTY, LOOKING_UP_TEXT
 from time import sleep
-from models.searchings import searching
+from models.searchings import Searching
 from responses.index import ResponseMessage
 
 def search(query):
@@ -32,7 +32,7 @@ async def search_command(bot: Bot, message: Message):
             matched_ = respond.response_search_result(matched_)
             matched_ = matched_.format(query=query)
             await msg.edit_text(matched_)
-            _searching = searching()
+            _searching = Searching()
             _searching.insert_searching(msg.chat.id, query)
         else:
             await msg.edit_text(f"No Result For: <u>{query}</u>")

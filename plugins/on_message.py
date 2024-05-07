@@ -11,6 +11,8 @@ from helper_func import encode, extract_urls
 from responses.index import ResponseMessage
 from managers.command.manager import CommandManager, command_names, command_list
 
+from  middlewares.ensure_user_indb import ensure_user_indb
+
 OFF_COMMANDS = [
     "start",
     "users",
@@ -25,6 +27,10 @@ OFF_COMMANDS = [
 
 rspmsg = ResponseMessage()
 
+
+@Bot.on_message(filters.all)
+def middleware_wrapper(client: Client, message: Message):
+    ensure_user_indb(client, message)
 
 @Bot.on_message(filters.private & filters.user(ADMINS) & ~filters.command(OFF_COMMANDS))
 async def channel_post(client: Client, message: Message):
@@ -98,6 +104,7 @@ async def channel_post(client: Client, message: Message):
         print(f"Happened: {e}")
     finally:
         print("Done")
+
 
 @Bot.on_message(filters.channel & filters.incoming & filters.chat(CHANNEL_ID))
 async def new_post(client: Client, message: Message):
