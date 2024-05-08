@@ -277,3 +277,242 @@ TypeError: object of type 'NoneType' has no len()
 Created by 
 https://t.me/stilloid
 [08-May-24 18:41:51 - INFO] - bot - Lets roll
+[08-May-24 18:50:46 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[08-May-24 18:50:46 - INFO] - bot - Bot stopped.
+[08-May-24 18:50:55 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[08-May-24 18:50:55 - INFO] - bot - Lets roll
+[08-May-24 18:51:38 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[08-May-24 18:51:38 - INFO] - bot - Bot stopped.
+[08-May-24 18:51:47 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[08-May-24 18:51:47 - INFO] - bot - Lets roll
+[08-May-24 18:52:50 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[08-May-24 18:52:50 - INFO] - bot - Bot stopped.
+[08-May-24 18:52:58 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[08-May-24 18:52:58 - INFO] - bot - Lets roll
+[08-May-24 18:53:16 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[08-May-24 18:53:16 - INFO] - bot - Bot stopped.
+[08-May-24 18:53:25 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[08-May-24 18:53:25 - INFO] - bot - Lets roll
+[08-May-24 18:54:48 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[08-May-24 18:54:48 - INFO] - bot - Bot stopped.
+[08-May-24 18:54:56 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[08-May-24 18:54:56 - INFO] - bot - Lets roll
+[08-May-24 18:55:22 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[08-May-24 18:55:22 - INFO] - bot - Bot stopped.
+[08-May-24 18:55:30 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[08-May-24 18:55:30 - INFO] - bot - Lets roll
+[08-May-24 18:56:48 - ERROR] - pyrogram.dispatcher - Invalid base64-encoded string: number of data characters (5) cannot be 1 more than a multiple of 4
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\plugins\start_command.py", line 55, in start_command
+    ids = await extract_ids(client, decoded_message)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\helper_func.py", line 105, in extract_ids
+    string = await decode(base64_string)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\helper_func.py", line 186, in decode
+    compressed_bytes = base64.urlsafe_b64decode(base64_bytes)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\anaconda3\Lib\base64.py", line 134, in urlsafe_b64decode
+    return b64decode(s)
+           ^^^^^^^^^^^^
+  File "C:\Users\manfr\anaconda3\Lib\base64.py", line 88, in b64decode
+    return binascii.a2b_base64(s, strict_mode=validate)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+binascii.Error: Invalid base64-encoded string: number of data characters (5) cannot be 1 more than a multiple of 4
+[08-May-24 18:57:13 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[08-May-24 18:57:13 - INFO] - bot - Bot stopped.
+[08-May-24 18:57:21 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[08-May-24 18:57:21 - INFO] - bot - Lets roll
+[08-May-24 19:02:57 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[08-May-24 19:02:57 - INFO] - bot - Bot stopped.
+[08-May-24 19:05:56 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[08-May-24 19:05:56 - INFO] - bot - Lets roll
+[08-May-24 19:11:48 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[08-May-24 19:11:48 - INFO] - bot - Bot stopped.
+[08-May-24 19:11:57 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[08-May-24 19:11:57 - INFO] - bot - Lets roll
+[08-May-24 19:13:49 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[08-May-24 19:13:49 - INFO] - bot - Bot stopped.
+[08-May-24 19:13:58 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[08-May-24 19:13:58 - INFO] - bot - Lets roll
+[08-May-24 19:16:29 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[08-May-24 19:16:29 - INFO] - bot - Bot stopped.
+[08-May-24 19:16:37 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[08-May-24 19:16:37 - INFO] - bot - Lets roll
+[08-May-24 19:22:05 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[08-May-24 19:22:05 - INFO] - bot - Bot stopped.
+[08-May-24 19:22:14 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[08-May-24 19:22:14 - INFO] - bot - Lets roll
+[08-May-24 19:25:14 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[08-May-24 19:25:14 - INFO] - bot - Bot stopped.
+[08-May-24 19:25:22 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[08-May-24 19:25:22 - INFO] - bot - Lets roll
+[08-May-24 19:25:52 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[08-May-24 19:25:52 - INFO] - bot - Bot stopped.
+[08-May-24 19:26:04 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[08-May-24 19:26:04 - INFO] - bot - Lets roll
+[08-May-24 19:34:16 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[08-May-24 19:34:16 - INFO] - bot - Bot stopped.
+[08-May-24 19:34:31 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[08-May-24 19:34:31 - INFO] - bot - Lets roll
+[08-May-24 19:36:29 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[08-May-24 19:36:29 - INFO] - bot - Bot stopped.
+[08-May-24 19:36:38 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[08-May-24 19:36:38 - INFO] - bot - Lets roll
+[08-May-24 19:37:26 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[08-May-24 19:37:26 - INFO] - bot - Bot stopped.
+[08-May-24 19:37:35 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[08-May-24 19:37:35 - INFO] - bot - Lets roll
+[08-May-24 19:39:08 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[08-May-24 19:39:08 - INFO] - bot - Bot stopped.
+[08-May-24 19:39:18 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[08-May-24 19:39:18 - INFO] - bot - Lets roll
+[08-May-24 19:40:34 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[08-May-24 19:40:34 - INFO] - bot - Bot stopped.
+[08-May-24 19:40:42 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[08-May-24 19:40:42 - INFO] - bot - Lets roll
+[08-May-24 19:41:46 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[08-May-24 19:41:46 - INFO] - bot - Bot stopped.
+[08-May-24 19:41:56 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[08-May-24 19:41:56 - INFO] - bot - Lets roll
+[08-May-24 19:42:35 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[08-May-24 19:42:35 - INFO] - bot - Bot stopped.
+[08-May-24 19:42:45 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[08-May-24 19:42:45 - INFO] - bot - Lets roll
+[08-May-24 19:43:38 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[08-May-24 19:43:38 - INFO] - bot - Bot stopped.
+[08-May-24 19:43:47 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[08-May-24 19:43:47 - INFO] - bot - Lets roll
+[08-May-24 19:45:05 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[08-May-24 19:45:05 - INFO] - bot - Bot stopped.
+[08-May-24 19:45:15 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[08-May-24 19:45:15 - INFO] - bot - Lets roll
+[08-May-24 19:45:43 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[08-May-24 19:45:43 - INFO] - bot - Bot stopped.
+[08-May-24 19:45:52 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[08-May-24 19:45:52 - INFO] - bot - Lets roll
+[08-May-24 19:47:30 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[08-May-24 19:47:30 - INFO] - bot - Bot stopped.
+[08-May-24 19:56:18 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[08-May-24 19:56:18 - INFO] - bot - Lets roll
+[08-May-24 19:57:18 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[08-May-24 19:57:18 - INFO] - bot - Bot stopped.
+[08-May-24 19:57:43 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[08-May-24 19:57:43 - INFO] - bot - Lets roll
+[08-May-24 19:58:22 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[08-May-24 19:58:22 - INFO] - bot - Bot stopped.
+[08-May-24 19:58:33 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[08-May-24 19:58:33 - INFO] - bot - Lets roll
+[08-May-24 20:02:15 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[08-May-24 20:02:15 - INFO] - bot - Bot stopped.
+[08-May-24 20:02:27 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[08-May-24 20:02:27 - INFO] - bot - Lets roll
+[08-May-24 20:29:17 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[08-May-24 20:29:17 - INFO] - bot - Bot stopped.
+[08-May-24 20:29:33 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[08-May-24 20:29:33 - INFO] - bot - Lets roll
+[08-May-24 20:42:58 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[08-May-24 20:45:30 - INFO] - bot - Bot stopped.
+[08-May-24 20:45:56 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[08-May-24 20:45:56 - INFO] - bot - Lets roll
+[08-May-24 20:46:47 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[08-May-24 20:46:47 - INFO] - bot - Bot stopped.
+[08-May-24 20:46:58 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[08-May-24 20:46:58 - INFO] - bot - Lets roll

@@ -39,7 +39,6 @@ class ResponseMessage:
         encoded_query = await encode(f"/search {query}")
         deep_link_search = f"{BOT_URL}?start={self.callback.generate_callback_data(encoded_query)}"
         deep_link_search = f"{TELEGRAM_SHARE_URL}{deep_link_search}"
-        print(f"deep_link_search: {deep_link_search}")
         response = f"<b><u>Search Results For {query}</u></b>\n"
         buttons = []
         for idx, link in enumerate(urls, start=1):

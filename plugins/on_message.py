@@ -37,6 +37,7 @@ async def handle_message(client: Client, message: Message):
 
     try:
         from managers.command.methods import command_extract, command_call
+
         command_ext = command_extract(msg_text)
         if isinstance(command_ext, dict):
             await command_call(client, message, command_ext["name"])
@@ -47,7 +48,7 @@ async def handle_message(client: Client, message: Message):
             print(f"No Commadn Supplied, Proceed")
 
         reply_text = await message.reply_text("Please Wait...!", quote=True)
-        hasUrl, isDownloadable  = extract_url(msg_text)
+        hasUrl, isDownloadable = extract_url(msg_text)
         if hasUrl:
             try:
                 reply_markup = await rspmsg.response_when_has_link(hasUrl)
@@ -64,39 +65,15 @@ async def handle_message(client: Client, message: Message):
         else:
             response_message_markup = await rspmsg.response_when_plain_text(msg_text)
             respond_text = f"<b><u>What do you want me to do with this text?</u></b>\n\n<code>{msg_text}</code>\n\n"
-            return await reply_text.edit_text(
-                respond_text, reply_markup=response_message_markup
-            )
-
-        isSuccess, cloudLink, share_link, post_message = await moveto_cloud(
-            client, message
-        )
-        if not isSuccess:
-            sorry_text = f"Sorry, could not upload your message to cloud. 😟"
-            return await message.edit_text(sorry_text)
-
-        reply_markup = InlineKeyboardMarkup(
-            [[InlineKeyboardButton("🔁 Share URL", url=share_link)]]
-        )
-
-        await reply_text.edit(
-            f"<b>Here is your link</b>\n\n{share_link}",
-            reply_markup=reply_markup,
-            disable_web_page_preview=True,
-        )
-
-        if not DISABLE_CHANNEL_BUTTON:
-            try:
-                await post_message.edit_reply_markup(reply_markup)
-            except FloodWait as e:
-                await asyncio.sleep(e.value)
-                await post_message.edit_reply_markup(reply_markup)
-            except Exception:
+            await reply_text.edit_text( respond_text, reply_markup=response_message_markup )
+            isSuccess, cloudLink, share_link, post_message = await moveto_cloud(client, message)
+            if not isSuccess:
+                sorry_text = f"Sorry, could not upload your message to cloud. 😟"
+                print(sorry_text)
                 pass
+                # return await message.edit_text(sorry_text)
+
     except Exception as e:
         print(f"Happened: {e}")
     finally:
-        print(f"Done {msg_text}")
-
-
-handle_messages = handle_message
+        pass

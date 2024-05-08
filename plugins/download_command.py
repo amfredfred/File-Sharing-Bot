@@ -74,12 +74,11 @@ async def download_command(bot: Bot, message: Message):
     if expect_link:
         link = await dm._parse_link(expect_link)
         url = link.get("url")
-        print(f"urs {url}")
         link_type = link.get("type")
         if link_type == "telegram":
             print("TELEGRAAM LINK")
+            return await msg.edit_text("<b><u>Telegram link is not supported yet</u></b>")
         elif link_type == "media":
-            print('link is media')
             await msg.edit_text("<strong><u>Downloading...</ul></strong>")
             response = await dm.download_and_send_media(msg, url, on_success, on_update)
             if isinstance(response, str):

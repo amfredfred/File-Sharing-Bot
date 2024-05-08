@@ -2,7 +2,6 @@ from bs4 import BeautifulSoup
 import datetime, aiohttp, asyncio
 from helper_func import if_only_path, extract_link_title, has_path
 
-
 class ScrapeTheWeb:
     def __init__(self, search_query):
         self.search_query = str(search_query)
@@ -11,8 +10,8 @@ class ScrapeTheWeb:
         search_query = self.search_query.replace(" ", "%20")
         query_urls = [
             f"https://archive.org/search?query={search_query}",
-            f"https://9jarocks.net/?s={search_query}",
-            f"https://parrotvibes.com/?s={search_query}",
+            # f"https://9jarocks.net/?s={search_query}",
+            # f"https://parrotvibes.com/?s={search_query}",
         ]
         return query_urls
 
@@ -32,6 +31,7 @@ class ScrapeTheWeb:
         async with aiohttp.ClientSession() as session:
             tasks = [fetch_search_results(session, url) for url in query_urls]
             await asyncio.gather(*tasks)
+        print(f"all_search_results: {all_search_results}   query_urls: {query_urls}")
         return all_search_results
 
     def parse_search_results(self, html, search_url: str):
@@ -57,6 +57,7 @@ class ScrapeTheWeb:
                             else:
                                 title = extract_link_title(href)
                                 link_data = {"text": title, "url": href}
+
                         if link_data:
                             links.append(link_data)
                         seen_urls.add(href)
@@ -69,10 +70,8 @@ class ScrapeTheWeb:
         unmatched_links = []
         search_query_words = self.search_query.lower().split()
         for link in links:
-            link_text_lower = link["text"].lower()
-            if any(word in link_text_lower for word in search_query_words) and has_path(
-                link["url"]
-            ):
+            link_text_lower = str(link["text"]).lower().split()
+            if any(word in link_text_lower for word in search_query_words) and has_path( link["url"]):
                 if str(current_year) in link["url"]:
                     matched_links_with_current_year.append(link)
                 else:

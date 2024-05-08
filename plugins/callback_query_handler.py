@@ -19,8 +19,6 @@ async def callback_handler(client: Bot, query: CallbackQuery):
     try:
         cdm = CallbackDataManager()
         encoded_data = cdm.get_data_from_callback(data)
-        print(f"encoded_data {encoded_data}")
-
         if encoded_data:
             decoded_message = await decode(encoded_data)
             if decoded_message:

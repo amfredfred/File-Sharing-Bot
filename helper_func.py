@@ -168,7 +168,6 @@ async def is_subscribed(filter, client, update):
     else:
         return True
 
-
 async def encode(string):
     # Compress the string using gzip
     compressed_bytes = gzip.compress(string.encode("utf-8"))
@@ -342,10 +341,11 @@ def clear_url(link: str):
     return cleared
 
 
-def has_path(url):
-    parsed_url = urlparse(url)
-    _is_not_empty = parsed_url.path != "\\"
-    return bool(_is_not_empty) and not parsed_url.path.endswith("/")
+def has_path(url:str):
+    _link = url[:-1]  if not url.endswith("\\")  else url
+    _parsed_url = urlparse(_link)
+    _is_not_empty = _parsed_url.path != "\\"
+    return bool(_is_not_empty)
 
 
 def starts_with_bot_username(bot_username: str, message_text: str) -> bool:

@@ -1,8 +1,13 @@
 import json
 import hashlib
+import os
 
+
+current_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+json_file_path = f"{current_dir}\callback\callback_data.json"
 class CallbackDataManager:
-    def __init__(self, json_file= 'callback_data_temp.json'):
+
+    def __init__(self, json_file=json_file_path):
         self.json_file = json_file
         self.load_mappings()
 
