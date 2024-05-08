@@ -4,7 +4,7 @@ from pyrogram import __version__
 from bot import Bot
 from config import OWNER_ID
 from helper_func import decode
-# from plugins.on_message import handle_message
+from managers.callback import CallbackDataManager
 from pyrogram.types import (
     Message,
     InlineKeyboardMarkup,
@@ -15,18 +15,24 @@ from pyrogram.types import (
 
 @Bot.on_callback_query()
 async def callback_handler(client: Bot, query: CallbackQuery):
-
     data = query.data
-    from managers.command.methods import command_clean
-    comm_clean = command_clean(data)
-    if comm_clean:
-        decoded_message = await decode(comm_clean)
-        if decoded_message:
-            message = query.message
-            message.text = decoded_message.replace("%20", ' ')
-            await query.message.reply_to_message.delete()
-            from plugins.on_message import handle_message
-            return await handle_message(client, message)
+    try:
+        cdm = CallbackDataManager()
+        encoded_data = cdm.get_data_from_callback(data)
+        print(f"encoded_data {encoded_data}")
+
+        if encoded_data:
+            decoded_message = await decode(encoded_data)
+            if decoded_message:
+                from managers.command.methods import command_clean
+                comm_clean = command_clean(encoded_data)
+                if comm_clean:
+                    message = query.message
+                    message.text = decoded_message.replace("%20", " ")
+                    from plugins.on_message import handle_message
+                    return await handle_message(client, message)
+    except Exception as e:
+        print(f"Exception callback_handler: {e}")
 
     if data == "about":
         await query.message.edit_text(
@@ -46,9 +52,3 @@ async def callback_handler(client: Bot, query: CallbackQuery):
     # # # # # # # # # # # # # # # # # # # # # # # # # #
     #
     # # # # # # # # # # # # # # # # # # # # # # # # # #
-
-    elif True:
-        command_ext = "command_extract(data)"
-        # print(f"callback data {data} command_ext: {command_ext}, ")
-        # if isinstance(command_ext, dict):
-        #     await handle_message(client, query.message)

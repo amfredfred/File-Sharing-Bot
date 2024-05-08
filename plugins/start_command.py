@@ -11,6 +11,7 @@ from pyrogram.types import (
 )
 from pyrogram.errors import FloodWait, UserIsBlocked, InputUserDeactivated
 from helper_func import command_clean, decode
+from managers.callback import CallbackDataManager
 
 from bot import Bot
 from config import (
@@ -35,16 +36,23 @@ command = "start"
 async def start_command(client: Client, message: Message):
     text = message.text
     comm_clean = command_clean(text)
-    if comm_clean:
-        decoded_message = await decode(comm_clean)
-        print(f"message: {message.text}")
-        if decoded_message:
+    cdm = CallbackDataManager()
+    encoded_data = cdm.get_data_from_callback(comm_clean)
+    decoded_message = text
+    try:
+        if encoded_data:
+            decoded_message = await decode(encoded_data)
             message.text = decoded_message
-            from plugins.on_message import handle_message
+            if decoded_message:
+                comm_clean = command_clean(decoded_message)
+                if comm_clean:
+                    from plugins.on_message import handle_message
+                    return await handle_message(client, message)
+    except Exception as e:
+        print(f"Exception callback_handler: {e}")
 
-            return await handle_message(client, message)
-    if len(text) > 7 and not starts_with_bot_username(client.me.username, text):
-        ids = await extract_ids(client, text)
+    if len(decoded_message) > 7 and not starts_with_bot_username(client.me.username, decoded_message):
+        ids = await extract_ids(client, decoded_message)
         if not ids:
             return
         temp_msg = await message.reply("Please wait...")

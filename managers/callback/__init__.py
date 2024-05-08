@@ -2,7 +2,7 @@ import json
 import hashlib
 
 class CallbackDataManager:
-    def __init__(self, json_file):
+    def __init__(self, json_file= 'callback_data_temp.json'):
         self.json_file = json_file
         self.load_mappings()
 
@@ -18,10 +18,7 @@ class CallbackDataManager:
             json.dump(self.callback_data, file, indent=4)
 
     def generate_callback_data(self, data):
-        # Generate a unique hash for the data
         data_hash = hashlib.sha256(data.encode()).hexdigest()[:8]
-
-        # Store the mapping between the data and the callback data
         self.callback_data[data_hash] = data
         self.save_mappings()
 
@@ -36,7 +33,3 @@ class CallbackDataManager:
         if callback in self.callback_data:
             del self.callback_data[callback]
             self.save_mappings()
-
-
-# Example usage
-callback_manager = CallbackDataManager("callback_data.json")

@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 import requests
-from urllib.parse import urlparse, urljoin
+from urllib.parse import urlparse
 import os
 import tempfile
 from helper_func import if_only_path
@@ -8,6 +8,8 @@ from config import ALL_EXTENTIONS
 import aiofiles
 import aiohttp
 import shutil
+from managers.callback import CallbackDataManager
+from helper_func import is_downloadable
 
 
 class DownloadManager:
@@ -15,7 +17,7 @@ class DownloadManager:
         self.should_cancel_download = False
         pass
 
-    def _parse_link(self, link):
+    async def _parse_link(self, link):
         parsed_url = urlparse(link)
         if parsed_url.scheme == "https" and parsed_url.netloc == "t.me":
             return {"type": "telegram", "url": link}
@@ -24,24 +26,29 @@ class DownloadManager:
         else:
             return {
                 "type": "webpage",
-                "urls": self._find_downloadable_links(link),
+                "urls": await self._find_all_links(link),
             }
 
-    def _find_downloadable_links(self, link):
-        downloadable_links = []
+    async def _find_all_links(self, link):
+        all_links = []
         try:
-            response = requests.get(link)
-            soup = BeautifulSoup(response.text, "html.parser")
-            base_url = urlparse(link).scheme + "://" + urlparse(link).netloc
-            for a_tag in soup.find_all("a", href=True):
-                href = if_only_path(base_url, a_tag["href"])
-                if href.endswith(ALL_EXTENTIONS):
-                    downloadable_links.append(href)
-        except Exception as e:
+            async with aiohttp.ClientSession() as session:
+                async with session.get(link) as response:
+                    response.raise_for_status()  
+                    html_content = await response.text()
+                    soup = BeautifulSoup(html_content, "html.parser")
+                    for a_tag in soup.find_all("a", href=True):
+                        href = if_only_path(link, a_tag["href"]) 
+                        isDownloadable, url = is_downloadable(href)
+                        if isDownloadable:
+                            all_links.append(href)
+        except aiohttp.ClientError as e:
             print(f"Error while fetching links: {e}")
-        return downloadable_links
+        except Exception as e:
+            print(f"Unexpected error occurred: {e}")
+        return all_links
 
-    async def download_and_send_media(self, msg, url, callback, progress):
+    async def download_and_send_media(self, msg, url, on_success, on_update):
         try:
             temp_dir = tempfile.mkdtemp()
             async with aiohttp.ClientSession() as session:
@@ -58,16 +65,24 @@ class DownloadManager:
                                     return "Download canceled."
                                 await file.write(chunk)
                                 downloaded_size += len(chunk)
-                                current_progress_percentage = (downloaded_size / total_size) * 100
-                                if current_progress_percentage - previous_progress_percentage >= 2:
+                                current_progress_percentage = (
+                                    downloaded_size / total_size
+                                ) * 100
+                                if (
+                                    current_progress_percentage
+                                    - previous_progress_percentage
+                                    >= 2
+                                ):
                                     try:
-                                        await progress(msg, total_size, downloaded_size)
+                                        await on_update(msg, total_size, downloaded_size)
                                     except Exception as e:
                                         pass
                                     finally:
-                                       previous_progress_percentage = current_progress_percentage
-                                       downloaded_size = 0
-                        await callback(msg, url, file_name, f">>>> ✅✅✅ <<<<")
+                                        previous_progress_percentage = (
+                                            current_progress_percentage
+                                        )
+                                        downloaded_size = 0
+                        await on_success(msg, url, file_name, f">>>> ✅✅✅ <<<<")
                         return True
                     elif response.status == 404:
                         return "The requested file was not found."
@@ -83,12 +98,3 @@ class DownloadManager:
 
     async def cancel_download(self):
         self.should_cancel_download = True
-
-    def download_options(self, urls):
-        message = "<b>Choose a file to download:</b>\n"
-        for idx, dl_link in enumerate(urls, start=1):
-            file_name = urlparse(dl_link).path.split("/")[-1]
-            button_text = f"{idx}. {file_name}"
-            message += f"<b>{button_text}</b>\n"
-        message += "\nPlease select a number to download."
-        return message

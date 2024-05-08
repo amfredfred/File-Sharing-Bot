@@ -305,9 +305,9 @@ def extract_url(text: str):
 
 def clean_file_url(file_url: str):
     # Use regular expressions to remove everything after the file extension
-    # cleaned_url = re.sub(r'(\.mp4|\.mp3|\.avi|\.mkv|\.jpg|\.jpeg|\.png|\.gif|\.ogg).*$', lambda x: x.group(1), file_url)
-    # return cleaned_url
-    return file_url
+    cleaned_url = re.sub(r'(\.mp4|\.mp3|\.avi|\.mkv|\.jpg|\.jpeg|\.png|\.gif|\.ogg).*$', lambda x: x.group(1), file_url)
+    return cleaned_url
+    # return file_url
 
 
 def is_downloadable(link: str):

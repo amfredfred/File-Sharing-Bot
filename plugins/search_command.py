@@ -6,11 +6,11 @@ from bot import Bot
 from config import SEARCH_TEXT_EMPTY, LOOKING_UP_TEXT
 from time import sleep
 from models.searchings import Searching
-from responses.index import ResponseMessage
+from responses import ResponseMessage
 
-def search(query):
+async def search(query):
     scraper = ScrapeTheWeb(query)
-    results = scraper.search()
+    results = await scraper.search()
     return scraper.filter_links(results)
 
 respond = ResponseMessage()
@@ -26,7 +26,7 @@ async def search_command(bot: Bot, message: Message):
         return await lsg_msg.delete()
     msg = await message.reply_text(LOOKING_UP_TEXT.format(query=query), reply_to_message_id=message.id)
     try:
-        matched_, others = search(query)
+        matched_, others = await search(query)
         if len(matched_) > 0:
             matched_ = matched_[:10] 
             response_text, reply_markup = await respond.response_search_result(query, matched_) 

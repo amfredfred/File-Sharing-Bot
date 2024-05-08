@@ -1,6 +1,5 @@
-import requests
 from bs4 import BeautifulSoup
-import datetime
+import datetime, aiohttp, asyncio
 from helper_func import if_only_path, extract_link_title, has_path
 
 
@@ -8,29 +7,31 @@ class ScrapeTheWeb:
     def __init__(self, search_query):
         self.search_query = str(search_query)
 
-    def search(self):
+    def get_query_urls(self):
         search_query = self.search_query.replace(" ", "%20")
-        search_urls = [
-            f"https://netnaija.uk/?s={self.search_query}",
-            f"https://9jarocks.net/?s={self.search_query}",
-            # f"https://netnaija.xyz/?s={self.search_query}",
-            # f"https://netnaijatv.com/?s={self.search_query}",
-            # f"https://ww16.0123movie.net/search.html?q={self.search_query}",
+        query_urls = [
+            f"https://archive.org/search?query={search_query}",
+            f"https://9jarocks.net/?s={search_query}",
             f"https://parrotvibes.com/?s={search_query}",
         ]
+        return query_urls
+
+    async def search(self):
+        query_urls = self.get_query_urls()
         all_search_results = []
-        for search_url in search_urls:
+        async def fetch_search_results(session, url):
             try:
-                response = requests.get(search_url)
-                if response.status_code == 200:
-                    search_results = self.parse_search_results(
-                        response.text, search_url
-                    )
-                    all_search_results.extend(search_results)
-                else:
-                    print(f"Failed to perform search for {search_url}")
-            except Exception as e:
-                print(f"Exception: {e}")
+                async with session.get(url) as response:
+                    if response.status == 200:
+                        search_results = await response.text()
+                        all_search_results.extend(self.parse_search_results(search_results, url) )
+                    else:
+                        print(f"Failed to perform search for {url}")
+            except aiohttp.ClientError as e:
+                print(f"Error while fetching search results: {e}")
+        async with aiohttp.ClientSession() as session:
+            tasks = [fetch_search_results(session, url) for url in query_urls]
+            await asyncio.gather(*tasks)
         return all_search_results
 
     def parse_search_results(self, html, search_url: str):
@@ -69,7 +70,9 @@ class ScrapeTheWeb:
         search_query_words = self.search_query.lower().split()
         for link in links:
             link_text_lower = link["text"].lower()
-            if any(word in link_text_lower for word in search_query_words) and has_path(link["url"]):
+            if any(word in link_text_lower for word in search_query_words) and has_path(
+                link["url"]
+            ):
                 if str(current_year) in link["url"]:
                     matched_links_with_current_year.append(link)
                 else:

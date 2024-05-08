@@ -7,8 +7,8 @@ from pyrogram.errors import FloodWait
 
 from bot import Bot
 from config import DISABLE_CHANNEL_BUTTON
-from helper_func import extract_urls
-from responses.index import ResponseMessage
+from helper_func import extract_urls, extract_url
+from responses import ResponseMessage
 from plugins.link_generator import moveto_cloud
 
 OFF_COMMANDS = [
@@ -25,9 +25,11 @@ OFF_COMMANDS = [
 
 rspmsg = ResponseMessage()
 
-@Bot.on_message(filters.private & ~filters.channel & ~filters.command(["start", "search"]))
+
+@Bot.on_message(
+    filters.private & ~filters.channel & ~filters.command(["start", "search"])
+)
 async def handle_message(client: Client, message: Message):
-    reply_text = await message.reply_text("Please Wait...!", quote=True)
 
     msg_text = message.text if not None else " "
     if msg_text:
@@ -36,38 +38,35 @@ async def handle_message(client: Client, message: Message):
     try:
         from managers.command.methods import command_extract, command_call
         command_ext = command_extract(msg_text)
-        print(f"command_ext: {command_ext}")
         if isinstance(command_ext, dict):
-            await reply_text.delete()
             await command_call(client, message, command_ext["name"])
             return
         elif command_ext == False:
             print("Invalid Command supplied")
         else:
             print(f"No Commadn Supplied, Proceed")
-            urls = extract_urls(msg_text)
-            if urls:
-                try:
-                    response_markup, other_links = rspmsg.response_check_links(urls)
-                    print(f"response_markup: {response_markup}")
-                    _text = f"<b><u>Check Out Details Below</u></b>"
-                    await message.delete()
-                    print(f"_sharelink: {cloudLink}")
-                    return await reply_text.edit_text(
-                        _text,
-                        reply_markup=response_markup,
-                        disable_web_page_preview=True,
-                    )
-                except Exception as e:
-                    print(f"Exception: {e}")
-            else:
-                response_message_markup = await rspmsg.response_when_plain_text(
-                    msg_text
-                )
-                respond_text = f"<b><u>What do you want me to do with this text?</u></b>\n\n<code>{msg_text}</code>\n\n"
+
+        reply_text = await message.reply_text("Please Wait...!", quote=True)
+        hasUrl, isDownloadable  = extract_url(msg_text)
+        if hasUrl:
+            try:
+                reply_markup = await rspmsg.response_when_has_link(hasUrl)
+                print(f"response_markup: {reply_markup}")
+                _text = f"<b><u>Check Out Details Below</u></b>"
+                await message.delete()
                 return await reply_text.edit_text(
-                    respond_text, reply_markup=response_message_markup
+                    _text,
+                    reply_markup=reply_markup,
+                    disable_web_page_preview=True,
                 )
+            except Exception as e:
+                print(f"Exception: {e}")
+        else:
+            response_message_markup = await rspmsg.response_when_plain_text(msg_text)
+            respond_text = f"<b><u>What do you want me to do with this text?</u></b>\n\n<code>{msg_text}</code>\n\n"
+            return await reply_text.edit_text(
+                respond_text, reply_markup=response_message_markup
+            )
 
         isSuccess, cloudLink, share_link, post_message = await moveto_cloud(
             client, message
