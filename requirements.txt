@@ -3,13 +3,15 @@ requests==2.31.0
 pyrogram==2.0.106
 TgCrypto==1.2.5
 pyromod==1.5
+
 # --- For-Database ------------ #
-# removed pymongo
 psycopg2==2.9.9
 dnspython==2.6.1
+
 # --- For-Web-Response ------- #
-aiohttp==3.8.4
-BeautifulSoup==
+aiohttp==3.9.5
+bs4==0.0.2
 aiofiles==23.2.1
-# for env
+
+# For env
 python-dotenv==1.0.1

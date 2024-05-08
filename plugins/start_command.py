@@ -10,6 +10,7 @@ from pyrogram.types import (
     InlineKeyboardButton,
 )
 from pyrogram.errors import FloodWait, UserIsBlocked, InputUserDeactivated
+from helper_func import command_clean, decode
 
 from bot import Bot
 from config import (
@@ -20,22 +21,28 @@ from config import (
 
 from helper_func import (
     subscribed,
-    get_messages, 
+    get_messages,
     extract_ids,
     copy_messages,
     send_start_message,
-    starts_with_bot_username
+    starts_with_bot_username,
 )
-from database.database import  del_user, full_userbase 
+from database.database import del_user, full_userbase
 
-command = 'start'
+command = "start"
 
 @Bot.on_message(filters.command(command) & filters.private & subscribed)
 async def start_command(client: Client, message: Message):
-    id = message.from_user.id
-    chat = message.chat
-    msg_from = message.from_user 
     text = message.text
+    comm_clean = command_clean(text)
+    if comm_clean:
+        decoded_message = await decode(comm_clean)
+        print(f"message: {message.text}")
+        if decoded_message:
+            message.text = decoded_message
+            from plugins.on_message import handle_message
+
+            return await handle_message(client, message)
     if len(text) > 7 and not starts_with_bot_username(client.me.username, text):
         ids = await extract_ids(client, text)
         if not ids:

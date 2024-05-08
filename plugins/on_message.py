@@ -3,14 +3,13 @@
 import asyncio
 from pyrogram import filters, Client
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
-from pyrogram.errors import FloodWait 
+from pyrogram.errors import FloodWait
 
 from bot import Bot
-from config import ADMINS, CHANNEL_ID, DISABLE_CHANNEL_BUTTON
-from helper_func import encode, extract_urls
+from config import DISABLE_CHANNEL_BUTTON
+from helper_func import extract_urls
 from responses.index import ResponseMessage
-from managers.command.manager import CommandManager, command_names, command_list
- 
+from plugins.link_generator import moveto_cloud
 
 OFF_COMMANDS = [
     "start",
@@ -24,65 +23,65 @@ OFF_COMMANDS = [
     "account",
 ]
 
+rspmsg = ResponseMessage()
 
-rspmsg = ResponseMessage() 
-@Bot.on_message(filters.private & filters.user(ADMINS) & ~filters.command(OFF_COMMANDS))
-async def channel_post(client: Client, message: Message):
-
+@Bot.on_message(filters.private & ~filters.channel & ~filters.command(["start", "search"]))
+async def handle_message(client: Client, message: Message):
     reply_text = await message.reply_text("Please Wait...!", quote=True)
-    msg_text = message.text.strip()
+
+    msg_text = message.text if not None else " "
+    if msg_text:
+        msg_text = message.text.strip()
 
     try:
-        comm_man = CommandManager(client, message)
-        command_ext = comm_man.command_extract(msg_text)
+        from managers.command.methods import command_extract, command_call
+        command_ext = command_extract(msg_text)
+        print(f"command_ext: {command_ext}")
         if isinstance(command_ext, dict):
-            await comm_man.command_call(command_ext["name"])
             await reply_text.delete()
+            await command_call(client, message, command_ext["name"])
             return
         elif command_ext == False:
             print("Invalid Command supplied")
         else:
             print(f"No Commadn Supplied, Proceed")
-            
-        return
-        urls = extract_urls(msg_text)
-        if urls:
-            try:
-                response_text, _ = rspmsg.response_check_links(urls)
-                return await reply_text.edit_text("_", reply_markup=response_text)
-            except Exception as e:
-                print(f"Exception: {e}")
+            urls = extract_urls(msg_text)
+            if urls:
+                try:
+                    response_markup, other_links = rspmsg.response_check_links(urls)
+                    print(f"response_markup: {response_markup}")
+                    _text = f"<b><u>Check Out Details Below</u></b>"
+                    await message.delete()
+                    print(f"_sharelink: {cloudLink}")
+                    return await reply_text.edit_text(
+                        _text,
+                        reply_markup=response_markup,
+                        disable_web_page_preview=True,
+                    )
+                except Exception as e:
+                    print(f"Exception: {e}")
+            else:
+                response_message_markup = await rspmsg.response_when_plain_text(
+                    msg_text
+                )
+                respond_text = f"<b><u>What do you want me to do with this text?</u></b>\n\n<code>{msg_text}</code>\n\n"
+                return await reply_text.edit_text(
+                    respond_text, reply_markup=response_message_markup
+                )
 
-        try:
-            post_message = await message.copy(
-                chat_id=client.db_channel.id, disable_notification=True
-            )
-        except FloodWait as e:
-            await asyncio.sleep(e.value)
-            post_message = await message.copy(
-                chat_id=client.db_channel.id, disable_notification=True
-            )
-        except Exception as e:
-            print(e)
-            await reply_text.edit_text("Something went Wrong..!")
-            return
-        converted_id = post_message.id * abs(client.db_channel.id)
-        string = f"get-{converted_id}"
-        base64_string = await encode(string)
-        link = f"https://t.me/{client.username}?start={base64_string}"
+        isSuccess, cloudLink, share_link, post_message = await moveto_cloud(
+            client, message
+        )
+        if not isSuccess:
+            sorry_text = f"Sorry, could not upload your message to cloud. 😟"
+            return await message.edit_text(sorry_text)
 
         reply_markup = InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "🔁 Share URL", url=f"https://telegram.me/share/url?url={link}"
-                    )
-                ]
-            ]
+            [[InlineKeyboardButton("🔁 Share URL", url=share_link)]]
         )
 
         await reply_text.edit(
-            f"<b>Here is your link</b>\n\n{link}",
+            f"<b>Here is your link</b>\n\n{share_link}",
             reply_markup=reply_markup,
             disable_web_page_preview=True,
         )
@@ -98,32 +97,7 @@ async def channel_post(client: Client, message: Message):
     except Exception as e:
         print(f"Happened: {e}")
     finally:
-        print("Done")
+        print(f"Done {msg_text}")
 
 
-@Bot.on_message(filters.channel & filters.incoming & filters.chat(CHANNEL_ID))
-async def new_post(client: Client, message: Message):
-
-    if DISABLE_CHANNEL_BUTTON:
-        return
-
-    converted_id = message.id * abs(client.db_channel.id)
-    string = f"get-{converted_id}"
-    base64_string = await encode(string)
-    link = f"https://t.me/{client.username}?start={base64_string}"
-    reply_markup = InlineKeyboardMarkup(
-        [
-            [
-                InlineKeyboardButton(
-                    "🔁 Share URL", url=f"https://telegram.me/share/url?url={link}"
-                )
-            ]
-        ]
-    )
-    try:
-        await message.edit_reply_markup(reply_markup)
-    except FloodWait as e:
-        await asyncio.sleep(e.value)
-        await message.edit_reply_markup(reply_markup)
-    except Exception:
-        pass
+handle_messages = handle_message

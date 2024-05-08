@@ -1,8 +1,6 @@
 # (©)Codexbotz
 
-import base64
-import re
-import asyncio
+import base64, gzip, re, asyncio
 from pyrogram import filters
 from pyrogram.enums import ChatMemberStatus
 from config import (
@@ -98,7 +96,7 @@ async def copy_messages(client, message: Message, messages):
             pass
 
 
-async def extract_ids(client, text):
+async def extract_ids(client, text: str):
     try:
         base64_string = text.split(" ", 1)[1]
     except:
@@ -134,7 +132,7 @@ async def extract_ids(client, text):
 
 
 async def check_and_add_user(chat, msg_from):
-    if not await present_user(telegram_id=msg_from.id):
+    if msg_from is not None and not await present_user(telegram_id=msg_from.id):
         try:
             await add_user(
                 tid=msg_from.id,
@@ -172,20 +170,23 @@ async def is_subscribed(filter, client, update):
 
 
 async def encode(string):
-    string_bytes = string.encode("ascii")
-    base64_bytes = base64.urlsafe_b64encode(string_bytes)
+    # Compress the string using gzip
+    compressed_bytes = gzip.compress(string.encode("utf-8"))
+    # Encode the compressed bytes using base64
+    base64_bytes = base64.urlsafe_b64encode(compressed_bytes)
     base64_string = (base64_bytes.decode("ascii")).strip("=")
     return base64_string
 
 
 async def decode(base64_string):
-    base64_string = base64_string.strip(
-        "="
-    )  # links generated before this commit will be having = sign, hence striping them to handle padding errors.
+    # Decode the base64 string
+    base64_string = base64_string.strip("=")
     base64_bytes = (base64_string + "=" * (-len(base64_string) % 4)).encode("ascii")
-    string_bytes = base64.urlsafe_b64decode(base64_bytes)
-    string = string_bytes.decode("ascii")
-    return string
+    # Decode the base64 bytes
+    compressed_bytes = base64.urlsafe_b64decode(base64_bytes)
+    # Decompress the compressed bytes using gzip
+    decompressed_string = gzip.decompress(compressed_bytes).decode("utf-8")
+    return decompressed_string
 
 
 async def get_messages(client, message_ids):
@@ -260,6 +261,8 @@ subscribed = filters.create(is_subscribed)
 
 
 def is_url(text: str):
+    if not text:
+        return False, []
     prefixes = ["http://", "https://", "www."]
     extensions = ALL_EXTENTIONS
     urls = []
@@ -279,6 +282,8 @@ def is_url(text: str):
 
 
 def extract_urls(text: str):
+    if not text:
+        return []
     parts = text.split()
     urls = []
     for part in parts:
@@ -288,6 +293,8 @@ def extract_urls(text: str):
 
 
 def extract_url(text: str):
+    if not text:
+        return None, False
     parts = text.split()
     for part in parts:
         if is_url(part)[0]:
@@ -340,8 +347,10 @@ def has_path(url):
     _is_not_empty = parsed_url.path != "\\"
     return bool(_is_not_empty) and not parsed_url.path.endswith("/")
 
+
 def starts_with_bot_username(bot_username: str, message_text: str) -> bool:
     return message_text.startswith(f"@{bot_username}")
+
 
 def is_second_message_command(message_text: str) -> bool:
     if message_text.startswith("/"):
@@ -351,8 +360,11 @@ def is_second_message_command(message_text: str) -> bool:
     else:
         return False
 
-def command_clean(text:str):
+
+def command_clean(text: str):
     words = text.split()
-    words_without_command = [word for word in words if not word.startswith("/") or word.startswith('@')]
+    words_without_command = [
+        word for word in words if not word.startswith("/") or word.startswith("@")
+    ]
     result = " ".join(words_without_command)
     return result

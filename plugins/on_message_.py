@@ -35,7 +35,7 @@ async def end_command(bot: Bot, message: Message):
 
 
 # Handler for text messages
-@Bot.on_message(filters.text)
+@Bot.on_message(filters.text, 1)
 async def handle_text(bot: Bot, message: Message):
     session = conversation_manager.get_session(message.chat.id)
     current_step = session.current_step
@@ -58,5 +58,4 @@ async def handle_text(bot: Bot, message: Message):
         session.age = message.text
         await message.reply_text("Thank you! Your data has been recorded.")
         conversation_manager.update_session(message.chat.id, END, None, None)
-
-    print(f"{next_step} {prev_step}")
+    print("HMMM")

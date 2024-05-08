@@ -9,7 +9,7 @@ from models.searchings import Searching
 
 
 @Bot.on_message(filters.command("stats") & filters.user(ADMINS))
-async def stats(bot: Bot, message: Message):
+async def statistics_command(bot: Bot, message: Message):
     now = datetime.now()
     delta = now - bot.uptime
     time = get_readable_time(delta.seconds)
@@ -27,6 +27,7 @@ async def stats(bot: Bot, message: Message):
         ]
     )
     msg = await message.reply(stats_text, reply_to_message_id=message.id)
+
 
 @Bot.on_message(filters.private & filters.incoming)
 async def useless(_, message: Message):

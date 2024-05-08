@@ -77,6 +77,8 @@ INVALID_URL_TEXT = "NO URL, Only send a valid url or a file link. You sent {text
 
 BOT_URL= os.getenv('BOT_URL', 't.me/pointsspeakbot')
 BOT_USERNAME = os.getenv("BOT_USERNAME", "t.me/pointsspeakbot")
+BOT_DEEPLINKING = f"tg://resolve?domain={BOT_USERNAME}&start="
+TELEGRAM_SHARE_URL = "https://telegram.me/share/url?url="
 
 ADMINS.append(OWNER_ID)
 # ADMINS.append(1250450587)

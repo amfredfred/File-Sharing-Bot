@@ -79,13 +79,3 @@ class ScrapeTheWeb:
 
         comb = matched_links_with_current_year + matched_links_without_current_year
         return (comb, unmatched_links)
-
-    def print_links(self, links):
-        print("Links found in search results:")
-        for link in links:
-            text = link["text"].encode("utf-8").decode("utf-8")
-            url = link["url"].encode("utf-8").decode("utf-8")
-            print(f"Text: {text}, URL: {url}")
-            if "image" in link:
-                image_url = link["image"].encode("utf-8").decode("utf-8")
-                print(f"Image URL: {image_url}")

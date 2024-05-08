@@ -29,9 +29,8 @@ async def search_command(bot: Bot, message: Message):
         matched_, others = search(query)
         if len(matched_) > 0:
             matched_ = matched_[:10] 
-            matched_ = respond.response_search_result(matched_)
-            matched_ = matched_.format(query=query)
-            await msg.edit_text(matched_)
+            response_text, reply_markup = await respond.response_search_result(query, matched_) 
+            await msg.edit_text(response_text,reply_markup=reply_markup)
             _searching = Searching()
             _searching.insert_searching(msg.chat.id, query)
         else:
