@@ -2,12 +2,10 @@
 
 import asyncio
 from pyrogram import filters, Client
-from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
-from pyrogram.errors import FloodWait
+from pyrogram.types import Message
 
 from bot import Bot
-from config import DISABLE_CHANNEL_BUTTON
-from helper_func import extract_urls, extract_url
+from helper_func import   extract_url
 from responses import ResponseMessage
 from plugins.link_generator import moveto_cloud
 
@@ -54,7 +52,7 @@ async def handle_message(client: Client, message: Message):
             reply_markup = await rspmsg.response_when_has_link(hasUrl)
             print(f"response_markup: {reply_markup}")
             _text = f"<b><u>Check Out Details Below</u></b>"
-            await message.delete()
+            # await message.delete()
             return await reply_text.edit_text(
                 _text,
                 reply_markup=reply_markup,

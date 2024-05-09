@@ -3,7 +3,7 @@ from pyrogram.types import Message, InputMedia
 from pyrogram.enums import ChatAction
 from pyrogram import filters
 from bot import Bot
-from helper_func import extract_url
+from helper_func import extract_url, make_share_handle
 from config import INVALID_URL_TEXT, NO_DOWNLOADABLE_RESPONSE
 from responses import ResponseMessage
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
@@ -18,19 +18,23 @@ COMMAND_END = "cancel_download"
 async def on_success(msg: Message, media_url: str, file_name: str, caption=""):
     chat_id = msg.chat.id
     media = InputMedia(file_name).media
+    _IShare, _iTGSgare = await make_share_handle(msg.command_text)
+    buttons = [[InlineKeyboardButton("📤Share📤", url=_iTGSgare)]]
+    reply_markup = InlineKeyboardMarkup(buttons)
+
     if media_url.endswith((".mp4", ".avi", ".mkv")):
         await msg.reply_chat_action(action=ChatAction.UPLOAD_VIDEO)
-        await msg.reply_video(media, caption=caption)
+        await msg.reply_video(media, caption=caption, reply_markup=reply_markup)
     elif media_url.endswith((".mp3", ".ogg")):
         await msg.reply_chat_action(action=ChatAction.UPLOAD_AUDIO)
-        await msg.reply_audio(media, caption=caption)
+        await msg.reply_audio(media, caption=caption, reply_markup=reply_markup)
     elif media_url.endswith((".jpg", ".jpeg", ".png", ".gif")):
         await msg.reply_chat_action(action=ChatAction.UPLOAD_PHOTO)
-        await msg.reply_photo(media, caption=caption)
+        await msg.reply_photo(media, caption=caption, reply_markup=reply_markup)
     else:
         await msg.reply_chat_action(action=ChatAction.UPLOAD_DOCUMENT)
-        await msg.reply_document(media, caption=caption)
-    await msg.edit_text("<b><u>Downloaded 100%</u></b>")
+        await msg.reply_document(media, caption=caption, reply_markup=reply_markup)
+    pass
 
 
 async def on_update(msg: Message, total_size, downloaded):
@@ -41,7 +45,7 @@ async def on_update(msg: Message, total_size, downloaded):
     # Progress bar visualization
     completed_blocks = int(progress_percentage / 10)
     remaining_blocks = 10 - completed_blocks
-    progress_bar = "▪️" * completed_blocks + "▫️" * remaining_blocks
+    progress_bar = "🟢" * completed_blocks + "⚫" * remaining_blocks
 
     # Speed calculation and formatting
     speed = downloaded / (1024)  # Speed in KB/sec
@@ -72,6 +76,7 @@ async def download_command(bot: Bot, message: Message):
     msg = await message.reply_text("<strong><u>Checking Link...</ul></strong>")
     expect_link, isDownloadable = extract_url(msg_text)
     if expect_link:
+        msg.command_text = msg_text
         link = await dm._parse_link(expect_link)
         url = link.get("url")
         link_type = link.get("type")
@@ -83,6 +88,7 @@ async def download_command(bot: Bot, message: Message):
         elif link_type == "media":
             await msg.edit_text("<strong><u>Downloading...</ul></strong>")
             response = await dm.download_and_send_media(msg, url, on_success, on_update)
+            await msg.delete()
             if isinstance(response, str):
                 return await msg.edit_text(response)
         else:

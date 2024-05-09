@@ -12,6 +12,9 @@ from config import (
     START_MSG,
     CUSTOM_CAPTION,
     COMMANDS_LIST,
+    TELEGRAM_SHARE_URL,
+    BOT_DEEPLINKING,
+    BOT_URL
 )
 from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant
 from pyrogram.errors import FloodWait
@@ -19,6 +22,7 @@ from urllib.parse import urlparse
 from urllib.parse import urlparse, urljoin
 from database.database import present_user, add_user
 from pyrogram.enums import ParseMode
+from managers.callback import CallbackDataManager
 from pyrogram.types import (
     Message,
     InlineKeyboardMarkup,
@@ -27,6 +31,7 @@ from pyrogram.types import (
     InputTextMessageContent,
 )
 
+cbm = CallbackDataManager()
 
 async def get_caption(msg):
     if bool(CUSTOM_CAPTION) & bool(msg.document):
@@ -374,3 +379,9 @@ def get_extension(url:str):
     filename = os.path.basename(clean_file_url(url))
     _, extension = os.path.splitext(filename)
     return extension.lower()
+
+async def make_share_handle(string:str):
+    encoded_query = await encode(string)
+    share_link = f"{BOT_URL}?start={cbm.generate_callback_data(encoded_query)}"
+    tg_share = f"{TELEGRAM_SHARE_URL}{share_link}"
+    return share_link, tg_share

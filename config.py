@@ -103,6 +103,9 @@ NO_DOWNLOADABLE_RESPONSE = "<b>🔴 No downloadable items found.</b>\n"
 NO_DOWNLOADABLE_RESPONSE += "<code>Please try a different search query.\n</code>"
 NO_DOWNLOADABLE_RESPONSE += "<i>Feel free to contact us if you need further assistance!</i>"
 
+DOWNLOAD_SUCCESSFUL_TEXT = "<b>Download Successful! 🎉</b>\n"
+DOWNLOAD_SUCCESSFUL_TEXT += "<code>Your download is complete! Enjoy your content! 🌟</code>"
+
 SEARCH_TEXT_EMPTY = (
     "Sorry, that is not a valid way to search;\nexample = /search some text"
 )

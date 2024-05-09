@@ -1,14 +1,8 @@
 from bs4 import BeautifulSoup
-import requests
 from urllib.parse import urlparse
-import os
-import tempfile
+import os, tempfile, aiofiles, aiohttp, shutil
 from helper_func import if_only_path
-from config import ALL_EXTENTIONS
-import aiofiles
-import aiohttp
-import shutil
-from managers.callback import CallbackDataManager
+from config import ALL_EXTENTIONS, DOWNLOAD_SUCCESSFUL_TEXT
 from helper_func import is_downloadable
 
 
@@ -88,7 +82,7 @@ class DownloadManager:
                             msg,
                             url,
                             file_name,
-                            f"🟢🟢🟢Download Successful",
+                            DOWNLOAD_SUCCESSFUL_TEXT,
                         )
                         return True
                     elif response.status == 404:
