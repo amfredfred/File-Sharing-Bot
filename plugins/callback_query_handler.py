@@ -28,9 +28,11 @@ async def callback_handler(client: Bot, query: CallbackQuery):
                     message = query.message
                     message.text = decoded_message.replace("%20", " ")
                     from plugins.on_message import handle_message
+                    #HERE======================
                     return await handle_message(client, message)
     except Exception as e:
-        print(f"Exception callback_handler: {e}")
+        print(f"Exception In Callback_Handler: {e}")
+        await query.message.edit_text("<b>SOMETHING UNUSUAL HAS HAPPENED</b>")
 
     if data == "about":
         await query.message.edit_text(

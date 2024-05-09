@@ -49,7 +49,7 @@ async def start_command(client: Client, message: Message):
                     from plugins.on_message import handle_message
                     return await handle_message(client, message)
     except Exception as e:
-        print(f"Exception callback_handler: {e}")
+        print(f"Exception In Start Command: {e}")
 
     if len(decoded_message) > 7 and not starts_with_bot_username(client.me.username, decoded_message):
         ids = await extract_ids(client, decoded_message)

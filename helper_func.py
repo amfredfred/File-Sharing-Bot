@@ -1,6 +1,6 @@
 # (©)Codexbotz
 
-import base64, gzip, re, asyncio
+import base64, gzip, re, asyncio, os
 from pyrogram import filters
 from pyrogram.enums import ChatMemberStatus
 from config import (
@@ -368,3 +368,9 @@ def command_clean(text: str):
     ]
     result = " ".join(words_without_command)
     return result
+
+
+def get_extension(url:str):
+    filename = os.path.basename(clean_file_url(url))
+    _, extension = os.path.splitext(filename)
+    return extension.lower()

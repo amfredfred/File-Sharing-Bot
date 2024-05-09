@@ -23,18 +23,16 @@ class CallbackDataManager:
             json.dump(self.callback_data, file, indent=4)
 
     def generate_callback_data(self, data):
-        data_hash = hashlib.sha256(data.encode()).hexdigest()[:8]
+        data_hash = hashlib.sha256(data.encode()).hexdigest()[:10]
         self.callback_data[data_hash] = data
         self.save_mappings()
 
         return data_hash
 
     def get_data_from_callback(self, callback):
-        # Retrieve the original data from the callback data
         return self.callback_data.get(callback)
 
     def remove_callback_data(self, callback):
-        # Remove the mapping for the given callback
         if callback in self.callback_data:
             del self.callback_data[callback]
             self.save_mappings()

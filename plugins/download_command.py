@@ -4,7 +4,7 @@ from pyrogram.enums import ChatAction
 from pyrogram import filters
 from bot import Bot
 from helper_func import extract_url
-from config import INVALID_URL_TEXT
+from config import INVALID_URL_TEXT, NO_DOWNLOADABLE_RESPONSE
 from responses import ResponseMessage
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
@@ -77,7 +77,9 @@ async def download_command(bot: Bot, message: Message):
         link_type = link.get("type")
         if link_type == "telegram":
             print("TELEGRAAM LINK")
-            return await msg.edit_text("<b><u>Telegram link is not supported yet</u></b>")
+            return await msg.edit_text(
+                "<b><u>Telegram link is not supported yet</u></b>"
+            )
         elif link_type == "media":
             await msg.edit_text("<strong><u>Downloading...</ul></strong>")
             response = await dm.download_and_send_media(msg, url, on_success, on_update)
@@ -86,15 +88,14 @@ async def download_command(bot: Bot, message: Message):
         else:
             urls = link.get("urls")
             found, reply_markup = await response_msg.download_options(urls)
-            ressponse_text = "<b><u>➿ Found few stuffs 🍭</u><b>"
+            ressponse_text = "<b><u>🟢FOUND FEW STUFFS</u><b>"
             if not found and not urls:
-                ressponse_text = "<b><u>No downloadable links from your search 🙏</u><b"
-                buttons = []
-                buttons.append([InlineKeyboardButton("🔗 Visit Website 🔗", url=url)])
-                reply_markup = InlineKeyboardMarkup(buttons)
+                ressponse_text = NO_DOWNLOADABLE_RESPONSE
+                reply_markup = InlineKeyboardMarkup(
+                    [[InlineKeyboardButton("📤VISIT WEBPAGE📤", url=expect_link)]]
+                )
             # else:
-
-            return await msg.edit_text(f"{ressponse_text}", reply_markup=reply_markup)
+            return await msg.edit_text(ressponse_text, reply_markup=reply_markup)
     else:
         await message.delete()
         return await msg.edit_text(INVALID_URL_TEXT.format(text=msg_text))

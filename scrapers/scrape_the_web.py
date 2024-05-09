@@ -9,9 +9,9 @@ class ScrapeTheWeb:
     def get_query_urls(self):
         search_query = self.search_query.replace(" ", "%20")
         query_urls = [
-            f"https://archive.org/search?query={search_query}",
-            # f"https://9jarocks.net/?s={search_query}",
-            # f"https://parrotvibes.com/?s={search_query}",
+            f"https://www.tooxtraloadedtv.com.ng/?s={search_query}"
+            f"https://9jarocks.net/?s={search_query}",
+            f"https://parrotvibes.com/?s={search_query}",
         ]
         return query_urls
 
@@ -31,7 +31,6 @@ class ScrapeTheWeb:
         async with aiohttp.ClientSession() as session:
             tasks = [fetch_search_results(session, url) for url in query_urls]
             await asyncio.gather(*tasks)
-        print(f"all_search_results: {all_search_results}   query_urls: {query_urls}")
         return all_search_results
 
     def parse_search_results(self, html, search_url: str):

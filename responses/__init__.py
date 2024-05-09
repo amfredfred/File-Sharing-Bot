@@ -5,6 +5,7 @@ from helper_func import (
     has_path,
     encode,
     extract_link_title,
+    get_extension
 )
 from config import BOT_URL, BOT_USERNAME, TELEGRAM_SHARE_URL
 from urllib.parse import urlparse
@@ -53,9 +54,9 @@ class ResponseMessage:
                 _url = f"{BOT_URL}?start={callback_data}"
                 clickable_text = f"{link['text']}"
                 button = [InlineKeyboardButton( clickable_text, callback_data=callback_data)]
-                visit_button = InlineKeyboardButton("🖇️📤", url=link["url"])
-                if not isDownloadable:
-                    button.append(visit_button)
+                # visit_button = InlineKeyboardButton("🖇️📤", url=link["url"])
+                # if not isDownloadable:
+                #     button.append(visit_button)
                 buttons.append(button)
         buttons.append([InlineKeyboardButton("📤 Share 📤", url=deep_link_search)])
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -77,21 +78,22 @@ class ResponseMessage:
     async def download_options(self, urls):
         cdm = CallbackDataManager()
         buttons = []
-        reply_markup = None
+        is_seen = set()
         for idx, dl_link in enumerate(urls, start=1):
+            if dl_link in is_seen:
+                continue
             isDownloadable, link = is_downloadable(dl_link)
             file_name = extract_link_title(link["url"])
-            button_text = f"{idx}. {file_name}"
-            if isDownloadable:
-                button_text = "Download " + button_text
+            button_text = f"{file_name}"
+            if isDownloadable: 
                 callback_data = await encode(f"/download {link['url']}")
                 callback_data = cdm.generate_callback_data(callback_data)
-                button = InlineKeyboardButton(button_text, callback_data=callback_data)
+                extension = get_extension(dl_link)
+                button = [InlineKeyboardButton(f"⬇️ [{extension}] " + button_text, callback_data=callback_data)]
+                buttons.append(button)
             else:
-                button_text = "Go to " + button_text
-                button = InlineKeyboardButton(button_text, url=dl_link)
-            buttons.append([button])
-        if buttons:
-            reply_markup = InlineKeyboardMarkup(buttons)
-
-        return len(buttons) > 0, reply_markup
+                button = [InlineKeyboardButton("🔗Visit🔗", url=dl_link)]
+                buttons.append(button)
+            is_seen.add(dl_link)
+        reply_markup = InlineKeyboardMarkup(buttons) if buttons else None
+        return bool(buttons), reply_markup

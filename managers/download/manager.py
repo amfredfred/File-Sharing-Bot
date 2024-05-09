@@ -34,11 +34,11 @@ class DownloadManager:
         try:
             async with aiohttp.ClientSession() as session:
                 async with session.get(link) as response:
-                    response.raise_for_status()  
+                    response.raise_for_status()
                     html_content = await response.text()
                     soup = BeautifulSoup(html_content, "html.parser")
                     for a_tag in soup.find_all("a", href=True):
-                        href = if_only_path(link, a_tag["href"]) 
+                        href = if_only_path(link, a_tag["href"])
                         isDownloadable, url = is_downloadable(href)
                         if isDownloadable:
                             all_links.append(href)
@@ -74,7 +74,9 @@ class DownloadManager:
                                     >= 2
                                 ):
                                     try:
-                                        await on_update(msg, total_size, downloaded_size)
+                                        await on_update(
+                                            msg, total_size, downloaded_size
+                                        )
                                     except Exception as e:
                                         pass
                                     finally:
@@ -82,7 +84,12 @@ class DownloadManager:
                                             current_progress_percentage
                                         )
                                         downloaded_size = 0
-                        await on_success(msg, url, file_name, f">>>> ✅✅✅ <<<<")
+                        await on_success(
+                            msg,
+                            url,
+                            file_name,
+                            f"🟢🟢🟢Download Successful",
+                        )
                         return True
                     elif response.status == 404:
                         return "The requested file was not found."
@@ -92,7 +99,7 @@ class DownloadManager:
                         return f"Error downloading media: HTTP error {response.status}"
         except Exception as e:
             print(f"Error downloading media. {e}")
-            return f"Error downloading media."
+            return f"UhUhh Something`s not right: Status CODE {response.status}"
         finally:
             shutil.rmtree(temp_dir, ignore_errors=True)
 
