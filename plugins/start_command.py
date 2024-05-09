@@ -17,7 +17,6 @@ from bot import Bot
 from config import (
     ADMINS,
     FORCE_MSG,
-    START_MSG,
 )
 
 from helper_func import (
@@ -25,12 +24,46 @@ from helper_func import (
     get_messages,
     extract_ids,
     copy_messages,
-    send_start_message,
     starts_with_bot_username,
 )
 from database.database import del_user, full_userbase
 
 command = "start"
+
+WELCOME_TEXT = "🤟💚💛💛💚🤟\n"
+WELCOME_TEXT += "<b>Hi, I`m your ultimate companion</b> for exploring and downloading digital content hassle-free! "
+WELCOME_TEXT += "Whether you're in search of the latest blockbuster movie, trending music tracks, "
+WELCOME_TEXT += "captivating pictures, or any downloadable files from a link, i`ve has got you covered."
+
+#
+WELCOME_TEXT += "\n\n🔑 <b>Key Features:</b>\n\n"
+WELCOME_TEXT += "🎬 <b>Movie Finder:</b>\n\n"
+WELCOME_TEXT += "Discover a vast collection of movies spanning various genres, from action-packed thrillers to heartwarming dramas. Simply type in the movie's title, and our bot will swiftly fetch relevant results, complete with details like synopsis, cast, and ratings. 🍿\n\n"
+WELCOME_TEXT += "🎵 <b>Music Hunter:</b>\n\n"
+WELCOME_TEXT += "Dive into the realm of melodies with our music search feature. Search for your favorite songs, albums, or artists, and our bot will provide you with direct download links or streaming options. 🎶\n\n"
+WELCOME_TEXT += "📥 <b>Download Manager:</b>\n\n"
+WELCOME_TEXT += "Need to download a file or content from a specific link? Look no further! Simply paste the link, and our bot will analyze it to extract any downloadable files, making the process effortless. 🚀"
+
+#
+
+WELCOM_REPLY_MARKUP = InlineKeyboardMarkup(
+    [
+        [
+            InlineKeyboardButton("🤝 About Me", callback_data="about"),
+            InlineKeyboardButton("❓ Need Help", callback_data="how_to_use_bot"),
+            InlineKeyboardButton("🗑️ Close", callback_data="close"),
+        ]
+    ]
+)
+
+async def send_start_message(message: Message): 
+    await message.reply_text(
+        text=WELCOME_TEXT,
+        reply_markup=WELCOM_REPLY_MARKUP,
+        disable_web_page_preview=True,
+        quote=True,
+    )
+
 
 @Bot.on_message(filters.command(command) & filters.private & subscribed)
 async def start_command(client: Client, message: Message):
