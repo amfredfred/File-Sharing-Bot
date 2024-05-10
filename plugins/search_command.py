@@ -23,11 +23,9 @@ async def search_command(bot: Bot, message: Message):
     message.text = command_clean(message.text)
     query = message.text
     if not query:
-        lsg_msg = await message.reply_text(SEARCH_TEXT_EMPTY)
-        sleep(1)
-        return await lsg_msg.delete()
+        return await message.reply_text(SEARCH_TEXT_EMPTY, quote=True)
     msg = await message.reply_text(
-        LOOKING_UP_TEXT.format(query=query), reply_to_message_id=message.id
+        LOOKING_UP_TEXT.format(query=query), reply_to_message_id=message.id, quote=True
     )
     try:
         matched_, others = await search(query)

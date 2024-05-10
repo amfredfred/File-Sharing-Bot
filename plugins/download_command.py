@@ -3,7 +3,7 @@ from pyrogram.types import Message, InputMedia
 from pyrogram.enums import ChatAction
 from pyrogram import filters
 from bot import Bot
-from helper_func import extract_url, make_share_handle
+from helper_func import extract_url, make_share_handle, subscribed
 from config import INVALID_URL_TEXT, NO_DOWNLOADABLE_RESPONSE
 from responses import ResponseMessage
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
@@ -16,7 +16,6 @@ COMMAND_END = "cancel_download"
 
 
 async def on_success(msg: Message, media_url: str, file_name: str, caption=""):
-    chat_id = msg.chat.id
     media = InputMedia(file_name).media
     _IShare, _iTGSgare = await make_share_handle(msg.command_text)
     buttons = [[InlineKeyboardButton("📤Share📤", url=_iTGSgare)]]
@@ -70,14 +69,14 @@ async def on_update(msg: Message, total_size, downloaded):
 response_msg = ResponseMessage()
 
 
-@Bot.on_message(filters.private and filters.command(COMMAND_START))
+@Bot.on_message(filters.private and filters.command(COMMAND_START) & subscribed)
 async def download_command(bot: Bot, message: Message):
     msg_text = message.text.strip()
-    msg = await message.reply_text("<strong><u>Checking Link...</ul></strong>")
+    msg = await message.reply_text("<strong><u>Checking For Options...</ul></strong>", quote=True)
     expect_link, isDownloadable = extract_url(msg_text)
     if expect_link:
         msg.command_text = msg_text
-        link = await dm._parse_link(expect_link)
+        link = await dm.check_link_type(expect_link)
         url = link.get("url")
         link_type = link.get("type")
         if link_type == "telegram":
@@ -88,20 +87,19 @@ async def download_command(bot: Bot, message: Message):
         elif link_type == "media":
             await msg.edit_text("<strong><u>Downloading...</ul></strong>")
             response = await dm.download_and_send_media(msg, url, on_success, on_update)
-            await msg.delete()
             if isinstance(response, str):
                 return await msg.edit_text(response)
-        else:
+            else:
+                await msg.delete()
+        elif link_type == "webpage":
             urls = link.get("urls")
-            found, reply_markup = await response_msg.download_options(urls)
+            found, reply_markup = await response_msg.download_options(urls, expect_link)
             ressponse_text = "<b><u>🟢FOUND FEW STUFFS</u><b>"
             if not found and not urls:
                 ressponse_text = NO_DOWNLOADABLE_RESPONSE
-                reply_markup = InlineKeyboardMarkup(
-                    [[InlineKeyboardButton("📤VISIT WEBPAGE📤", url=expect_link)]]
-                )
             # else:
             return await msg.edit_text(ressponse_text, reply_markup=reply_markup)
+        elif link_type == 'facebook_watch':
+            print(f"Facebooks Link")
     else:
-        await message.delete()
         return await msg.edit_text(INVALID_URL_TEXT.format(text=msg_text))

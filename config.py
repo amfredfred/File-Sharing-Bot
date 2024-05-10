@@ -38,7 +38,7 @@ NON_HARMFUL_FILE_EXTENSIONS = (
     ".ppt",
     ".pptx",
 )
-ALL_EXTENTIONS = (
+ALL_EXTENSIONS = (
     PLAYABLE_FILE_EXTENSIONS + ZIP_FILE_EXTENSIONS + NON_HARMFUL_FILE_EXTENSIONS
 )
 
@@ -84,7 +84,7 @@ except ValueError:
 # Force sub message
 FORCE_MSG = os.getenv(
     "FORCE_SUB_MESSAGE",
-    "Hello {first}\n\n<b>You need to join in my Channel/Group to use me\n\nKindly Please join Channel</b>",
+    "Hello There\n\n<b>It seems you haven't joined our channel yet.\nPlease join to proceed.\n\n</b>{invitelink}\n\nIf you've already joined, please click <b>Try Again</b>.",
 )
 
 # set your Custom Caption here, Keep None for Disable Custom Caption
@@ -96,21 +96,29 @@ PROTECT_CONTENT = True if os.getenv("PROTECT_CONTENT", "False") == "True" else F
 # Set true if you want Disable your Channel Posts Share button
 DISABLE_CHANNEL_BUTTON = os.getenv("DISABLE_CHANNEL_BUTTON", None) == "True"
 
-BOT_STATS_TEXT = "<b>STATS & USAGE</b>\n"
+BOT_STATS_TEXT = "📊 <b>STATS & USAGE FOR YOU</b>"
 USER_REPLY_TEXT = "❌Don't send me messages directly I'm only File Share bot!"
 
 NO_DOWNLOADABLE_RESPONSE = "<b>🔴 No downloadable items found.</b>\n"
 NO_DOWNLOADABLE_RESPONSE += "<code>Please try a different search query.\n</code>"
-NO_DOWNLOADABLE_RESPONSE += "<i>Feel free to contact us if you need further assistance!</i>"
+NO_DOWNLOADABLE_RESPONSE += (
+    "<i>Feel free to contact us if you need further assistance!</i>"
+)
 
 DOWNLOAD_SUCCESSFUL_TEXT = "<b>Download Successful! 🎉</b>\n"
-DOWNLOAD_SUCCESSFUL_TEXT += "<code>Your download is complete! Enjoy your content! 🌟</code>"
+DOWNLOAD_SUCCESSFUL_TEXT += (
+    "<code>Your download is complete! Enjoy your content! 🌟</code>"
+)
 
 SEARCH_TEXT_EMPTY = (
     "Sorry, that is not a valid way to search;\nexample = /search some text"
 )
 LOOKING_UP_TEXT = "<code><b>Looking up</b> <u>{query}</u><code>"
 INVALID_URL_TEXT = "NO URL, Only send a valid url or a file link. You sent {text}"
+
+FACEBOOK_DISCALIMER = f"<b>‼️Disclaimer:</b>\n"
+FACEBOOK_DISCALIMER += "<code>Downloading videos from Facebook using third-party tools may violate Facebook's terms of service and copyright laws. Content shared on Facebook is protected by intellectual property rights, and unauthorized downloading could infringe upon those rights. It is crucial to obtain proper permissions from content creators before downloading or distributing videos. Additionally, using unofficial download tools may pose security risks, including exposure to malware or phishing attacks. We do not endorse or encourage the unauthorized downloading of videos from Facebook and advise users to use official download options provided by the platform. By downloading videos from Facebook, users <b>acknowledge and accept</b> the associated risks and legal implications.</code>"
+
 
 BOT_URL = os.getenv("BOT_URL", "t.me/pointsspeakbot")
 BOT_USERNAME = os.getenv("BOT_USERNAME", "t.me/pointsspeakbot")

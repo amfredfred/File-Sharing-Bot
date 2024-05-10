@@ -2,6 +2,7 @@ from plugins.start_command import start_command
 from plugins.search_command import search_command
 from plugins.download_command import download_command
 from plugins.statistics_command import statistics_command
+from plugins.check_link_command import check_link_command
 
 # Define command names
 command_names = {
@@ -9,6 +10,7 @@ command_names = {
     "search": "search",
     "download": "download",
     "stats": "stats",
+    "check_link": "check_link",
 }
 
 command_list_public = {
@@ -35,11 +37,17 @@ command_list = {
         "method": start_command,
     },
     **command_list_public,
-    "statc": {
-        "name": command_names["start"],
+    "stats": {
+        "name": command_names["stats"],
         "desc": "",
         "command": f"/{command_names['stats']}",
         "method": statistics_command,
+    },
+    "check_link": {
+        "name": command_names["check_link"],
+        "desc": "",
+        "command": f"/{command_names['check_link']}",
+        "method": check_link_command,
     },
 }
 

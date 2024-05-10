@@ -1,0 +1,49 @@
+from pyrogram import filters, client
+from helper_func import link_type, extract_url, encode
+from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
+from scrapers.facebook import FacebookVideoDownloader
+from managers.callback import CallbackDataManager
+import json
+from bot import Bot
+
+from  config import FACEBOOK_DISCALIMER
+
+@Bot.on_message(filters.command("check_link"))
+async def check_link_command(bot: client, message: Message):
+    callable_m = CallbackDataManager()
+    msg_text = message.text if not None else " "
+    if msg_text:
+        msg_text = message.text.strip()
+    reply_text = await message.reply_text("Please Wait...!", quote=True)
+    hasUrl, isDownloadable = extract_url(msg_text)
+    type_link = link_type(hasUrl)
+
+    # Construct message based on link type
+    if type_link == "facebook_watch":
+        msg = "This is a Facebook Watch link."
+        facebook = FacebookVideoDownloader()
+        result = json.loads(await facebook.download(hasUrl))
+        if result["success"]:
+            title = result["title"]
+            links = result["links"]
+            msg = FACEBOOK_DISCALIMER+f"\n\nTitle: {title}\n\nDownload Options:"
+            buttons = []
+            for key, value in links.items(): 
+                # callable_mdata = await encode(f"/download {value}")
+                # callable_mdata = callable_m.generate_callback_data(callable_mdata)
+                buttons.append([InlineKeyboardButton(text=key, url=value)])
+            keyboard = InlineKeyboardMarkup(buttons)
+            return await reply_text.edit_text(msg, reply_markup=keyboard)
+    elif type_link == "telegram":
+        msg = "This is a Telegram link."
+        buttons = None  # No keyboard buttons needed for Telegram links
+    elif type_link == "media":
+        msg = "This is a media link."
+        buttons = None  # No keyboard buttons needed for media links
+    else:
+        msg = "This is a webpage link."
+        buttons = [
+            "Button 1",
+            "Button 2",
+            "Button 3",
+        ]  # Example keyboard buttons for webpage links

@@ -9,7 +9,7 @@ class ScrapeTheWeb:
     def get_query_urls(self):
         search_query = self.search_query.replace(" ", "%20")
         query_urls = [
-            f"https://www.tooxtraloadedtv.com.ng/?s={search_query}"
+            # f"https://www.tooxtraloadedtv.com.ng/?s={search_query}"
             f"https://9jarocks.net/?s={search_query}",
             f"https://parrotvibes.com/?s={search_query}",
         ]

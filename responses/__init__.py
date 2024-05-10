@@ -75,7 +75,7 @@ class ResponseMessage:
         )
         return reply_markup
 
-    async def download_options(self, urls):
+    async def download_options(self, urls, query:str = ""):
         cdm = CallbackDataManager()
         buttons = []
         is_seen = set()
@@ -95,5 +95,6 @@ class ResponseMessage:
                 button = [InlineKeyboardButton("🔗Visit🔗", url=dl_link)]
                 buttons.append(button)
             is_seen.add(dl_link)
+        buttons.append([InlineKeyboardButton("📤VISIT WEBPAGE📤", url=query)])
         reply_markup = InlineKeyboardMarkup(buttons) if buttons else None
         return bool(buttons), reply_markup

@@ -13,23 +13,29 @@ async def statistics_command(bot: Bot, message: Message):
     now = datetime.now()
     delta = now - bot.uptime
     time = get_readable_time(delta.seconds)
-    users = Profile().get_all_users()
-    queries = Searching().get_all_seachings()
-    stats_text = "".join(
-        [
-            f"<u>{BOT_STATS_TEXT}</u>",
-            f"<strong>UpTime</strong> - {time}\n",
-            f"<strong>Daily users</strong> - {len(users)}\n\n",
-            f"<strong><u>SEARCH QUERIES</u></strong>\n",
-            f"<strong>Total</strong> - {len(queries)}\n",
-            # f"<strong>Today</strong> - {len(queries)}\n",
-            # f"<strong>Yesterday</strong> - {len(queries)}\n",
-        ]
-    )
-    msg = await message.reply(stats_text, reply_to_message_id=message.id)
 
+    # Retrieve data from Profile model
+    _profile = Profile()
+    users = _profile.get_all_users()
+    get_active_users_last_24_hours = _profile.get_active_users_last_24_hours()
 
-@Bot.on_message(filters.private & filters.incoming)
-async def useless(_, message: Message):
-    if USER_REPLY_TEXT:
-        await message.reply(USER_REPLY_TEXT)
+    # Retrieve data from Searching model
+    _searchings = Searching()
+    queries = _searchings.get_all_searchings()
+    _common = _searchings.most_common_searched_word()
+
+    # Format statistics text
+    stats_text = f"""╔═══════════════════════╗
+║{BOT_STATS_TEXT}
+╠═══════════════════════╣
+║---⏳ <b>UpTime</b>: {time}
+║---👥 <b>Daily Users</b>: {len(users)}
+║═══════════════════════
+║<b>SEARCH QUERIES</b>
+║═══════════════════════
+║---🔹 <b>Total</b>: {len(queries)}
+║---🔍 <b>Popular Word</b>: {_common or 'N/A'}
+╚═══════════════════════╝"""
+
+    # Reply with statistics
+    msg = await message.reply_text(stats_text, quote=True)

@@ -1,4 +1,4 @@
-import psycopg2
+from datetime import datetime, timedelta
 from database.connection import DBConnection
 
 class Profile:
@@ -91,3 +91,11 @@ class Profile:
             cursor.execute(query, (telegram_id,))
             self.conn.commit()
             return cursor.rowcount
+        
+    def get_active_users_last_24_hours(self): 
+        twenty_four_hours_ago = datetime.now() - timedelta(hours=24) 
+        query = "SELECT * FROM profiles WHERE updated_at >= %s"
+        
+        with self.conn.cursor() as cursor:
+            cursor.execute(query, (twenty_four_hours_ago,))
+            return cursor.fetchall()

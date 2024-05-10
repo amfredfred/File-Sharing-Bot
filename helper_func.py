@@ -1,12 +1,12 @@
 # (©)Codexbotz
-
+from collections import Counter
 import base64, gzip, re, asyncio, os
 from pyrogram import filters
 from pyrogram.enums import ChatMemberStatus
 from config import (
     FORCE_SUB_CHANNEL,
     ADMINS,
-    ALL_EXTENTIONS,
+    ALL_EXTENSIONS,
     DISABLE_CHANNEL_BUTTON,
     PROTECT_CONTENT,
     START_MSG,
@@ -14,11 +14,10 @@ from config import (
     COMMANDS_LIST,
     TELEGRAM_SHARE_URL,
     BOT_DEEPLINKING,
-    BOT_URL
+    BOT_URL,
 )
 from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant
 from pyrogram.errors import FloodWait
-from urllib.parse import urlparse
 from urllib.parse import urlparse, urljoin
 from database.database import present_user, add_user
 from pyrogram.enums import ParseMode
@@ -32,6 +31,7 @@ from pyrogram.types import (
 )
 
 cbm = CallbackDataManager()
+
 
 async def get_caption(msg):
     if bool(CUSTOM_CAPTION) & bool(msg.document):
@@ -146,6 +146,7 @@ async def is_subscribed(filter, client, update):
     else:
         return True
 
+
 async def encode(string):
     # Compress the string using gzip
     compressed_bytes = gzip.compress(string.encode("utf-8"))
@@ -241,7 +242,7 @@ def is_url(text: str):
     if not text:
         return False, []
     prefixes = ["http://", "https://", "www."]
-    extensions = ALL_EXTENTIONS
+    extensions = ALL_EXTENSIONS
     urls = []
     for prefix in prefixes:
         if text.startswith(prefix):
@@ -282,14 +283,18 @@ def extract_url(text: str):
 
 def clean_file_url(file_url: str):
     # Use regular expressions to remove everything after the file extension
-    cleaned_url = re.sub(r'(\.mp4|\.mp3|\.avi|\.mkv|\.jpg|\.jpeg|\.png|\.gif|\.ogg).*$', lambda x: x.group(1), file_url)
+    cleaned_url = re.sub(
+        r"(\.mp4|\.mp3|\.avi|\.mkv|\.jpg|\.jpeg|\.png|\.gif|\.ogg).*$",
+        lambda x: x.group(1),
+        file_url,
+    )
     return cleaned_url
     # return file_url
 
 
 def is_downloadable(link: str):
     parsed_url = urlparse(link)
-    if parsed_url.path.endswith(ALL_EXTENTIONS):
+    if parsed_url.path.endswith(ALL_EXTENSIONS):
         return True, {"type": "media", "url": link}
     return False, {}
 
@@ -319,8 +324,8 @@ def clear_url(link: str):
     return cleared
 
 
-def has_path(url:str):
-    _link = url[:-1]  if not url.endswith("\\")  else url
+def has_path(url: str):
+    _link = url[:-1] if not url.endswith("\\") else url
     _parsed_url = urlparse(_link)
     _is_not_empty = _parsed_url.path != "\\"
     return bool(_is_not_empty)
@@ -348,13 +353,40 @@ def command_clean(text: str):
     return result
 
 
-def get_extension(url:str):
+def get_extension(url: str):
     filename = os.path.basename(clean_file_url(url))
     _, extension = os.path.splitext(filename)
     return extension.lower()
 
-async def make_share_handle(string:str):
+
+async def make_share_handle(string: str):
     encoded_query = await encode(string)
     share_link = f"{BOT_URL}?start={cbm.generate_callback_data(encoded_query)}"
     tg_share = f"{TELEGRAM_SHARE_URL}{share_link}"
     return share_link, tg_share
+
+
+def most_common_word(text: str):
+    # Split the text into words and convert them to lowercase
+    words = text.lower().split()
+    # Count the occurrences of each word
+    word_counts = Counter(words)
+    # Find the most common word
+    most_common = word_counts.most_common(1)
+    if most_common:
+        return most_common[0][0]
+    else:
+        return None
+
+def link_type(link: str):
+    parsed_url = urlparse(link)
+    if parsed_url.scheme == "https":
+        if parsed_url.netloc.startswith("fb.watch") or parsed_url.netloc.endswith('facebook.com'):
+            return "facebook_watch"
+        elif parsed_url.netloc == "t.me":
+            return "telegram"
+        elif parsed_url.path.endswith(ALL_EXTENSIONS):
+            return "media"
+        else:
+            return "webpage"
+    return "invalid"

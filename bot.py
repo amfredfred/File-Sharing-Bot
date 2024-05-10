@@ -11,7 +11,7 @@ import sys
 from datetime import datetime
 
 from config import API_HASH, APP_ID, LOGGER, TG_BOT_TOKEN, TG_BOT_WORKERS, FORCE_SUB_CHANNEL, CHANNEL_ID, PORT 
-from middlewares.ensure_user_indb import ensure_user_indb
+from middlewares import ensure_user_indb, ensure_user_issubscribed_channel
 
 class Bot(Client):
     def __init__(self):
@@ -23,9 +23,11 @@ class Bot(Client):
                 "root": "plugins"
             },
             workers=TG_BOT_WORKERS,
-            bot_token=TG_BOT_TOKEN
+            bot_token=TG_BOT_TOKEN,
+            
         )
-        self.add_handler(MessageHandler(ensure_user_indb), -1)
+        self.add_handler(MessageHandler(ensure_user_indb), -2)
+        self.add_handler(MessageHandler(ensure_user_issubscribed_channel), -1)
         self.LOGGER = LOGGER
 
     async def start(self):

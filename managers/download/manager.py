@@ -1,9 +1,9 @@
 from bs4 import BeautifulSoup
-from urllib.parse import urlparse
+import random
 import os, tempfile, aiofiles, aiohttp, shutil
-from helper_func import if_only_path
-from config import ALL_EXTENTIONS, DOWNLOAD_SUCCESSFUL_TEXT
-from helper_func import is_downloadable
+from config import DOWNLOAD_SUCCESSFUL_TEXT
+from helper_func import is_downloadable, if_only_path, link_type
+from scrapers.facebook import FacebookVideoDownloader
 
 
 class DownloadManager:
@@ -11,19 +11,21 @@ class DownloadManager:
         self.should_cancel_download = False
         pass
 
-    async def _parse_link(self, link):
-        parsed_url = urlparse(link)
-        if parsed_url.scheme == "https" and parsed_url.netloc == "t.me":
-            return {"type": "telegram", "url": link}
-        elif parsed_url.path.endswith(ALL_EXTENTIONS):
-            return {"type": "media", "url": link}
-        else:
-            return {
-                "type": "webpage",
-                "urls": await self._find_all_links(link),
-            }
+    async def check_link_type(self, link: str):
+        type_of_link = link_type(link)
+        if type_of_link == "facebook_watch":
+            fb_downloader = FacebookVideoDownloader()
+            message = fb_downloader.download(link)
+            print(f"message: {message}")
+            return {"type": type_of_link, "url": link}
+        elif type_of_link == "telegram":
+            return {"type": type_of_link, "url": link}
+        elif type_of_link == "media":
+            return {"type": type_of_link, "url": link}
+        elif type_of_link == "webpage":
+            return {"type": type_of_link, "urls": await self.find_all_links(link)}
 
-    async def _find_all_links(self, link):
+    async def find_all_links(self, link):
         all_links = []
         try:
             async with aiohttp.ClientSession() as session:
@@ -45,8 +47,8 @@ class DownloadManager:
     async def download_and_send_media(self, msg, url, on_success, on_update):
         try:
             temp_dir = tempfile.mkdtemp()
-            async with aiohttp.ClientSession() as session:
-                async with session.get(url) as response:
+            async with aiohttp.ClientSession(headers=self._get_headers(url)) as session:
+                async with session.get(url, headers=self._get_headers(url)) as response:
                     total_size = int(response.headers.get("content-length", 0))
                     previous_progress_percentage = 0
                     if response.status == 200:
@@ -99,3 +101,25 @@ class DownloadManager:
 
     async def cancel_download(self):
         self.should_cancel_download = True
+
+    def _get_headers(self, link: str = " "):
+
+        user_agents = [
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36",
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:85.0) Gecko/20100101 Firefox/85.0",
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36",
+        ]
+        user_agent = random.choice(user_agents)
+
+        return {
+            "sec-fetch-mode": "navigate",
+            "cache-control": "max-age=0",
+            "authority": "(link unavailable)",
+            "upgrade-insecure-requests": "1",
+            "accept-language": "en-GB,en;q=0.9,tr-TR;q=0.8,tr;q=0.7,en-US;q=0.6", 
+            "user-agent": user_agent,
+            "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+            "accept-encoding": "gzip, deflate, br",
+            "referer": f"wwww.facebook.com",
+            "Sec-CH-UA": '"Chromium";v="93", "Google Chrome";v="93", " Not;A Brand";v="99"'
+        }
