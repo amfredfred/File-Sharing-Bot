@@ -23,7 +23,7 @@ OFF_COMMANDS = [
 rspmsg = ResponseMessage()
 
 
-@Bot.on_message(filters.private & (~filters.channel & ~filters.command(OFF_COMMANDS) & subscribed))
+@Bot.on_message((~filters.channel & ~filters.command(OFF_COMMANDS) & subscribed))
 async def handle_message(client: Client, message: Message):
     msg_text = message.text if not None else " "
     if msg_text:
@@ -37,7 +37,7 @@ async def handle_message(client: Client, message: Message):
         print("Invalid Command supplied")
     else:
         print(f"No Commadn Supplied, Proceed")
-
+        
     if extract_url(msg_text)[0]:
         from plugins.check_link_command import check_link_command
         return await check_link_command(client, message)

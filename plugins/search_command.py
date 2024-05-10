@@ -17,8 +17,7 @@ async def search(query):
 
 respond = ResponseMessage()
 
-
-@Bot.on_message(filters.command("search") & filters.private & subscribed)
+@Bot.on_message(filters.command("search") & ~filters.channel & subscribed)
 async def search_command(bot: Bot, message: Message):
     message.text = command_clean(message.text)
     query = message.text

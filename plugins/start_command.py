@@ -68,7 +68,7 @@ async def send_start_message(message: Message):
     )
 
 
-@Bot.on_message(filters.command(command) & filters.private & subscribed)
+@Bot.on_message(filters.command(command) & ~filters.channel & subscribed)
 async def start_command(client: Client, message: Message):
     text = message.text
     comm_clean = command_clean(text)
@@ -115,7 +115,7 @@ REPLY_ERROR = """<code>Use this command as a replay to any telegram message with
 # =====================================================================================##
 
 
-@Bot.on_message(filters.command(command) & filters.private)
+@Bot.on_message(filters.command(command) & (filters.private or filters.group))
 async def not_joined(client: Client, message: Message):
     buttons = [[InlineKeyboardButton("Join Channel", url=client.invitelink)]]
     try:

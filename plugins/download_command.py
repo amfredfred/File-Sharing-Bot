@@ -69,7 +69,7 @@ async def on_update(msg: Message, total_size, downloaded):
 response_msg = ResponseMessage()
 
 
-@Bot.on_message(filters.private and filters.command(COMMAND_START) & subscribed)
+@Bot.on_message(~filters.channel and filters.command(COMMAND_START) & subscribed)
 async def download_command(bot: Bot, message: Message):
     msg_text = message.text.strip()
     msg = await message.reply_text("<strong><u>Checking For Options...</ul></strong>", quote=True)
@@ -95,11 +95,13 @@ async def download_command(bot: Bot, message: Message):
             urls = link.get("urls")
             found, reply_markup = await response_msg.download_options(urls, expect_link)
             ressponse_text = "<b><u>🟢FOUND FEW STUFFS</u><b>"
-            if not found and not urls:
+            print(f"found: {found} reply_markup: {reply_markup}")
+            if not found:
                 ressponse_text = NO_DOWNLOADABLE_RESPONSE
             # else:
             return await msg.edit_text(ressponse_text, reply_markup=reply_markup)
         elif link_type == 'facebook_watch':
-            print(f"Facebooks Link")
+            from plugins.check_link_command import check_link_command
+            return await check_link_command(bot, message)
     else:
         return await msg.edit_text(INVALID_URL_TEXT.format(text=msg_text))

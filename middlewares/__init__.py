@@ -12,7 +12,7 @@ async def ensure_user_indb(client: Client, message: Message):
 
 async def ensure_user_issubscribed_channel(client: Client, message: Message):
     isSuscribed = await is_subscribed(None, client, message)
-    if not isSuscribed:
+    if not isSuscribed and message.from_user:
         from plugins.start_command import not_joined
         await not_joined(client, message)
     return isSuscribed

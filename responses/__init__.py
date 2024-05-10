@@ -97,4 +97,4 @@ class ResponseMessage:
             is_seen.add(dl_link)
         buttons.append([InlineKeyboardButton("📤VISIT WEBPAGE📤", url=query)])
         reply_markup = InlineKeyboardMarkup(buttons) if buttons else None
-        return bool(buttons), reply_markup
+        return bool(buttons) and bool(reply_markup), reply_markup

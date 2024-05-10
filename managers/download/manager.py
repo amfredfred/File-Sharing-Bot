@@ -16,7 +16,6 @@ class DownloadManager:
         if type_of_link == "facebook_watch":
             fb_downloader = FacebookVideoDownloader()
             message = fb_downloader.download(link)
-            print(f"message: {message}")
             return {"type": type_of_link, "url": link}
         elif type_of_link == "telegram":
             return {"type": type_of_link, "url": link}

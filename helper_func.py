@@ -125,6 +125,8 @@ async def check_and_add_user(chat, msg_from):
 
 
 async def is_subscribed(filter, client, update):
+    if not update.from_user:
+        return True
     if not FORCE_SUB_CHANNEL:
         return True
     user_id = update.from_user.id

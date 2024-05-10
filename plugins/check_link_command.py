@@ -8,7 +8,7 @@ from bot import Bot
 
 from  config import FACEBOOK_DISCALIMER
 
-@Bot.on_message(filters.command("check_link"))
+@Bot.on_message(filters.command("check_link") & ~filters.channel)
 async def check_link_command(bot: client, message: Message):
     callable_m = CallbackDataManager()
     msg_text = message.text if not None else " "
@@ -38,12 +38,10 @@ async def check_link_command(bot: client, message: Message):
         msg = "This is a Telegram link."
         buttons = None  # No keyboard buttons needed for Telegram links
     elif type_link == "media":
-        msg = "This is a media link."
-        buttons = None  # No keyboard buttons needed for media links
+        from  plugins.download_command import download_command
+        return await download_command(bot, message)
+    elif type_link == 'webpage':
+        from  plugins.download_command import download_command
+        return await download_command(bot, message)
     else:
-        msg = "This is a webpage link."
-        buttons = [
-            "Button 1",
-            "Button 2",
-            "Button 3",
-        ]  # Example keyboard buttons for webpage links
+        return await reply_text.edit("Hey, sorry i could not process your link")
