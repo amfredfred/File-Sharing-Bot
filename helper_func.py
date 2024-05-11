@@ -158,13 +158,14 @@ async def encode(string):
     return base64_string
 
 
-async def decode(base64_string):
+async def decode(base64_string:str):
     # Decode the base64 string
     base64_string = base64_string.strip("=")
     base64_bytes = (base64_string + "=" * (-len(base64_string) % 4)).encode("ascii")
     # Decode the base64 bytes
     compressed_bytes = base64.urlsafe_b64decode(base64_bytes)
     # Decompress the compressed bytes using gzip
+    print(f"compressed_bytes:   {compressed_bytes}")
     decompressed_string = gzip.decompress(compressed_bytes).decode("utf-8")
     return decompressed_string
 

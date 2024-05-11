@@ -80,30 +80,16 @@ async def start_command(client: Client, message: Message):
             decoded_message = await decode(encoded_data)
             message.text = decoded_message
             if decoded_message:
-                comm_clean = command_clean(decoded_message)
+                comm_clean = command_clean(decoded_message) 
                 if comm_clean:
                     from plugins.on_message import handle_message
-
                     return await handle_message(client, message)
     except Exception as e:
         print(f"Exception In Start Command: {e}")
+        return await message.reply_text(f"Something went wrong while trying to get where you wanted 😔", quote=True)
 
-    if len(decoded_message) > 7 and not starts_with_bot_username(
-        client.me.username, decoded_message
-    ):
-        ids = await extract_ids(client, decoded_message)
-        if not ids:
-            return
-        temp_msg = await message.reply("Please wait...")
-        try:
-            messages = await get_messages(client, ids)
-        except:
-            await message.reply_text("Something went wrong..!")
-            return
-        await temp_msg.delete()
-        await copy_messages(client, message, messages)
-    else:
-        await send_start_message(message)
+   
+    return await send_start_message(message)
 
 
 # =====================================================================================##
