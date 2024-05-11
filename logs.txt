@@ -326,3 +326,601 @@ https://t.me/stilloid
 [11-May-24 11:15:34 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: Connection timed out
 [11-May-24 11:21:18 - INFO] - root - Stop signal received (SIGINT). Exiting...
 [11-May-24 11:21:18 - INFO] - bot - Bot stopped.
+[11-May-24 11:48:02 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[11-May-24 11:48:02 - INFO] - bot - Lets roll
+[11-May-24 11:53:12 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: Connection timed out
+[11-May-24 11:53:23 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: Connection timed out
+[11-May-24 11:53:34 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: Connection timed out
+[11-May-24 11:53:35 - WARNING] - pyrogram.connection.connection - Connection failed! Trying again...
+[11-May-24 11:53:45 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: Connection timed out
+[11-May-24 11:54:35 - ERROR] - pyrogram.dispatcher - cannot access local variable 'post_message' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\plugins\link_generator.py", line 71, in moveto_cloud
+    post_message = await message.copy(
+                   ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\types\messages_and_media\message.py", line 3181, in copy
+    raise ValueError("Can't copy this message")
+ValueError: Can't copy this message
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\plugins\on_message.py", line 39, in handle_message
+    return await command_call(client, message, command_ext["name"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\managers\command\methods.py", line 15, in command_call
+    await comm["method"](bot, message)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\plugins\upload_command.py", line 12, in upload_command
+    isSuccess, link, share_link, post_message = await moveto_cloud(client, message)
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\plugins\link_generator.py", line 81, in moveto_cloud
+    return False, None, None, post_message
+                        ^^^^
+UnboundLocalError: cannot access local variable 'post_message' where it is not associated with a value
+[11-May-24 11:55:39 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[11-May-24 11:55:39 - INFO] - bot - Bot stopped.
+[11-May-24 11:55:47 - ERROR] - pyrogram.dispatcher - cannot access local variable 'post_message' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\plugins\link_generator.py", line 72, in moveto_cloud
+    chat_id=client.db_channel.id, disable_notification=True
+            ^^^^^^^^^^^^^^^^^
+AttributeError: 'Bot' object has no attribute 'db_channel'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\plugins\on_message.py", line 39, in handle_message
+    return await command_call(client, message, command_ext["name"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\managers\command\methods.py", line 15, in command_call
+    await comm["method"](bot, message)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\plugins\upload_command.py", line 11, in upload_command
+    isSuccess, link, share_link, post_message = await moveto_cloud(client, message)
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\plugins\link_generator.py", line 81, in moveto_cloud
+    return False, None, None, post_message
+                              ^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'post_message' where it is not associated with a value
+[11-May-24 11:55:48 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[11-May-24 11:55:48 - INFO] - bot - Lets roll
+[11-May-24 11:55:50 - ERROR] - pyrogram.dispatcher - cannot access local variable 'post_message' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\plugins\link_generator.py", line 71, in moveto_cloud
+    post_message = await message.copy(
+                   ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\types\messages_and_media\message.py", line 3181, in copy
+    raise ValueError("Can't copy this message")
+ValueError: Can't copy this message
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\plugins\on_message.py", line 39, in handle_message
+    return await command_call(client, message, command_ext["name"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\managers\command\methods.py", line 15, in command_call
+    await comm["method"](bot, message)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\plugins\upload_command.py", line 11, in upload_command
+    isSuccess, link, share_link, post_message = await moveto_cloud(client, message)
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\plugins\link_generator.py", line 81, in moveto_cloud
+    return False, None, None, post_message
+                              ^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'post_message' where it is not associated with a value
+[11-May-24 11:56:46 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[11-May-24 11:56:46 - INFO] - bot - Bot stopped.
+[11-May-24 11:56:54 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[11-May-24 11:56:54 - INFO] - bot - Lets roll
+[11-May-24 12:00:08 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[11-May-24 12:00:08 - INFO] - bot - Bot stopped.
+[11-May-24 12:00:15 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[11-May-24 12:00:15 - INFO] - bot - Lets roll
+[11-May-24 12:03:57 - WARNING] - pyrogram.session.session - [Bot] Waiting for 4 seconds before continuing (required by "messages.SendMedia")
+[11-May-24 12:03:57 - WARNING] - pyrogram.session.session - [Bot] Waiting for 4 seconds before continuing (required by "messages.SendMedia")
+[11-May-24 12:03:57 - WARNING] - pyrogram.session.session - [Bot] Waiting for 4 seconds before continuing (required by "messages.SendMedia")
+[11-May-24 12:05:59 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[11-May-24 12:05:59 - INFO] - bot - Bot stopped.
+[11-May-24 12:06:07 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[11-May-24 12:06:07 - INFO] - bot - Lets roll
+[11-May-24 12:06:43 - WARNING] - pyrogram.session.session - [Bot] Waiting for 3 seconds before continuing (required by "messages.SendMedia")
+[11-May-24 12:06:43 - WARNING] - pyrogram.session.session - [Bot] Waiting for 3 seconds before continuing (required by "messages.SendMedia")
+[11-May-24 12:06:43 - WARNING] - pyrogram.session.session - [Bot] Waiting for 3 seconds before continuing (required by "messages.SendMedia")
+[11-May-24 12:06:46 - WARNING] - pyrogram.session.session - [Bot] Waiting for 3 seconds before continuing (required by "messages.SendMedia")
+[11-May-24 12:06:46 - WARNING] - pyrogram.session.session - [Bot] Waiting for 3 seconds before continuing (required by "messages.SendMedia")
+[11-May-24 12:06:46 - WARNING] - pyrogram.session.session - [Bot] Waiting for 3 seconds before continuing (required by "messages.SendMedia")
+[11-May-24 12:15:03 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[11-May-24 12:15:03 - INFO] - bot - Bot stopped.
+[11-May-24 12:15:10 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[11-May-24 12:15:10 - INFO] - bot - Lets roll
+[11-May-24 12:15:20 - ERROR] - pyrogram.dispatcher - Failed to decode "/assets/logo-image.jpg". The value does not represent an existing local file, HTTP URL, or valid file id.
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\utils.py", line 49, in get_input_media_from_file_id
+    decoded = FileId.decode(file_id)
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\file_id.py", line 201, in decode
+    decoded = rle_decode(b64_decode(file_id))
+                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\file_id.py", line 54, in b64_decode
+    return base64.urlsafe_b64decode(s + "=" * (-len(s) % 4))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\anaconda3\Lib\base64.py", line 134, in urlsafe_b64decode
+    return b64decode(s)
+           ^^^^^^^^^^^^
+  File "C:\Users\manfr\anaconda3\Lib\base64.py", line 88, in b64decode
+    return binascii.a2b_base64(s, strict_mode=validate)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+binascii.Error: Invalid base64-encoded string: number of data characters (21) cannot be 1 more than a multiple of 4
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\plugins\start_command.py", line 84, in start_command
+    return await send_start_message(message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\plugins\start_command.py", line 56, in send_start_message
+    await message.reply_photo(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\types\messages_and_media\message.py", line 2000, in reply_photo
+    return await self._client.send_photo(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\methods\messages\send_photo.py", line 166, in send_photo
+    media = utils.get_input_media_from_file_id(photo, FileType.PHOTO, ttl_seconds=ttl_seconds)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\utils.py", line 51, in get_input_media_from_file_id
+    raise ValueError(
+ValueError: Failed to decode "/assets/logo-image.jpg". The value does not represent an existing local file, HTTP URL, or valid file id.
+[11-May-24 12:16:29 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[11-May-24 12:16:29 - INFO] - bot - Bot stopped.
+[11-May-24 12:16:36 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[11-May-24 12:16:36 - INFO] - bot - Lets roll
+[11-May-24 12:16:37 - ERROR] - pyrogram.dispatcher - module 'os' has no attribute '__path__'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\plugins\start_command.py", line 85, in start_command
+    return await send_start_message(message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\plugins\start_command.py", line 55, in send_start_message
+    print(os.__path__)
+          ^^^^^^^^^^^
+AttributeError: module 'os' has no attribute '__path__'
+[11-May-24 12:17:01 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[11-May-24 12:17:01 - INFO] - bot - Bot stopped.
+[11-May-24 12:17:09 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[11-May-24 12:17:09 - INFO] - bot - Lets roll
+[11-May-24 12:17:10 - ERROR] - pyrogram.dispatcher - name '__path__' is not defined
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\plugins\start_command.py", line 85, in start_command
+    return await send_start_message(message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\plugins\start_command.py", line 55, in send_start_message
+    print(__path__)
+          ^^^^^^^^
+NameError: name '__path__' is not defined
+[11-May-24 12:19:10 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[11-May-24 12:19:10 - INFO] - bot - Bot stopped.
+[11-May-24 12:19:19 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[11-May-24 12:19:19 - INFO] - bot - Lets roll
+[11-May-24 12:19:22 - ERROR] - pyrogram.dispatcher - name '__path__' is not defined
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\plugins\start_command.py", line 86, in start_command
+    return await send_start_message(message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\plugins\start_command.py", line 57, in send_start_message
+    photo = InputMedia(__path__)
+                       ^^^^^^^^
+NameError: name '__path__' is not defined
+[11-May-24 12:20:01 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[11-May-24 12:20:01 - INFO] - bot - Bot stopped.
+[11-May-24 12:20:09 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[11-May-24 12:20:09 - INFO] - bot - Lets roll
+[11-May-24 12:20:12 - ERROR] - pyrogram.dispatcher - Failed to decode "['C:\\WorkSpace\\Apps\\Bots\\File-Sharing-Bot\\assets']\logo-image.jpg". The value does not represent an existing local file, HTTP URL, or valid file id.
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\utils.py", line 49, in get_input_media_from_file_id
+    decoded = FileId.decode(file_id)
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\file_id.py", line 201, in decode
+    decoded = rle_decode(b64_decode(file_id))
+                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\file_id.py", line 54, in b64_decode
+    return base64.urlsafe_b64decode(s + "=" * (-len(s) % 4))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\anaconda3\Lib\base64.py", line 134, in urlsafe_b64decode
+    return b64decode(s)
+           ^^^^^^^^^^^^
+  File "C:\Users\manfr\anaconda3\Lib\base64.py", line 88, in b64decode
+    return binascii.a2b_base64(s, strict_mode=validate)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+binascii.Error: Invalid base64-encoded string: number of data characters (53) cannot be 1 more than a multiple of 4
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\plugins\start_command.py", line 86, in start_command
+    return await send_start_message(message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\plugins\start_command.py", line 58, in send_start_message
+    await message.reply_photo(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\types\messages_and_media\message.py", line 2000, in reply_photo
+    return await self._client.send_photo(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\methods\messages\send_photo.py", line 166, in send_photo
+    media = utils.get_input_media_from_file_id(photo, FileType.PHOTO, ttl_seconds=ttl_seconds)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\utils.py", line 51, in get_input_media_from_file_id
+    raise ValueError(
+ValueError: Failed to decode "['C:\\WorkSpace\\Apps\\Bots\\File-Sharing-Bot\\assets']\logo-image.jpg". The value does not represent an existing local file, HTTP URL, or valid file id.
+[11-May-24 12:20:44 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[11-May-24 12:20:44 - INFO] - bot - Bot stopped.
+[11-May-24 12:20:52 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[11-May-24 12:20:52 - INFO] - bot - Lets roll
+[11-May-24 12:24:08 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[11-May-24 12:24:08 - INFO] - bot - Bot stopped.
+[11-May-24 12:24:17 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[11-May-24 12:24:17 - INFO] - bot - Lets roll
+[11-May-24 12:28:24 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[11-May-24 12:28:24 - INFO] - bot - Bot stopped.
+[11-May-24 12:28:33 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[11-May-24 12:28:33 - INFO] - bot - Lets roll
+[11-May-24 13:10:46 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[11-May-24 13:10:46 - INFO] - bot - Bot stopped.
+[11-May-24 13:10:54 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[11-May-24 13:10:54 - INFO] - bot - Lets roll
+[11-May-24 13:14:47 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[11-May-24 13:14:47 - INFO] - bot - Bot stopped.
+[11-May-24 13:14:56 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[11-May-24 13:14:56 - INFO] - bot - Lets roll
+[11-May-24 13:16:11 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[11-May-24 13:16:11 - INFO] - bot - Bot stopped.
+[11-May-24 13:16:19 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[11-May-24 13:16:19 - INFO] - bot - Lets roll
+[11-May-24 13:17:30 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[11-May-24 13:17:30 - INFO] - bot - Bot stopped.
+[11-May-24 13:17:37 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[11-May-24 13:17:37 - INFO] - bot - Lets roll
+[11-May-24 13:36:19 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[11-May-24 13:36:19 - INFO] - bot - Bot stopped.
+[11-May-24 13:43:47 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[11-May-24 13:43:47 - INFO] - bot - Lets roll
+[11-May-24 13:43:53 - ERROR] - pyrogram.dispatcher - 'Profile' object has no attribute 'get_profile_by_telegram_id'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\middlewares\__init__.py", line 9, in ensure_user_indb
+    await check_and_add_user(msg.chat, msg.from_user)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\helper_func.py", line 113, in check_and_add_user
+    if msg_from is not None and not await present_user(telegram_id=msg_from.id):
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\database\database.py", line 8, in present_user
+    found = _profile.get_profile_by_telegram_id(telegram_id=telegram_id)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Profile' object has no attribute 'get_profile_by_telegram_id'
+[11-May-24 13:45:15 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[11-May-24 13:45:15 - INFO] - bot - Bot stopped.
+[11-May-24 13:45:24 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[11-May-24 13:45:24 - INFO] - bot - Lets roll
+[11-May-24 13:45:25 - ERROR] - pyrogram.dispatcher - (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: FATAL:  password authentication failed for user "username"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 3300, in raw_connection
+    return self.pool.connect()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\pool\base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\pool\base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\pool\base.py", line 712, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\pool\impl.py", line 179, in _do_get
+    with util.safe_reraise():
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\pool\base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\pool\base.py", line 674, in __init__
+    self.__connect()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\pool\base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\pool\base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\default.py", line 620, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\psycopg2\__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: FATAL:  password authentication failed for user "username"
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\middlewares\__init__.py", line 9, in ensure_user_indb
+    await check_and_add_user(msg.chat, msg.from_user)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\helper_func.py", line 113, in check_and_add_user
+    if msg_from is not None and not await present_user(telegram_id=msg_from.id):
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\database\database.py", line 7, in present_user
+    _profile = ProfileManager()
+               ^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\models\profile.py", line 31, in __init__
+    Base.metadata.create_all(engine)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\sql\schema.py", line 5857, in create_all
+    bind._run_ddl_visitor(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 3250, in _run_ddl_visitor
+    with self.begin() as conn:
+  File "C:\Users\manfr\anaconda3\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 3240, in begin
+    with self.connect() as conn:
+         ^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 3276, in connect
+    return self._connection_cls(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 148, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 2440, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 3300, in raw_connection
+    return self.pool.connect()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\pool\base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\pool\base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\pool\base.py", line 712, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\pool\impl.py", line 179, in _do_get
+    with util.safe_reraise():
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\pool\base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\pool\base.py", line 674, in __init__
+    self.__connect()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\pool\base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\pool\base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\default.py", line 620, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\psycopg2\__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: FATAL:  password authentication failed for user "username"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[11-May-24 13:56:11 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[11-May-24 13:56:11 - INFO] - bot - Bot stopped.
+[11-May-24 13:56:21 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[11-May-24 13:56:21 - INFO] - bot - Lets roll
+[11-May-24 13:58:59 - ERROR] - pyrogram.dispatcher - (psycopg2.errors.UndefinedFunction) operator does not exist: text = integer
+LINE 3: WHERE profiles.telegram_id = 1497831921 
+                                   ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+
+[SQL: SELECT profiles.id AS profiles_id, profiles.chat_id AS profiles_chat_id, profiles.telegram_id AS profiles_telegram_id, profiles.username AS profiles_username, profiles.first_name AS profiles_first_name, profiles.last_name AS profiles_last_name, profiles.level AS profiles_level, profiles.bio AS profiles_bio, profiles.location AS profiles_location, profiles.avatar AS profiles_avatar, profiles.website AS profiles_website, profiles.deleted_at AS profiles_deleted_at, profiles.created_at AS profiles_created_at, profiles.updated_at AS profiles_updated_at 
+FROM profiles 
+WHERE profiles.telegram_id = %(telegram_id_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'telegram_id_1': 1497831921, 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedFunction: operator does not exist: text = integer
+LINE 3: WHERE profiles.telegram_id = 1497831921 
+                                   ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\middlewares\__init__.py", line 9, in ensure_user_indb
+    await check_and_add_user(msg.chat, msg.from_user)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\helper_func.py", line 113, in check_and_add_user
+    if msg_from is not None and not await present_user(telegram_id=msg_from.id):
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\database\database.py", line 8, in present_user
+    found = _profile.get_profile_by_telegram_id(telegram_id=telegram_id)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\models\profile.py", line 68, in get_profile_by_telegram_id
+    .first()
+     ^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\query.py", line 2728, in first
+    return self.limit(1)._iter().first()  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\query.py", line 2827, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 2351, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 2236, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\context.py", line 293, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 2353, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedFunction) operator does not exist: text = integer
+LINE 3: WHERE profiles.telegram_id = 1497831921 
+                                   ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+
+[SQL: SELECT profiles.id AS profiles_id, profiles.chat_id AS profiles_chat_id, profiles.telegram_id AS profiles_telegram_id, profiles.username AS profiles_username, profiles.first_name AS profiles_first_name, profiles.last_name AS profiles_last_name, profiles.level AS profiles_level, profiles.bio AS profiles_bio, profiles.location AS profiles_location, profiles.avatar AS profiles_avatar, profiles.website AS profiles_website, profiles.deleted_at AS profiles_deleted_at, profiles.created_at AS profiles_created_at, profiles.updated_at AS profiles_updated_at 
+FROM profiles 
+WHERE profiles.telegram_id = %(telegram_id_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'telegram_id_1': 1497831921, 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+[11-May-24 14:02:15 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[11-May-24 14:02:15 - INFO] - bot - Bot stopped.
+[11-May-24 14:08:07 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[11-May-24 14:08:07 - INFO] - bot - Lets roll
+[11-May-24 14:10:07 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[11-May-24 14:10:07 - INFO] - bot - Bot stopped.
+[11-May-24 14:10:16 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[11-May-24 14:10:16 - INFO] - bot - Lets roll

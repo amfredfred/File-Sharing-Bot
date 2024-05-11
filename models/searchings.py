@@ -1,70 +1,79 @@
-from database.connection import DBConnection
+from sqlalchemy import Column, Integer, String
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
+from database import engine as DBEngine
 from helper_func import most_common_word
 
-class Searching:
-    def __init__(self):
-        db_connect = DBConnection()
-        self.conn = db_connect.conneciton()
-        self._create_table()
+Base = declarative_base()
 
-    def _create_table(self):
-        query = """
-            CREATE TABLE IF NOT EXISTS searchings (
-                id SERIAL PRIMARY KEY,
-                chat_id INTEGER,
-                searched_for TEXT,
-                downloads INTEGER DEFAULT 0
-            )
-        """
-        with self.conn.cursor() as cursor:
-            cursor.execute(query)
-            self.conn.commit()
+class Searching(Base):
+    __tablename__ = "searchings"
+
+    id = Column(Integer, primary_key=True)
+    chat_id = Column(Integer)
+    searched_for = Column(String)
+    downloads = Column(Integer, default=0)
+
+
+class SearchingManager:
+    def __init__(self):
+        engine = DBEngine
+        Base.metadata.create_all(engine)
+        Session = sessionmaker(bind=engine)
+        self.session = Session()
 
     def insert_searching(self, chat_id, searched_for):
+        searching = Searching(chat_id=chat_id, searched_for=searched_for)
         try:
-            query = """
-            INSERT INTO searchings
-                (chat_id, searched_for)
-            VALUES
-                (%s, %s)
-            """
-            values = (chat_id, searched_for)
-            with self.conn.cursor() as cursor:
-                cursor.execute(query, values)
-                self.conn.commit()
-                return True
+            self.session.add(searching)
+            self.session.commit()
+            return True
         except Exception as e:
             print(f"Exception: {e}")
-            self.conn.rollback()
+            self.session.rollback()
             return False
 
     def get_searching_by_searched_for(self, searched_for):
-        query = "SELECT * FROM searchings WHERE searched_for = %s"
-        with self.conn.cursor() as cursor:
-            cursor.execute(query, (searched_for,))
-            return cursor.fetchone()
+        return (
+            self.session.query(Searching)
+            .filter(Searching.searched_for == searched_for)
+            .first()
+        )
 
     def get_all_searchings(self):
-        query = "SELECT * FROM searchings"
-        with self.conn.cursor() as cursor:
-            cursor.execute(query)
-            return cursor.fetchall()
+        return self.session.query(Searching).all()
 
     def delete_searching(self, searched_for):
-        query = "DELETE FROM searchings WHERE searched_for = %s"
-        with self.conn.cursor() as cursor:
-            cursor.execute(query, (searched_for,))
-            self.conn.commit()
-            return cursor.rowcount
+        try:
+            result = (
+                self.session.query(Searching)
+                .filter(Searching.searched_for == searched_for)
+                .delete()
+            )
+            self.session.commit()
+            return result
+        except Exception as e:
+            print(f"Exception: {e}")
+            self.session.rollback()
+            return 0
 
     def increment_downloads(self, searched_for):
-        query = "UPDATE searchings SET downloads = downloads + 1 WHERE searched_for = %s"
-        with self.conn.cursor() as cursor:
-            cursor.execute(query, (searched_for,))
-            self.conn.commit()
-            return cursor.rowcount
+        try:
+            result = (
+                self.session.query(Searching)
+                .filter(Searching.searched_for == searched_for)
+                .update({"downloads": Searching.downloads + 1})
+            )
+            self.session.commit()
+            return result
+        except Exception as e:
+            print(f"Exception: {e}")
+            self.session.rollback()
+            return 0
 
     def most_common_searched_word(self):
-        searched_for_texts = [row[2] for row in self.get_all_searchings()]
-        combined_text = ' '.join(searched_for_texts)
+        searched_for_texts = [
+            search.searched_for for search in self.get_all_searchings()
+        ]
+        combined_text = " ".join(searched_for_texts)
         return most_common_word(combined_text)

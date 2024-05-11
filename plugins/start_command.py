@@ -1,13 +1,11 @@
 # (©)CodeXBotz
-
-
 import os
-import asyncio
 from pyrogram import Client, filters, __version__
 from pyrogram.types import (
     Message,
     InlineKeyboardMarkup,
     InlineKeyboardButton,
+    InputMedia
 )
 from pyrogram.errors import FloodWait, UserIsBlocked, InputUserDeactivated
 from helper_func import command_clean, decode
@@ -19,14 +17,9 @@ from config import (
     FORCE_MSG,
 )
 
-from helper_func import (
-    subscribed,
-    get_messages,
-    extract_ids,
-    copy_messages,
-    starts_with_bot_username,
-)
+from helper_func import  subscribed 
 from database.database import del_user, full_userbase
+from assets import ASSETS
 
 command = "start"
 
@@ -60,11 +53,11 @@ WELCOM_REPLY_MARKUP = InlineKeyboardMarkup(
 
 
 async def send_start_message(message: Message):
-    await message.reply_text(
-        text=WELCOME_TEXT,
+    photo = InputMedia(ASSETS["logo-rect"])
+    await message.reply_photo(
+        photo.media,
+        caption=WELCOME_TEXT,
         reply_markup=WELCOM_REPLY_MARKUP,
-        disable_web_page_preview=True,
-        quote=True,
     )
 
 

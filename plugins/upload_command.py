@@ -8,17 +8,27 @@ from config import TELEGRAM_SHARE_URL
 @Bot.on_message(filters.forwarded)
 async def upload_command(client: Client, message: Message):
 
-    reply_text = await message.reply_text("Please wait...")
-    isSuccess, link, share_link, post_message = await moveto_cloud(client, message)
-    if isSuccess:
-        buttons = []
-        buttons.append(
-            [InlineKeyboardButton("🔁 Share URL", url=f"{TELEGRAM_SHARE_URL}{link}")]
-        )
-        reply_markup = InlineKeyboardMarkup(buttons)
+    try:
+        isSuccess, link, share_link, post_message = await moveto_cloud(client, message)
+        if isSuccess:
+            reply_text = await message.reply_text("Please wait...", quote=True)
+            buttons = []
+            buttons.append(
+                [
+                    InlineKeyboardButton(
+                        "🔁 Share URL", url=f"{TELEGRAM_SHARE_URL}{link}"
+                    )
+                ]
+            )
+            reply_markup = InlineKeyboardMarkup(buttons)
 
-        await reply_text.edit(
-            text=f"<b>Your Post Is Uploaded: </b>\n\n{link}",
-            reply_markup=reply_markup,
-            disable_web_page_preview=True,
-        )
+            UPLOADED_TEXT = "<b>✨✨Uploaded✨✨</b>\n\n"
+            UPLOADED_TEXT += f"<code>{link}</code>"
+            await reply_text.edit_text(
+                text=UPLOADED_TEXT,
+                reply_markup=reply_markup,
+                disable_web_page_preview=True,
+            )
+    except Exception as e:
+        await message.delete()
+        pass

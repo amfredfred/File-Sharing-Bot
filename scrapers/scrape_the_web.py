@@ -2,6 +2,15 @@ from bs4 import BeautifulSoup
 import datetime, aiohttp, asyncio
 from helper_func import if_only_path, extract_link_title, has_path
 
+
+MP3_SITES = [
+    "https://trendybeatz.com/search?search="
+]
+
+MOVIE_SITES=[
+    
+]
+
 class ScrapeTheWeb:
     def __init__(self, search_query):
         self.search_query = str(search_query)
@@ -12,6 +21,7 @@ class ScrapeTheWeb:
             # f"https://www.tooxtraloadedtv.com.ng/?s={search_query}"
             f"https://9jarocks.net/?s={search_query}",
             f"https://parrotvibes.com/?s={search_query}",
+            f"https://trendybeatz.com/search?search={search_query}",
         ]
         return query_urls
 

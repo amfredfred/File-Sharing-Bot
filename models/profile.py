@@ -1,35 +1,36 @@
+from sqlalchemy import create_engine, Column, Integer, String, Text, DateTime
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
 from datetime import datetime, timedelta
-from database.connection import DBConnection
+from database import engine as DBEngine
 
-class Profile:
+Base = declarative_base()
 
+class Profile(Base):
+    __tablename__ = "profiles"
+
+    id = Column(Integer, primary_key=True)
+    chat_id = Column(Integer)
+    telegram_id = Column(String, unique=True)
+    username = Column(String, unique=True)
+    first_name = Column(String)
+    last_name = Column(String)
+    level = Column(Integer)
+    bio = Column(Text)
+    location = Column(Text)
+    avatar = Column(Text)
+    website = Column(Text)
+    deleted_at = Column(DateTime)
+    created_at = Column(DateTime, default=datetime.now)
+    updated_at = Column(DateTime, default=datetime.now, onupdate=datetime.now)
+
+
+class ProfileManager:
     def __init__(self):
-        db_connect = DBConnection()
-        self.conn = db_connect.conneciton()
-        self._create_table()
-
-    def _create_table(self):
-        query = """
-            CREATE TABLE IF NOT EXISTS profiles (
-                id SERIAL PRIMARY KEY,
-                chat_id INTEGER,
-                telegram_id TEXT UNIQUE,
-                username TEXT UNIQUE,
-                first_name TEXT,
-                last_name TEXT,
-                level INTEGER,
-                bio TEXT,
-                location TEXT,
-                avatar TEXT,
-                website TEXT,
-                deleted_at TIMESTAMPTZ,
-                created_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
-                updated_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP
-            )
-        """
-        with self.conn.cursor() as cursor:
-            cursor.execute(query)
-            self.conn.commit()
+        engine = DBEngine
+        Base.metadata.create_all(engine)
+        Session = sessionmaker(bind=engine)
+        self.session = Session()
 
     def insert_profile(
         self,
@@ -44,58 +45,44 @@ class Profile:
         avatar=None,
         website=None,
     ):
-        try:
-            query = """
-            INSERT INTO profiles
-                (chat_id, telegram_id, username, first_name, last_name, level, bio, location, avatar, website)
-            VALUES
-                (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-            """
-            values = (
-                chat_id,
-                telegram_id,
-                username,
-                first_name,
-                last_name,
-                level,
-                bio,
-                location,
-                avatar,
-                website,
-            )
-            with self.conn.cursor() as cursor:
-                cursor.execute(query, values)
-                self.conn.commit()
-                return True
-        except Exception as e:
-            self.conn.rollback()
-            return False
+        profile = Profile(
+            chat_id=chat_id,
+            telegram_id=telegram_id,
+            username=username,
+            first_name=first_name,
+            last_name=last_name,
+            level=level,
+            bio=bio,
+            location=location,
+            avatar=avatar,
+            website=website,
+        )
+        self.session.add(profile)
+        self.session.commit()
+        return True
 
     def get_profile_by_telegram_id(self, telegram_id):
-        query = (
-            f"SELECT * FROM profiles WHERE telegram_id = CAST({telegram_id} AS TEXT)"
+        return (
+            self.session.query(Profile)
+            .filter(Profile.telegram_id is telegram_id)
+            .first()
         )
-        with self.conn.cursor() as cursor:
-            cursor.execute(query, (telegram_id,))
-            return cursor.fetchone()
 
     def get_all_users(self):
-        query = "SELECT * FROM profiles"
-        with self.conn.cursor() as cursor:
-            cursor.execute(query)
-            return cursor.fetchall()
+        return self.session.query(Profile).all()
 
     def delete_profile(self, telegram_id):
-        query = f"DELETE FROM profiles WHERE telegram_id = CAST({telegram_id} AS TEXT)"
-        with self.conn.cursor() as cursor:
-            cursor.execute(query, (telegram_id,))
-            self.conn.commit()
-            return cursor.rowcount
-        
-    def get_active_users_last_24_hours(self): 
-        twenty_four_hours_ago = datetime.now() - timedelta(hours=24) 
-        query = "SELECT * FROM profiles WHERE updated_at >= %s"
-        
-        with self.conn.cursor() as cursor:
-            cursor.execute(query, (twenty_four_hours_ago,))
-            return cursor.fetchall()
+        profile = self.get_profile_by_telegram_id(telegram_id)
+        if profile:
+            self.session.delete(profile)
+            self.session.commit()
+            return 1
+        return 0
+
+    def get_active_users_last_24_hours(self):
+        twenty_four_hours_ago = datetime.now() - timedelta(hours=24)
+        return (
+            self.session.query(Profile)
+            .filter(Profile.updated_at >= twenty_four_hours_ago)
+            .all()
+        )
