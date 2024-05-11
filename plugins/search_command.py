@@ -16,6 +16,7 @@ async def search(query):
 
 respond = ResponseMessage()
 
+
 @Bot.on_message(filters.command("search") & ~filters.channel & subscribed)
 async def search_command(bot: Bot, message: Message):
     message.text = command_clean(message.text)
@@ -30,7 +31,7 @@ async def search_command(bot: Bot, message: Message):
         if len(matched_) > 0:
             matched_ = matched_[:10]
             response_text, reply_markup = await respond.response_search_result(
-                query, matched_
+                query, message.from_user.id, matched_
             )
             await msg.edit_text(response_text, reply_markup=reply_markup)
             _searching = SearchingManager()

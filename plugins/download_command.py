@@ -17,7 +17,7 @@ COMMAND_END = "cancel_download"
 
 async def on_success(msg: Message, media_url: str, file_name: str, caption=""):
     media = InputMedia(file_name).media
-    _IShare, _iTGSgare = await make_share_handle(msg.command_text)
+    _IShare, _iTGSgare = await make_share_handle(msg.command_text, msg.from_user.id)
     buttons = [[InlineKeyboardButton("📤Share📤", url=_iTGSgare)]]
     reply_markup = InlineKeyboardMarkup(buttons)
 
@@ -93,7 +93,7 @@ async def download_command(bot: Bot, message: Message):
                 await msg.delete()
         elif link_type == "webpage":
             urls = link.get("urls")
-            found, reply_markup = await response_msg.download_options(urls, expect_link)
+            found, reply_markup = await response_msg.download_options(urls,message.from_user.id, expect_link)
             ressponse_text = "<b><u>🟢FOUND FEW STUFFS</u><b>"
             if not found:
                 ressponse_text = NO_DOWNLOADABLE_RESPONSE

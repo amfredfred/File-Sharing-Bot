@@ -1,18 +1,8 @@
-from sqlalchemy import Column, Integer, String
-from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from database import engine as DBEngine
 from helper_func import most_common_word
 
-Base = declarative_base()
-
-class Searching(Base):
-    __tablename__ = "searchings"
-
-    id = Column(Integer, primary_key=True)
-    chat_id = Column(Integer)
-    searched_for = Column(String)
-
+from models import Searching, Base
 
 class SearchingManager:
     def __init__(self):
@@ -55,7 +45,6 @@ class SearchingManager:
             print(f"Exception: {e}")
             self.session.rollback()
             return 0
-
 
     def most_common_searched_word(self):
         searched_for_texts = [

@@ -2,7 +2,7 @@ from pyrogram import filters, client
 from helper_func import link_type, extract_url, encode
 from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
 from scrapers.facebook import FacebookVideoDownloader
-from managers.callback import CallbackDataManager
+from models.calling_back import CallbackDataManager
 import json
 from bot import Bot
 

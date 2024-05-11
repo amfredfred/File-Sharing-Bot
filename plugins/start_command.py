@@ -5,11 +5,12 @@ from pyrogram.types import (
     Message,
     InlineKeyboardMarkup,
     InlineKeyboardButton,
-    InputMedia
+    InputMedia,
 )
 from pyrogram.errors import FloodWait, UserIsBlocked, InputUserDeactivated
 from helper_func import command_clean, decode
-from managers.callback import CallbackDataManager
+
+from models.calling_back import CallbackDataManager
 
 from bot import Bot
 from config import (
@@ -17,7 +18,7 @@ from config import (
     FORCE_MSG,
 )
 
-from helper_func import  subscribed 
+from helper_func import subscribed
 from database.database import del_user, full_userbase
 from assets import ASSETS
 
@@ -73,15 +74,17 @@ async def start_command(client: Client, message: Message):
             decoded_message = await decode(encoded_data)
             message.text = decoded_message
             if decoded_message:
-                comm_clean = command_clean(decoded_message) 
+                comm_clean = command_clean(decoded_message)
                 if comm_clean:
                     from plugins.on_message import handle_message
+
                     return await handle_message(client, message)
     except Exception as e:
         print(f"Exception In Start Command: {e}")
-        return await message.reply_text(f"Something went wrong while trying to get where you wanted 😔", quote=True)
+        return await message.reply_text(
+            f"Something went wrong while trying to get where you wanted 😔", quote=True
+        )
 
-   
     return await send_start_message(message)
 
 
@@ -118,6 +121,7 @@ async def not_joined(client: Client, message: Message):
         quote=True,
         disable_web_page_preview=True,
     )
+
 
 @Bot.on_message(filters.command("users") & filters.private & filters.user(ADMINS))
 async def get_users(client: Bot, message: Message):

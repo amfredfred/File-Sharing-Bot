@@ -21,7 +21,7 @@ from pyrogram.errors import FloodWait
 from urllib.parse import urlparse, urljoin
 from database.database import present_user, add_user
 from pyrogram.enums import ParseMode
-from managers.callback import CallbackDataManager
+from models.calling_back import CallbackDataManager
 from pyrogram.types import (
     Message,
     InlineKeyboardMarkup,
@@ -362,9 +362,9 @@ def get_extension(url: str):
     return extension.lower()
 
 
-async def make_share_handle(string: str):
+async def make_share_handle(string: str, owner_id:int):
     encoded_query = await encode(string)
-    share_link = f"{BOT_URL}?start={cbm.generate_callback_data(encoded_query)}"
+    share_link = f"{BOT_URL}?start={cbm.generate_callback_data(encoded_query, owner_id)}"
     tg_share = f"{TELEGRAM_SHARE_URL}{share_link}"
     return share_link, tg_share
 

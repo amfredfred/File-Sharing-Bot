@@ -1,35 +1,6 @@
-from sqlalchemy import Column, Integer, String, Float, ForeignKey, TIMESTAMP
-from sqlalchemy.orm import relationship
-from sqlalchemy.ext.declarative import declarative_base
 from database import engine as DBEngine
 from datetime import datetime
-
-Base = declarative_base()
-
-
-class Wallet(Base):
-    __tablename__ = "wallets"
-
-    id = Column(Integer, primary_key=True)
-    telegram_id = Column(Integer, ForeignKey("profiles.id"))
-    name = Column(String)
-    balance = Column(Float, default=0)
-    currency = Column(String)
-
-    transactions = relationship("Transaction", back_populates="wallet")
-
-
-class Transaction(Base):
-    __tablename__ = "transactions"
-
-    id = Column(Integer, primary_key=True)
-    wallet_id = Column(Integer, ForeignKey("wallets.id"))
-    amount = Column(Float)
-    type = Column(String)
-    status = Column(String)
-    timestamp = Column(TIMESTAMP)
-
-    wallet = relationship("Wallet", back_populates="transactions")
+from models import Transaction, Wallet, Base
 
 
 class WalletManager:

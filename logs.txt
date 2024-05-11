@@ -1,35 +1,1795 @@
-[11-May-24 14:39:57 - INFO] - root - Stop signal received (SIGINT). Exiting...
-[11-May-24 14:39:57 - INFO] - bot - Bot stopped.
-[11-May-24 14:40:06 - INFO] - bot - Bot Running..!
+[11-May-24 23:27:55 - ERROR] - pyrogram.dispatcher - 'NoneType' object has no attribute 'id'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\middlewares\__init__.py", line 9, in ensure_user_indb
+    await check_and_add_user(msg.chat, msg.from_user)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\helper_func.py", line 113, in check_and_add_user
+    esixts_user = await present_user(telegram_id=msg_from.id)
+                                                 ^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'id'
+[11-May-24 23:28:24 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[11-May-24 23:28:24 - INFO] - bot - Bot stopped.
+[11-May-24 23:28:32 - INFO] - bot - Bot Running..!
 
 Created by 
 https://t.me/stilloid
-[11-May-24 14:40:06 - INFO] - bot - Lets roll
-[11-May-24 14:41:49 - INFO] - root - Stop signal received (SIGINT). Exiting...
-[11-May-24 14:41:49 - INFO] - bot - Bot stopped.
-[11-May-24 14:41:57 - INFO] - bot - Bot Running..!
+[11-May-24 23:28:32 - INFO] - bot - Lets roll
+[11-May-24 23:28:37 - ERROR] - pyrogram.dispatcher - 'NoneType' object has no attribute 'id'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\middlewares\__init__.py", line 10, in ensure_user_indb
+    await check_and_add_user(msg.chat, msg.from_user)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\helper_func.py", line 113, in check_and_add_user
+    esixts_user = await present_user(telegram_id=msg_from.id)
+                                                 ^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'id'
+[11-May-24 23:29:31 - ERROR] - pyrogram.dispatcher - 'NoneType' object has no attribute 'id'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\middlewares\__init__.py", line 10, in ensure_user_indb
+    await check_and_add_user(msg.chat, msg.from_user)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\helper_func.py", line 113, in check_and_add_user
+    esixts_user = await present_user(telegram_id=msg_from.id)
+                                                 ^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'id'
+[11-May-24 23:29:42 - ERROR] - pyrogram.dispatcher - When initializing mapper Mapper[Profile(profiles)], expression 'Post' failed to locate a name ('Post'). If this is a class name, consider adding this relationship() to the <class 'models.profile.Profile'> class after both dependent classes have been defined.
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 515, in _resolve_name
+    rval = d[token]
+           ~^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\util\_collections.py", line 344, in __missing__
+    self[key] = val = self.creator(key)
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 483, in _access_cls
+    return self.fallback[key]
+           ~~~~~~~~~~~~~^^^^^
+KeyError: 'Post'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\middlewares\__init__.py", line 10, in ensure_user_indb
+    await check_and_add_user(msg.chat, msg.from_user)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\helper_func.py", line 113, in check_and_add_user
+    esixts_user = await present_user(telegram_id=msg_from.id)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\database\database.py", line 8, in present_user
+    found = _profile.get_profile_by_telegram_id(telegram_id=telegram_id)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\models\profile.py", line 69, in get_profile_by_telegram_id
+    self.session.query(Profile)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 2941, in query
+    return self._query_cls(entities, self, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\query.py", line 275, in __init__
+    self._set_entities(entities)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\query.py", line 287, in _set_entities
+    self._raw_columns = [
+                        ^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\query.py", line 288, in <listcomp>
+    coercions.expect(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\sql\coercions.py", line 389, in expect
+    insp._post_inspect
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\util\langhelpers.py", line 1253, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+                                           ^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 2711, in _post_inspect
+    self._check_configure()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 2388, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 4204, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 4245, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 2405, in _post_configure_properties
+    prop.init()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\interfaces.py", line 584, in init
+    self.do_init()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\relationships.py", line 1642, in do_init
+    self._setup_entity()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\relationships.py", line 1854, in _setup_entity
+    self._clsregistry_resolve_name(argument)(),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 519, in _resolve_name
+    self._raise_for_name(name, err)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 500, in _raise_for_name
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: When initializing mapper Mapper[Profile(profiles)], expression 'Post' failed to locate a name ('Post'). If this is a class name, consider adding this relationship() to the <class 'models.profile.Profile'> class after both dependent classes have been defined.
+[11-May-24 23:29:42 - ERROR] - pyrogram.dispatcher - When initializing mapper Mapper[CallbackData(callback_data)], expression 'Profile' failed to locate a name ('Profile'). If this is a class name, consider adding this relationship() to the <class 'models.calling_back.CallbackData'> class after both dependent classes have been defined.
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 515, in _resolve_name
+    rval = d[token]
+           ~^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\util\_collections.py", line 344, in __missing__
+    self[key] = val = self.creator(key)
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 483, in _access_cls
+    return self.fallback[key]
+           ~~~~~~~~~~~~~^^^^^
+KeyError: 'Profile'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\plugins\on_message.py", line 50, in handle_message
+    response_message_markup = await rspmsg.response_when_plain_text(msg_text,message.from_user.id)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\responses\__init__.py", line 50, in response_when_plain_text
+    callback_data = self.callback.generate_callback_data(callback_data, owner_id)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\models\calling_back.py", line 31, in generate_callback_data
+    callback_data = CallbackData(data_hash=data_hash, data=data, owner_id=int(owner_id))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 4, in __init__
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\state.py", line 559, in _initialize_instance
+    manager.dispatch.init(self, args, kwargs)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\event\attr.py", line 497, in __call__
+    fn(*args, **kw)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 4396, in _event_on_init
+    instrumenting_mapper._check_configure()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 2388, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 4204, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 4245, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 2405, in _post_configure_properties
+    prop.init()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\interfaces.py", line 584, in init
+    self.do_init()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\relationships.py", line 1642, in do_init
+    self._setup_entity()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\relationships.py", line 1854, in _setup_entity
+    self._clsregistry_resolve_name(argument)(),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 519, in _resolve_name
+    self._raise_for_name(name, err)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 500, in _raise_for_name
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: When initializing mapper Mapper[CallbackData(callback_data)], expression 'Profile' failed to locate a name ('Profile'). If this is a class name, consider adding this relationship() to the <class 'models.calling_back.CallbackData'> class after both dependent classes have been defined.
+[11-May-24 23:30:36 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[11-May-24 23:30:36 - INFO] - bot - Bot stopped.
+[11-May-24 23:30:45 - INFO] - bot - Bot Running..!
 
 Created by 
 https://t.me/stilloid
-[11-May-24 14:41:57 - INFO] - bot - Lets roll
-[11-May-24 14:42:56 - INFO] - root - Stop signal received (SIGINT). Exiting...
-[11-May-24 14:42:56 - INFO] - bot - Bot stopped.
-[11-May-24 14:43:08 - INFO] - bot - Bot Running..!
+[11-May-24 23:30:45 - INFO] - bot - Lets roll
+[11-May-24 23:30:54 - ERROR] - pyrogram.dispatcher - When initializing mapper Mapper[Profile(profiles)], expression 'Post' failed to locate a name ('Post'). If this is a class name, consider adding this relationship() to the <class 'models.profile.Profile'> class after both dependent classes have been defined.
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 515, in _resolve_name
+    rval = d[token]
+           ~^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\util\_collections.py", line 344, in __missing__
+    self[key] = val = self.creator(key)
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 483, in _access_cls
+    return self.fallback[key]
+           ~~~~~~~~~~~~~^^^^^
+KeyError: 'Post'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\middlewares\__init__.py", line 10, in ensure_user_indb
+    await check_and_add_user(msg.chat, msg.from_user)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\helper_func.py", line 113, in check_and_add_user
+    esixts_user = await present_user(telegram_id=msg_from.id)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\database\database.py", line 8, in present_user
+    found = _profile.get_profile_by_telegram_id(telegram_id=telegram_id)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\models\profile.py", line 69, in get_profile_by_telegram_id
+    self.session.query(Profile)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 2941, in query
+    return self._query_cls(entities, self, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\query.py", line 275, in __init__
+    self._set_entities(entities)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\query.py", line 287, in _set_entities
+    self._raw_columns = [
+                        ^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\query.py", line 288, in <listcomp>
+    coercions.expect(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\sql\coercions.py", line 389, in expect
+    insp._post_inspect
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\util\langhelpers.py", line 1253, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+                                           ^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 2711, in _post_inspect
+    self._check_configure()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 2388, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 4204, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 4245, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 2405, in _post_configure_properties
+    prop.init()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\interfaces.py", line 584, in init
+    self.do_init()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\relationships.py", line 1642, in do_init
+    self._setup_entity()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\relationships.py", line 1854, in _setup_entity
+    self._clsregistry_resolve_name(argument)(),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 519, in _resolve_name
+    self._raise_for_name(name, err)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 500, in _raise_for_name
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: When initializing mapper Mapper[Profile(profiles)], expression 'Post' failed to locate a name ('Post'). If this is a class name, consider adding this relationship() to the <class 'models.profile.Profile'> class after both dependent classes have been defined.
+[11-May-24 23:30:55 - ERROR] - pyrogram.dispatcher - When initializing mapper Mapper[CallbackData(callback_data)], expression 'Profile' failed to locate a name ('Profile'). If this is a class name, consider adding this relationship() to the <class 'models.calling_back.CallbackData'> class after both dependent classes have been defined.
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 515, in _resolve_name
+    rval = d[token]
+           ~^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\util\_collections.py", line 344, in __missing__
+    self[key] = val = self.creator(key)
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 483, in _access_cls
+    return self.fallback[key]
+           ~~~~~~~~~~~~~^^^^^
+KeyError: 'Profile'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\plugins\on_message.py", line 50, in handle_message
+    response_message_markup = await rspmsg.response_when_plain_text(msg_text,message.from_user.id)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\responses\__init__.py", line 50, in response_when_plain_text
+    callback_data = self.callback.generate_callback_data(callback_data, owner_id)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\models\calling_back.py", line 31, in generate_callback_data
+    callback_data = CallbackData(data_hash=data_hash, data=data, owner_id=int(owner_id))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 4, in __init__
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\state.py", line 559, in _initialize_instance
+    manager.dispatch.init(self, args, kwargs)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\event\attr.py", line 497, in __call__
+    fn(*args, **kw)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 4396, in _event_on_init
+    instrumenting_mapper._check_configure()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 2388, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 4204, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 4245, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 2405, in _post_configure_properties
+    prop.init()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\interfaces.py", line 584, in init
+    self.do_init()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\relationships.py", line 1642, in do_init
+    self._setup_entity()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\relationships.py", line 1854, in _setup_entity
+    self._clsregistry_resolve_name(argument)(),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 519, in _resolve_name
+    self._raise_for_name(name, err)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 500, in _raise_for_name
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: When initializing mapper Mapper[CallbackData(callback_data)], expression 'Profile' failed to locate a name ('Profile'). If this is a class name, consider adding this relationship() to the <class 'models.calling_back.CallbackData'> class after both dependent classes have been defined.
+[11-May-24 23:36:46 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[11-May-24 23:36:46 - INFO] - bot - Bot stopped.
+[11-May-24 23:36:55 - INFO] - bot - Bot Running..!
 
 Created by 
 https://t.me/stilloid
-[11-May-24 14:43:08 - INFO] - bot - Lets roll
-[11-May-24 14:44:36 - INFO] - root - Stop signal received (SIGINT). Exiting...
-[11-May-24 14:44:36 - INFO] - bot - Bot stopped.
-[11-May-24 14:44:53 - INFO] - bot - Bot Running..!
+[11-May-24 23:36:55 - INFO] - bot - Lets roll
+[11-May-24 23:37:00 - ERROR] - pyrogram.dispatcher - When initializing mapper Mapper[Profile(profiles)], expression 'Post' failed to locate a name ('Post'). If this is a class name, consider adding this relationship() to the <class 'models.profile.Profile'> class after both dependent classes have been defined.
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 515, in _resolve_name
+    rval = d[token]
+           ~^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\util\_collections.py", line 344, in __missing__
+    self[key] = val = self.creator(key)
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 483, in _access_cls
+    return self.fallback[key]
+           ~~~~~~~~~~~~~^^^^^
+KeyError: 'Post'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\middlewares\__init__.py", line 10, in ensure_user_indb
+    await check_and_add_user(msg.chat, msg.from_user)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\helper_func.py", line 113, in check_and_add_user
+    esixts_user = await present_user(telegram_id=msg_from.id)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\database\database.py", line 8, in present_user
+    found = _profile.get_profile_by_telegram_id(telegram_id=telegram_id)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\models\profile.py", line 69, in get_profile_by_telegram_id
+    self.session.query(Profile)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 2941, in query
+    return self._query_cls(entities, self, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\query.py", line 275, in __init__
+    self._set_entities(entities)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\query.py", line 287, in _set_entities
+    self._raw_columns = [
+                        ^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\query.py", line 288, in <listcomp>
+    coercions.expect(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\sql\coercions.py", line 389, in expect
+    insp._post_inspect
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\util\langhelpers.py", line 1253, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+                                           ^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 2711, in _post_inspect
+    self._check_configure()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 2388, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 4204, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 4245, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 2405, in _post_configure_properties
+    prop.init()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\interfaces.py", line 584, in init
+    self.do_init()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\relationships.py", line 1642, in do_init
+    self._setup_entity()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\relationships.py", line 1854, in _setup_entity
+    self._clsregistry_resolve_name(argument)(),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 519, in _resolve_name
+    self._raise_for_name(name, err)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 500, in _raise_for_name
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: When initializing mapper Mapper[Profile(profiles)], expression 'Post' failed to locate a name ('Post'). If this is a class name, consider adding this relationship() to the <class 'models.profile.Profile'> class after both dependent classes have been defined.
+[11-May-24 23:37:01 - ERROR] - pyrogram.dispatcher - When initializing mapper Mapper[CallbackData(callback_data)], expression 'Profile' failed to locate a name ('Profile'). If this is a class name, consider adding this relationship() to the <class 'models.calling_back.CallbackData'> class after both dependent classes have been defined.
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 515, in _resolve_name
+    rval = d[token]
+           ~^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\util\_collections.py", line 344, in __missing__
+    self[key] = val = self.creator(key)
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 483, in _access_cls
+    return self.fallback[key]
+           ~~~~~~~~~~~~~^^^^^
+KeyError: 'Profile'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\plugins\on_message.py", line 50, in handle_message
+    response_message_markup = await rspmsg.response_when_plain_text(msg_text,message.from_user.id)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\responses\__init__.py", line 50, in response_when_plain_text
+    callback_data = self.callback.generate_callback_data(callback_data, owner_id)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\models\calling_back.py", line 32, in generate_callback_data
+    callback_data = CallbackData(data_hash=data_hash, data=data, owner_id=int(owner_id))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 4, in __init__
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\state.py", line 559, in _initialize_instance
+    manager.dispatch.init(self, args, kwargs)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\event\attr.py", line 497, in __call__
+    fn(*args, **kw)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 4396, in _event_on_init
+    instrumenting_mapper._check_configure()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 2388, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 4204, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 4245, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 2405, in _post_configure_properties
+    prop.init()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\interfaces.py", line 584, in init
+    self.do_init()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\relationships.py", line 1642, in do_init
+    self._setup_entity()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\relationships.py", line 1854, in _setup_entity
+    self._clsregistry_resolve_name(argument)(),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 519, in _resolve_name
+    self._raise_for_name(name, err)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 500, in _raise_for_name
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: When initializing mapper Mapper[CallbackData(callback_data)], expression 'Profile' failed to locate a name ('Profile'). If this is a class name, consider adding this relationship() to the <class 'models.calling_back.CallbackData'> class after both dependent classes have been defined.
+[11-May-24 23:38:46 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[11-May-24 23:38:46 - INFO] - bot - Bot stopped.
+[11-May-24 23:38:56 - INFO] - bot - Bot Running..!
 
 Created by 
 https://t.me/stilloid
-[11-May-24 14:44:53 - INFO] - bot - Lets roll
-[11-May-24 14:51:20 - INFO] - root - Stop signal received (SIGINT). Exiting...
-[11-May-24 14:51:20 - INFO] - bot - Bot stopped.
-[11-May-24 14:53:38 - INFO] - bot - Bot Running..!
+[11-May-24 23:38:56 - INFO] - bot - Lets roll
+[11-May-24 23:39:00 - ERROR] - pyrogram.dispatcher - When initializing mapper Mapper[Profile(profiles)], expression 'Post' failed to locate a name ('Post'). If this is a class name, consider adding this relationship() to the <class 'models.profile.Profile'> class after both dependent classes have been defined.
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 515, in _resolve_name
+    rval = d[token]
+           ~^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\util\_collections.py", line 344, in __missing__
+    self[key] = val = self.creator(key)
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 483, in _access_cls
+    return self.fallback[key]
+           ~~~~~~~~~~~~~^^^^^
+KeyError: 'Post'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\middlewares\__init__.py", line 10, in ensure_user_indb
+    await check_and_add_user(msg.chat, msg.from_user)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\helper_func.py", line 113, in check_and_add_user
+    esixts_user = await present_user(telegram_id=msg_from.id)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\database\database.py", line 8, in present_user
+    found = _profile.get_profile_by_telegram_id(telegram_id=telegram_id)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\models\profile.py", line 69, in get_profile_by_telegram_id
+    self.session.query(Profile)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 2941, in query
+    return self._query_cls(entities, self, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\query.py", line 275, in __init__
+    self._set_entities(entities)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\query.py", line 287, in _set_entities
+    self._raw_columns = [
+                        ^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\query.py", line 288, in <listcomp>
+    coercions.expect(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\sql\coercions.py", line 389, in expect
+    insp._post_inspect
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\util\langhelpers.py", line 1253, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+                                           ^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 2711, in _post_inspect
+    self._check_configure()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 2388, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 4204, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 4245, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 2405, in _post_configure_properties
+    prop.init()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\interfaces.py", line 584, in init
+    self.do_init()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\relationships.py", line 1642, in do_init
+    self._setup_entity()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\relationships.py", line 1854, in _setup_entity
+    self._clsregistry_resolve_name(argument)(),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 519, in _resolve_name
+    self._raise_for_name(name, err)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 500, in _raise_for_name
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: When initializing mapper Mapper[Profile(profiles)], expression 'Post' failed to locate a name ('Post'). If this is a class name, consider adding this relationship() to the <class 'models.profile.Profile'> class after both dependent classes have been defined.
+[11-May-24 23:39:01 - ERROR] - pyrogram.dispatcher - When initializing mapper Mapper[CallbackData(callback_data)], expression 'Profile' failed to locate a name ('Profile'). If this is a class name, consider adding this relationship() to the <class 'models.calling_back.CallbackData'> class after both dependent classes have been defined.
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 515, in _resolve_name
+    rval = d[token]
+           ~^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\util\_collections.py", line 344, in __missing__
+    self[key] = val = self.creator(key)
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 483, in _access_cls
+    return self.fallback[key]
+           ~~~~~~~~~~~~~^^^^^
+KeyError: 'Profile'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\plugins\on_message.py", line 50, in handle_message
+    response_message_markup = await rspmsg.response_when_plain_text(msg_text,message.from_user.id)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\responses\__init__.py", line 50, in response_when_plain_text
+    callback_data = self.callback.generate_callback_data(callback_data, owner_id)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\models\calling_back.py", line 32, in generate_callback_data
+    callback_data = CallbackData(data_hash=data_hash, data=data, owner_id=int(owner_id))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 4, in __init__
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\state.py", line 559, in _initialize_instance
+    manager.dispatch.init(self, args, kwargs)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\event\attr.py", line 497, in __call__
+    fn(*args, **kw)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 4396, in _event_on_init
+    instrumenting_mapper._check_configure()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 2388, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 4204, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 4245, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 2405, in _post_configure_properties
+    prop.init()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\interfaces.py", line 584, in init
+    self.do_init()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\relationships.py", line 1642, in do_init
+    self._setup_entity()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\relationships.py", line 1854, in _setup_entity
+    self._clsregistry_resolve_name(argument)(),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 519, in _resolve_name
+    self._raise_for_name(name, err)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 500, in _raise_for_name
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: When initializing mapper Mapper[CallbackData(callback_data)], expression 'Profile' failed to locate a name ('Profile'). If this is a class name, consider adding this relationship() to the <class 'models.calling_back.CallbackData'> class after both dependent classes have been defined.
+[11-May-24 23:40:34 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[11-May-24 23:40:34 - INFO] - bot - Bot stopped.
+[11-May-24 23:40:43 - INFO] - bot - Bot Running..!
 
 Created by 
 https://t.me/stilloid
-[11-May-24 14:53:38 - INFO] - bot - Lets roll
+[11-May-24 23:40:43 - INFO] - bot - Lets roll
+[11-May-24 23:40:47 - ERROR] - pyrogram.dispatcher - When initializing mapper Mapper[Profile(profiles)], expression 'Post' failed to locate a name ('Post'). If this is a class name, consider adding this relationship() to the <class 'models.profile.Profile'> class after both dependent classes have been defined.
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 515, in _resolve_name
+    rval = d[token]
+           ~^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\util\_collections.py", line 344, in __missing__
+    self[key] = val = self.creator(key)
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 483, in _access_cls
+    return self.fallback[key]
+           ~~~~~~~~~~~~~^^^^^
+KeyError: 'Post'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\middlewares\__init__.py", line 10, in ensure_user_indb
+    await check_and_add_user(msg.chat, msg.from_user)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\helper_func.py", line 113, in check_and_add_user
+    esixts_user = await present_user(telegram_id=msg_from.id)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\database\database.py", line 8, in present_user
+    found = _profile.get_profile_by_telegram_id(telegram_id=telegram_id)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\models\profile.py", line 69, in get_profile_by_telegram_id
+    self.session.query(Profile)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 2941, in query
+    return self._query_cls(entities, self, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\query.py", line 275, in __init__
+    self._set_entities(entities)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\query.py", line 287, in _set_entities
+    self._raw_columns = [
+                        ^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\query.py", line 288, in <listcomp>
+    coercions.expect(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\sql\coercions.py", line 389, in expect
+    insp._post_inspect
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\util\langhelpers.py", line 1253, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+                                           ^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 2711, in _post_inspect
+    self._check_configure()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 2388, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 4204, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 4245, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 2405, in _post_configure_properties
+    prop.init()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\interfaces.py", line 584, in init
+    self.do_init()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\relationships.py", line 1642, in do_init
+    self._setup_entity()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\relationships.py", line 1854, in _setup_entity
+    self._clsregistry_resolve_name(argument)(),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 519, in _resolve_name
+    self._raise_for_name(name, err)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 500, in _raise_for_name
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: When initializing mapper Mapper[Profile(profiles)], expression 'Post' failed to locate a name ('Post'). If this is a class name, consider adding this relationship() to the <class 'models.profile.Profile'> class after both dependent classes have been defined.
+[11-May-24 23:40:47 - ERROR] - pyrogram.dispatcher - When initializing mapper Mapper[CallbackData(callback_data)], expression 'Profile' failed to locate a name ('Profile'). If this is a class name, consider adding this relationship() to the <class 'models.calling_back.CallbackData'> class after both dependent classes have been defined.
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 515, in _resolve_name
+    rval = d[token]
+           ~^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\util\_collections.py", line 344, in __missing__
+    self[key] = val = self.creator(key)
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 483, in _access_cls
+    return self.fallback[key]
+           ~~~~~~~~~~~~~^^^^^
+KeyError: 'Profile'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\plugins\on_message.py", line 50, in handle_message
+    response_message_markup = await rspmsg.response_when_plain_text(msg_text,message.from_user.id)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\responses\__init__.py", line 50, in response_when_plain_text
+    callback_data = self.callback.generate_callback_data(callback_data, owner_id)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\models\calling_back.py", line 32, in generate_callback_data
+    callback_data = CallbackData(data_hash=data_hash, data=data, owner_id=int(owner_id))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 4, in __init__
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\state.py", line 559, in _initialize_instance
+    manager.dispatch.init(self, args, kwargs)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\event\attr.py", line 497, in __call__
+    fn(*args, **kw)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 4396, in _event_on_init
+    instrumenting_mapper._check_configure()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 2388, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 4204, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 4245, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 2405, in _post_configure_properties
+    prop.init()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\interfaces.py", line 584, in init
+    self.do_init()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\relationships.py", line 1642, in do_init
+    self._setup_entity()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\relationships.py", line 1854, in _setup_entity
+    self._clsregistry_resolve_name(argument)(),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 519, in _resolve_name
+    self._raise_for_name(name, err)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 500, in _raise_for_name
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: When initializing mapper Mapper[CallbackData(callback_data)], expression 'Profile' failed to locate a name ('Profile'). If this is a class name, consider adding this relationship() to the <class 'models.calling_back.CallbackData'> class after both dependent classes have been defined.
+[11-May-24 23:43:12 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[11-May-24 23:43:12 - INFO] - bot - Bot stopped.
+[11-May-24 23:43:20 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[11-May-24 23:43:20 - INFO] - bot - Lets roll
+[11-May-24 23:43:22 - ERROR] - pyrogram.dispatcher - When initializing mapper Mapper[Profile(profiles)], expression 'Post' failed to locate a name ('Post'). If this is a class name, consider adding this relationship() to the <class 'models.profile.Profile'> class after both dependent classes have been defined.
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 515, in _resolve_name
+    rval = d[token]
+           ~^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\util\_collections.py", line 344, in __missing__
+    self[key] = val = self.creator(key)
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 483, in _access_cls
+    return self.fallback[key]
+           ~~~~~~~~~~~~~^^^^^
+KeyError: 'Post'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\middlewares\__init__.py", line 10, in ensure_user_indb
+    await check_and_add_user(msg.chat, msg.from_user)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\helper_func.py", line 113, in check_and_add_user
+    esixts_user = await present_user(telegram_id=msg_from.id)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\database\database.py", line 8, in present_user
+    found = _profile.get_profile_by_telegram_id(telegram_id=telegram_id)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\models\profile.py", line 69, in get_profile_by_telegram_id
+    self.session.query(Profile)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 2941, in query
+    return self._query_cls(entities, self, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\query.py", line 275, in __init__
+    self._set_entities(entities)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\query.py", line 287, in _set_entities
+    self._raw_columns = [
+                        ^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\query.py", line 288, in <listcomp>
+    coercions.expect(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\sql\coercions.py", line 389, in expect
+    insp._post_inspect
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\util\langhelpers.py", line 1253, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+                                           ^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 2711, in _post_inspect
+    self._check_configure()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 2388, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 4204, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 4245, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 2405, in _post_configure_properties
+    prop.init()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\interfaces.py", line 584, in init
+    self.do_init()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\relationships.py", line 1642, in do_init
+    self._setup_entity()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\relationships.py", line 1854, in _setup_entity
+    self._clsregistry_resolve_name(argument)(),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 519, in _resolve_name
+    self._raise_for_name(name, err)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 500, in _raise_for_name
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: When initializing mapper Mapper[Profile(profiles)], expression 'Post' failed to locate a name ('Post'). If this is a class name, consider adding this relationship() to the <class 'models.profile.Profile'> class after both dependent classes have been defined.
+[11-May-24 23:43:22 - ERROR] - pyrogram.dispatcher - When initializing mapper Mapper[CallbackData(callback_data)], expression 'profiles' failed to locate a name ('profiles'). If this is a class name, consider adding this relationship() to the <class 'models.calling_back.CallbackData'> class after both dependent classes have been defined.
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 515, in _resolve_name
+    rval = d[token]
+           ~^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\util\_collections.py", line 344, in __missing__
+    self[key] = val = self.creator(key)
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 483, in _access_cls
+    return self.fallback[key]
+           ~~~~~~~~~~~~~^^^^^
+KeyError: 'profiles'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\plugins\on_message.py", line 50, in handle_message
+    response_message_markup = await rspmsg.response_when_plain_text(msg_text,message.from_user.id)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\responses\__init__.py", line 50, in response_when_plain_text
+    callback_data = self.callback.generate_callback_data(callback_data, owner_id)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\models\calling_back.py", line 32, in generate_callback_data
+    callback_data = CallbackData(data_hash=data_hash, data=data, owner_id=int(owner_id))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 4, in __init__
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\state.py", line 559, in _initialize_instance
+    manager.dispatch.init(self, args, kwargs)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\event\attr.py", line 497, in __call__
+    fn(*args, **kw)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 4396, in _event_on_init
+    instrumenting_mapper._check_configure()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 2388, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 4204, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 4245, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 2405, in _post_configure_properties
+    prop.init()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\interfaces.py", line 584, in init
+    self.do_init()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\relationships.py", line 1642, in do_init
+    self._setup_entity()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\relationships.py", line 1854, in _setup_entity
+    self._clsregistry_resolve_name(argument)(),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 519, in _resolve_name
+    self._raise_for_name(name, err)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 500, in _raise_for_name
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: When initializing mapper Mapper[CallbackData(callback_data)], expression 'profiles' failed to locate a name ('profiles'). If this is a class name, consider adding this relationship() to the <class 'models.calling_back.CallbackData'> class after both dependent classes have been defined.
+[11-May-24 23:45:08 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[11-May-24 23:45:08 - INFO] - bot - Bot stopped.
+[11-May-24 23:45:16 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[11-May-24 23:45:16 - INFO] - bot - Lets roll
+[11-May-24 23:45:35 - ERROR] - pyrogram.dispatcher - When initializing mapper Mapper[Profile(profiles)], expression 'Post' failed to locate a name ('Post'). If this is a class name, consider adding this relationship() to the <class 'models.profile.Profile'> class after both dependent classes have been defined.
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 515, in _resolve_name
+    rval = d[token]
+           ~^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\util\_collections.py", line 344, in __missing__
+    self[key] = val = self.creator(key)
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 483, in _access_cls
+    return self.fallback[key]
+           ~~~~~~~~~~~~~^^^^^
+KeyError: 'Post'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\middlewares\__init__.py", line 10, in ensure_user_indb
+    await check_and_add_user(msg.chat, msg.from_user)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\helper_func.py", line 113, in check_and_add_user
+    esixts_user = await present_user(telegram_id=msg_from.id)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\database\database.py", line 8, in present_user
+    found = _profile.get_profile_by_telegram_id(telegram_id=telegram_id)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\models\profile.py", line 69, in get_profile_by_telegram_id
+    self.session.query(Profile)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 2941, in query
+    return self._query_cls(entities, self, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\query.py", line 275, in __init__
+    self._set_entities(entities)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\query.py", line 287, in _set_entities
+    self._raw_columns = [
+                        ^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\query.py", line 288, in <listcomp>
+    coercions.expect(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\sql\coercions.py", line 389, in expect
+    insp._post_inspect
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\util\langhelpers.py", line 1253, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+                                           ^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 2711, in _post_inspect
+    self._check_configure()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 2388, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 4204, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 4245, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 2405, in _post_configure_properties
+    prop.init()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\interfaces.py", line 584, in init
+    self.do_init()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\relationships.py", line 1642, in do_init
+    self._setup_entity()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\relationships.py", line 1854, in _setup_entity
+    self._clsregistry_resolve_name(argument)(),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 519, in _resolve_name
+    self._raise_for_name(name, err)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 500, in _raise_for_name
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: When initializing mapper Mapper[Profile(profiles)], expression 'Post' failed to locate a name ('Post'). If this is a class name, consider adding this relationship() to the <class 'models.profile.Profile'> class after both dependent classes have been defined.
+[11-May-24 23:45:35 - ERROR] - pyrogram.dispatcher - Foreign key associated with column 'callback_data.owner_id' could not find table 'profiles' with which to generate a foreign key to target column 'telegram_id'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\plugins\on_message.py", line 50, in handle_message
+    response_message_markup = await rspmsg.response_when_plain_text(msg_text,message.from_user.id)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\responses\__init__.py", line 50, in response_when_plain_text
+    callback_data = self.callback.generate_callback_data(callback_data, owner_id)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\models\calling_back.py", line 34, in generate_callback_data
+    self.session.commit()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 2017, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 1302, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 1277, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 4341, in flush
+    self._flush(objects)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 4476, in _flush
+    with util.safe_reraise():
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 4437, in _flush
+    flush_context.execute()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\persistence.py", line 76, in save_obj
+    for table, mapper in base_mapper._sorted_tables.items():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\util\langhelpers.py", line 1253, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+                                           ^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 4050, in _sorted_tables
+    sorted_ = sql_util.sort_tables(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\sql\ddl.py", line 1252, in sort_tables
+    for (t, fkcs) in sort_tables_and_constraints(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\sql\ddl.py", line 1322, in sort_tables_and_constraints
+    filtered = filter_fn(fkc)
+               ^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\sql\ddl.py", line 1242, in _skip_fn
+    if fixed_skip_fn(fk):
+       ^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 4033, in skip
+    dep = table_to_mapper.get(fk.column.table)
+                              ^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\util\langhelpers.py", line 1141, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+                                           ^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\sql\schema.py", line 3159, in column
+    return self._resolve_column()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\sql\schema.py", line 3182, in _resolve_column
+    raise exc.NoReferencedTableError(
+sqlalchemy.exc.NoReferencedTableError: Foreign key associated with column 'callback_data.owner_id' could not find table 'profiles' with which to generate a foreign key to target column 'telegram_id'
+[11-May-24 23:48:41 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[11-May-24 23:48:41 - INFO] - bot - Bot stopped.
+[11-May-24 23:48:50 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[11-May-24 23:48:50 - INFO] - bot - Lets roll
+[11-May-24 23:48:55 - ERROR] - pyrogram.dispatcher - When initializing mapper Mapper[Profile(profiles)], expression 'Post' failed to locate a name ('Post'). If this is a class name, consider adding this relationship() to the <class 'models.profile.Profile'> class after both dependent classes have been defined.
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 515, in _resolve_name
+    rval = d[token]
+           ~^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\util\_collections.py", line 344, in __missing__
+    self[key] = val = self.creator(key)
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 483, in _access_cls
+    return self.fallback[key]
+           ~~~~~~~~~~~~~^^^^^
+KeyError: 'Post'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\middlewares\__init__.py", line 10, in ensure_user_indb
+    await check_and_add_user(msg.chat, msg.from_user)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\helper_func.py", line 113, in check_and_add_user
+    esixts_user = await present_user(telegram_id=msg_from.id)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\database\database.py", line 8, in present_user
+    found = _profile.get_profile_by_telegram_id(telegram_id=telegram_id)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\models\profile.py", line 69, in get_profile_by_telegram_id
+    self.session.query(Profile)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 2941, in query
+    return self._query_cls(entities, self, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\query.py", line 275, in __init__
+    self._set_entities(entities)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\query.py", line 287, in _set_entities
+    self._raw_columns = [
+                        ^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\query.py", line 288, in <listcomp>
+    coercions.expect(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\sql\coercions.py", line 389, in expect
+    insp._post_inspect
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\util\langhelpers.py", line 1253, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+                                           ^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 2711, in _post_inspect
+    self._check_configure()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 2388, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 4204, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 4245, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 2405, in _post_configure_properties
+    prop.init()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\interfaces.py", line 584, in init
+    self.do_init()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\relationships.py", line 1642, in do_init
+    self._setup_entity()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\relationships.py", line 1854, in _setup_entity
+    self._clsregistry_resolve_name(argument)(),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 519, in _resolve_name
+    self._raise_for_name(name, err)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\clsregistry.py", line 500, in _raise_for_name
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: When initializing mapper Mapper[Profile(profiles)], expression 'Post' failed to locate a name ('Post'). If this is a class name, consider adding this relationship() to the <class 'models.profile.Profile'> class after both dependent classes have been defined.
+[11-May-24 23:48:55 - ERROR] - pyrogram.dispatcher - Foreign key associated with column 'callback_data.owner_id' could not find table 'profiles' with which to generate a foreign key to target column 'telegram_id'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\plugins\on_message.py", line 50, in handle_message
+    response_message_markup = await rspmsg.response_when_plain_text(msg_text,message.from_user.id)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\responses\__init__.py", line 50, in response_when_plain_text
+    callback_data = self.callback.generate_callback_data(callback_data, owner_id)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\models\calling_back.py", line 34, in generate_callback_data
+    self.session.commit()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 2017, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 1302, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 1277, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 4341, in flush
+    self._flush(objects)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 4476, in _flush
+    with util.safe_reraise():
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 4437, in _flush
+    flush_context.execute()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\persistence.py", line 76, in save_obj
+    for table, mapper in base_mapper._sorted_tables.items():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\util\langhelpers.py", line 1253, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+                                           ^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 4050, in _sorted_tables
+    sorted_ = sql_util.sort_tables(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\sql\ddl.py", line 1252, in sort_tables
+    for (t, fkcs) in sort_tables_and_constraints(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\sql\ddl.py", line 1322, in sort_tables_and_constraints
+    filtered = filter_fn(fkc)
+               ^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\sql\ddl.py", line 1242, in _skip_fn
+    if fixed_skip_fn(fk):
+       ^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\mapper.py", line 4033, in skip
+    dep = table_to_mapper.get(fk.column.table)
+                              ^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\util\langhelpers.py", line 1141, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+                                           ^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\sql\schema.py", line 3159, in column
+    return self._resolve_column()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\sql\schema.py", line 3182, in _resolve_column
+    raise exc.NoReferencedTableError(
+sqlalchemy.exc.NoReferencedTableError: Foreign key associated with column 'callback_data.owner_id' could not find table 'profiles' with which to generate a foreign key to target column 'telegram_id'
+[12-May-24 00:00:21 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[12-May-24 00:00:21 - INFO] - bot - Bot stopped.
+[12-May-24 00:15:10 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[12-May-24 00:15:10 - INFO] - bot - Lets roll
+[12-May-24 00:15:25 - ERROR] - pyrogram.dispatcher - (psycopg2.errors.UndefinedColumn) column "deleted_at" of relation "callback_data" does not exist
+LINE 1: ...RT INTO callback_data (data, data_hash, owner_id, deleted_at...
+                                                             ^
+
+[SQL: INSERT INTO callback_data (data, data_hash, owner_id, deleted_at, created_at, updated_at) VALUES (%(data)s, %(data_hash)s, %(owner_id)s, %(deleted_at)s, %(created_at)s, %(updated_at)s)]
+[parameters: {'data': 'H4sIAA38P2YC_9MvTk0sSs5QSEkDACB039oKAAAA', 'data_hash': 'f82f09133d', 'owner_id': 1497831921, 'deleted_at': None, 'created_at': datetime.datetime(2024, 5, 12, 0, 15, 25, 245230), 'updated_at': datetime.datetime(2024, 5, 12, 0, 15, 25, 245230)}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedColumn: column "deleted_at" of relation "callback_data" does not exist
+LINE 1: ...RT INTO callback_data (data, data_hash, owner_id, deleted_at...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\plugins\on_message.py", line 50, in handle_message
+    response_message_markup = await rspmsg.response_when_plain_text(msg_text,message.from_user.id)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\responses\__init__.py", line 50, in response_when_plain_text
+    callback_data = self.callback.generate_callback_data(callback_data, owner_id)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\models\calling_back.py", line 19, in generate_callback_data
+    self.session.commit()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 2017, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 1302, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 1277, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 4341, in flush
+    self._flush(objects)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 4476, in _flush
+    with util.safe_reraise():
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 4437, in _flush
+    flush_context.execute()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 2353, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedColumn) column "deleted_at" of relation "callback_data" does not exist
+LINE 1: ...RT INTO callback_data (data, data_hash, owner_id, deleted_at...
+                                                             ^
+
+[SQL: INSERT INTO callback_data (data, data_hash, owner_id, deleted_at, created_at, updated_at) VALUES (%(data)s, %(data_hash)s, %(owner_id)s, %(deleted_at)s, %(created_at)s, %(updated_at)s)]
+[parameters: {'data': 'H4sIAA38P2YC_9MvTk0sSs5QSEkDACB039oKAAAA', 'data_hash': 'f82f09133d', 'owner_id': 1497831921, 'deleted_at': None, 'created_at': datetime.datetime(2024, 5, 12, 0, 15, 25, 245230), 'updated_at': datetime.datetime(2024, 5, 12, 0, 15, 25, 245230)}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+[12-May-24 00:18:42 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[12-May-24 00:18:43 - INFO] - bot - Bot stopped.
+[12-May-24 00:18:51 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[12-May-24 00:18:51 - INFO] - bot - Lets roll
+[12-May-24 00:19:46 - ERROR] - pyrogram.dispatcher - (psycopg2.errors.UndefinedColumn) column profiles.timestamp does not exist
+LINE 1: ...les_avatar, profiles.website AS profiles_website, profiles.t...
+                                                             ^
+
+[SQL: SELECT profiles.id AS profiles_id, profiles.telegram_id AS profiles_telegram_id, profiles.username AS profiles_username, profiles.first_name AS profiles_first_name, profiles.last_name AS profiles_last_name, profiles.level AS profiles_level, profiles.bio AS profiles_bio, profiles.location AS profiles_location, profiles.avatar AS profiles_avatar, profiles.website AS profiles_website, profiles.timestamp AS profiles_timestamp 
+FROM profiles 
+WHERE profiles.telegram_id = %(telegram_id_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'telegram_id_1': 1497831921, 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedColumn: column profiles.timestamp does not exist
+LINE 1: ...les_avatar, profiles.website AS profiles_website, profiles.t...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\middlewares\__init__.py", line 10, in ensure_user_indb
+    await check_and_add_user(msg.chat, msg.from_user)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\helper_func.py", line 113, in check_and_add_user
+    esixts_user = await present_user(telegram_id=msg_from.id)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\database\database.py", line 8, in present_user
+    found = _profile.get_profile_by_telegram_id(telegram_id=telegram_id)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\models\profile.py", line 46, in get_profile_by_telegram_id
+    .first()
+     ^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\query.py", line 2728, in first
+    return self.limit(1)._iter().first()  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\query.py", line 2827, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 2351, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 2236, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\context.py", line 293, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 2353, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedColumn) column profiles.timestamp does not exist
+LINE 1: ...les_avatar, profiles.website AS profiles_website, profiles.t...
+                                                             ^
+
+[SQL: SELECT profiles.id AS profiles_id, profiles.telegram_id AS profiles_telegram_id, profiles.username AS profiles_username, profiles.first_name AS profiles_first_name, profiles.last_name AS profiles_last_name, profiles.level AS profiles_level, profiles.bio AS profiles_bio, profiles.location AS profiles_location, profiles.avatar AS profiles_avatar, profiles.website AS profiles_website, profiles.timestamp AS profiles_timestamp 
+FROM profiles 
+WHERE profiles.telegram_id = %(telegram_id_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'telegram_id_1': 1497831921, 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+[12-May-24 00:19:46 - ERROR] - pyrogram.dispatcher - (psycopg2.errors.UndefinedColumn) column "timestamp" of relation "callback_data" does not exist
+LINE 1: ...RT INTO callback_data (data, data_hash, owner_id, timestamp)...
+                                                             ^
+
+[SQL: INSERT INTO callback_data (data, data_hash, owner_id, timestamp) VALUES (%(data)s, %(data_hash)s, %(owner_id)s, %(timestamp)s)]
+[parameters: {'data': 'H4sIABL9P2YC_9MvTk0sSs5QKAYA7AV1MwkAAAA', 'data_hash': 'c6c28e8d97', 'owner_id': 1497831921, 'timestamp': None}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedColumn: column "timestamp" of relation "callback_data" does not exist
+LINE 1: ...RT INTO callback_data (data, data_hash, owner_id, timestamp)...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\plugins\on_message.py", line 50, in handle_message
+    response_message_markup = await rspmsg.response_when_plain_text(msg_text,message.from_user.id)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\responses\__init__.py", line 50, in response_when_plain_text
+    callback_data = self.callback.generate_callback_data(callback_data, owner_id)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\models\calling_back.py", line 19, in generate_callback_data
+    self.session.commit()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 2017, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 1302, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 1277, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 4341, in flush
+    self._flush(objects)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 4476, in _flush
+    with util.safe_reraise():
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 4437, in _flush
+    flush_context.execute()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 2353, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedColumn) column "timestamp" of relation "callback_data" does not exist
+LINE 1: ...RT INTO callback_data (data, data_hash, owner_id, timestamp)...
+                                                             ^
+
+[SQL: INSERT INTO callback_data (data, data_hash, owner_id, timestamp) VALUES (%(data)s, %(data_hash)s, %(owner_id)s, %(timestamp)s)]
+[parameters: {'data': 'H4sIABL9P2YC_9MvTk0sSs5QKAYA7AV1MwkAAAA', 'data_hash': 'c6c28e8d97', 'owner_id': 1497831921, 'timestamp': None}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+[12-May-24 00:20:53 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[12-May-24 00:20:53 - INFO] - bot - Bot stopped.
+[12-May-24 00:21:03 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[12-May-24 00:21:03 - INFO] - bot - Lets roll
+[12-May-24 00:21:05 - ERROR] - pyrogram.dispatcher - (psycopg2.errors.UndefinedColumn) column "created_at" of relation "callback_data" does not exist
+LINE 1: ...RT INTO callback_data (data, data_hash, owner_id, created_at...
+                                                             ^
+
+[SQL: INSERT INTO callback_data (data, data_hash, owner_id, created_at, updated_at) VALUES (%(data)s, %(data_hash)s, %(owner_id)s, %(created_at)s, %(updated_at)s)]
+[parameters: {'data': 'H4sIAGH9P2YC_9MvTk0sSs5QKE4BAJqRUjEKAAAA', 'data_hash': 'bae642feae', 'owner_id': 1497831921, 'created_at': datetime.datetime(2024, 5, 12, 0, 21, 5, 284544), 'updated_at': datetime.datetime(2024, 5, 12, 0, 21, 5, 284544)}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedColumn: column "created_at" of relation "callback_data" does not exist
+LINE 1: ...RT INTO callback_data (data, data_hash, owner_id, created_at...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\plugins\on_message.py", line 50, in handle_message
+    response_message_markup = await rspmsg.response_when_plain_text(msg_text,message.from_user.id)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\responses\__init__.py", line 50, in response_when_plain_text
+    callback_data = self.callback.generate_callback_data(callback_data, owner_id)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\models\calling_back.py", line 19, in generate_callback_data
+    self.session.commit()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 2017, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 1302, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 1277, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 4341, in flush
+    self._flush(objects)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 4476, in _flush
+    with util.safe_reraise():
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 4437, in _flush
+    flush_context.execute()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 2353, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedColumn) column "created_at" of relation "callback_data" does not exist
+LINE 1: ...RT INTO callback_data (data, data_hash, owner_id, created_at...
+                                                             ^
+
+[SQL: INSERT INTO callback_data (data, data_hash, owner_id, created_at, updated_at) VALUES (%(data)s, %(data_hash)s, %(owner_id)s, %(created_at)s, %(updated_at)s)]
+[parameters: {'data': 'H4sIAGH9P2YC_9MvTk0sSs5QKE4BAJqRUjEKAAAA', 'data_hash': 'bae642feae', 'owner_id': 1497831921, 'created_at': datetime.datetime(2024, 5, 12, 0, 21, 5, 284544), 'updated_at': datetime.datetime(2024, 5, 12, 0, 21, 5, 284544)}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+[12-May-24 00:25:46 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[12-May-24 00:25:46 - INFO] - bot - Bot stopped.
+[12-May-24 00:25:55 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[12-May-24 00:25:55 - INFO] - bot - Lets roll
+[12-May-24 00:26:42 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[12-May-24 00:26:42 - INFO] - bot - Bot stopped.
+[12-May-24 00:26:50 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[12-May-24 00:26:50 - INFO] - bot - Lets roll
+[12-May-24 00:26:59 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[12-May-24 00:26:59 - INFO] - bot - Bot stopped.
+[12-May-24 00:27:07 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[12-May-24 00:27:07 - INFO] - bot - Lets roll
+[12-May-24 00:27:32 - ERROR] - pyrogram.dispatcher - (psycopg2.errors.NotNullViolation) null value in column "id" of relation "callback_data" violates not-null constraint
+DETAIL:  Failing row contains (null, H4sIAOT-P2YC_9MvTk0sSs5QyEitBAAOc1jiCwAAAA, 8170ca6a9e, 2024-05-12 00:27:32.576929, 2024-05-12 00:27:32.576929, 1497831921).
+
+[SQL: INSERT INTO callback_data (data, data_hash, created_at, updated_at, owner_id) VALUES (%(data)s, %(data_hash)s, %(created_at)s, %(updated_at)s, %(owner_id)s)]
+[parameters: {'data': 'H4sIAOT-P2YC_9MvTk0sSs5QyEitBAAOc1jiCwAAAA', 'data_hash': '8170ca6a9e', 'created_at': datetime.datetime(2024, 5, 12, 0, 27, 32, 576929), 'updated_at': datetime.datetime(2024, 5, 12, 0, 27, 32, 576929), 'owner_id': 1497831921}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.NotNullViolation: null value in column "id" of relation "callback_data" violates not-null constraint
+DETAIL:  Failing row contains (null, H4sIAOT-P2YC_9MvTk0sSs5QyEitBAAOc1jiCwAAAA, 8170ca6a9e, 2024-05-12 00:27:32.576929, 2024-05-12 00:27:32.576929, 1497831921).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\plugins\on_message.py", line 50, in handle_message
+    response_message_markup = await rspmsg.response_when_plain_text(msg_text,message.from_user.id)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\responses\__init__.py", line 50, in response_when_plain_text
+    callback_data = self.callback.generate_callback_data(callback_data, owner_id)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\models\calling_back.py", line 19, in generate_callback_data
+    self.session.commit()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 2017, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 1302, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 1277, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 4341, in flush
+    self._flush(objects)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 4476, in _flush
+    with util.safe_reraise():
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 4437, in _flush
+    flush_context.execute()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 2353, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.NotNullViolation) null value in column "id" of relation "callback_data" violates not-null constraint
+DETAIL:  Failing row contains (null, H4sIAOT-P2YC_9MvTk0sSs5QyEitBAAOc1jiCwAAAA, 8170ca6a9e, 2024-05-12 00:27:32.576929, 2024-05-12 00:27:32.576929, 1497831921).
+
+[SQL: INSERT INTO callback_data (data, data_hash, created_at, updated_at, owner_id) VALUES (%(data)s, %(data_hash)s, %(created_at)s, %(updated_at)s, %(owner_id)s)]
+[parameters: {'data': 'H4sIAOT-P2YC_9MvTk0sSs5QyEitBAAOc1jiCwAAAA', 'data_hash': '8170ca6a9e', 'created_at': datetime.datetime(2024, 5, 12, 0, 27, 32, 576929), 'updated_at': datetime.datetime(2024, 5, 12, 0, 27, 32, 576929), 'owner_id': 1497831921}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[12-May-24 00:28:34 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[12-May-24 00:28:34 - INFO] - bot - Bot stopped.
+[12-May-24 00:28:43 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[12-May-24 00:28:43 - INFO] - bot - Lets roll
+[12-May-24 00:28:47 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[12-May-24 00:28:47 - INFO] - bot - Bot stopped.
+[12-May-24 00:28:55 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[12-May-24 00:28:55 - INFO] - bot - Lets roll
+[12-May-24 00:29:09 - ERROR] - pyrogram.dispatcher - (psycopg2.errors.NotNullViolation) null value in column "id" of relation "callback_data" violates not-null constraint
+DETAIL:  Failing row contains (null, H4sIAEX_P2YC_9MvTk0sSs5QKAcA9cEYNAkAAAA, 40d8b1a76e, 2024-05-12 00:29:09.554245, 2024-05-12 00:29:09.554245, 1497831921).
+
+[SQL: INSERT INTO callback_data (data, data_hash, created_at, updated_at, owner_id) VALUES (%(data)s, %(data_hash)s, %(created_at)s, %(updated_at)s, %(owner_id)s)]
+[parameters: {'data': 'H4sIAEX_P2YC_9MvTk0sSs5QKAcA9cEYNAkAAAA', 'data_hash': '40d8b1a76e', 'created_at': datetime.datetime(2024, 5, 12, 0, 29, 9, 554245), 'updated_at': datetime.datetime(2024, 5, 12, 0, 29, 9, 554245), 'owner_id': 1497831921}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.NotNullViolation: null value in column "id" of relation "callback_data" violates not-null constraint
+DETAIL:  Failing row contains (null, H4sIAEX_P2YC_9MvTk0sSs5QKAcA9cEYNAkAAAA, 40d8b1a76e, 2024-05-12 00:29:09.554245, 2024-05-12 00:29:09.554245, 1497831921).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\plugins\on_message.py", line 50, in handle_message
+    response_message_markup = await rspmsg.response_when_plain_text(msg_text,message.from_user.id)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\responses\__init__.py", line 50, in response_when_plain_text
+    callback_data = self.callback.generate_callback_data(callback_data, owner_id)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\models\calling_back.py", line 19, in generate_callback_data
+    self.session.commit()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 2017, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 1302, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 1277, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 4341, in flush
+    self._flush(objects)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 4476, in _flush
+    with util.safe_reraise():
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 4437, in _flush
+    flush_context.execute()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 2353, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.NotNullViolation) null value in column "id" of relation "callback_data" violates not-null constraint
+DETAIL:  Failing row contains (null, H4sIAEX_P2YC_9MvTk0sSs5QKAcA9cEYNAkAAAA, 40d8b1a76e, 2024-05-12 00:29:09.554245, 2024-05-12 00:29:09.554245, 1497831921).
+
+[SQL: INSERT INTO callback_data (data, data_hash, created_at, updated_at, owner_id) VALUES (%(data)s, %(data_hash)s, %(created_at)s, %(updated_at)s, %(owner_id)s)]
+[parameters: {'data': 'H4sIAEX_P2YC_9MvTk0sSs5QKAcA9cEYNAkAAAA', 'data_hash': '40d8b1a76e', 'created_at': datetime.datetime(2024, 5, 12, 0, 29, 9, 554245), 'updated_at': datetime.datetime(2024, 5, 12, 0, 29, 9, 554245), 'owner_id': 1497831921}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[12-May-24 00:30:01 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[12-May-24 00:30:01 - INFO] - bot - Bot stopped.
+[12-May-24 00:33:07 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[12-May-24 00:33:07 - INFO] - bot - Lets roll
+[12-May-24 00:33:24 - ERROR] - pyrogram.dispatcher - (psycopg2.errors.NotNullViolation) null value in column "id" of relation "callback_data" violates not-null constraint
+DETAIL:  Failing row contains (null, H4sIAEQAQGYC_9MvTk0sSs5QyEitBAAOc1jiCwAAAA, ece80cb804, 2024-05-12 00:33:24.458099, 2024-05-12 00:33:24.458099, 1497831921).
+
+[SQL: INSERT INTO callback_data (data, data_hash, created_at, updated_at, owner_id) VALUES (%(data)s, %(data_hash)s, %(created_at)s, %(updated_at)s, %(owner_id)s)]
+[parameters: {'data': 'H4sIAEQAQGYC_9MvTk0sSs5QyEitBAAOc1jiCwAAAA', 'data_hash': 'ece80cb804', 'created_at': datetime.datetime(2024, 5, 12, 0, 33, 24, 458099), 'updated_at': datetime.datetime(2024, 5, 12, 0, 33, 24, 458099), 'owner_id': 1497831921}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.NotNullViolation: null value in column "id" of relation "callback_data" violates not-null constraint
+DETAIL:  Failing row contains (null, H4sIAEQAQGYC_9MvTk0sSs5QyEitBAAOc1jiCwAAAA, ece80cb804, 2024-05-12 00:33:24.458099, 2024-05-12 00:33:24.458099, 1497831921).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\plugins\on_message.py", line 50, in handle_message
+    response_message_markup = await rspmsg.response_when_plain_text(msg_text,message.from_user.id)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\responses\__init__.py", line 50, in response_when_plain_text
+    callback_data = self.callback.generate_callback_data(callback_data, owner_id)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\models\calling_back.py", line 19, in generate_callback_data
+    self.session.commit()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 2017, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 1302, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 1277, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 4341, in flush
+    self._flush(objects)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 4476, in _flush
+    with util.safe_reraise():
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 4437, in _flush
+    flush_context.execute()
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 2353, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.NotNullViolation) null value in column "id" of relation "callback_data" violates not-null constraint
+DETAIL:  Failing row contains (null, H4sIAEQAQGYC_9MvTk0sSs5QyEitBAAOc1jiCwAAAA, ece80cb804, 2024-05-12 00:33:24.458099, 2024-05-12 00:33:24.458099, 1497831921).
+
+[SQL: INSERT INTO callback_data (data, data_hash, created_at, updated_at, owner_id) VALUES (%(data)s, %(data_hash)s, %(created_at)s, %(updated_at)s, %(owner_id)s)]
+[parameters: {'data': 'H4sIAEQAQGYC_9MvTk0sSs5QyEitBAAOc1jiCwAAAA', 'data_hash': 'ece80cb804', 'created_at': datetime.datetime(2024, 5, 12, 0, 33, 24, 458099), 'updated_at': datetime.datetime(2024, 5, 12, 0, 33, 24, 458099), 'owner_id': 1497831921}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[12-May-24 00:34:33 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[12-May-24 00:34:33 - INFO] - bot - Bot stopped.
+[12-May-24 00:34:43 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[12-May-24 00:34:43 - INFO] - bot - Lets roll
+[12-May-24 00:34:47 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[12-May-24 00:34:47 - INFO] - bot - Bot stopped.
+[12-May-24 00:34:56 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[12-May-24 00:34:56 - INFO] - bot - Lets roll

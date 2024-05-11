@@ -47,7 +47,7 @@ async def handle_message(client: Client, message: Message):
         return await check_link_command(client, message)
 
     reply_text = await message.reply_text("Please wait...", quote=True)
-    response_message_markup = await rspmsg.response_when_plain_text(msg_text)
+    response_message_markup = await rspmsg.response_when_plain_text(msg_text,message.from_user.id)
     respond_text = f"<b><u>What do you want me to do with this text?</u></b>\n\n<code>{msg_text}</code>\n\n"
     await reply_text.edit_text( respond_text, reply_markup=response_message_markup )
     isSuccess, cloudLink, share_link, post_message = await moveto_cloud(client, message)

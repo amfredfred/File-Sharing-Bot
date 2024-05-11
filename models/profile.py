@@ -1,30 +1,7 @@
-from sqlalchemy import BigInteger, Column, Integer, String, Text, DateTime, cast
-from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from datetime import datetime, timedelta
 from database import engine as DBEngine
-
-Base = declarative_base()
-
-
-class Profile(Base):
-    __tablename__ = "profiles"
-
-    id = Column(Integer, primary_key=True)
-    chat_id = Column(BigInteger, unique=True)
-    telegram_id = Column(BigInteger, unique=True)
-    username = Column(String, unique=True)
-    first_name = Column(String)
-    last_name = Column(String)
-    level = Column(Integer)
-    bio = Column(Text)
-    location = Column(Text)
-    avatar = Column(Text)
-    website = Column(Text)
-    deleted_at = Column(DateTime)
-    created_at = Column(DateTime, default=datetime.now)
-    updated_at = Column(DateTime, default=datetime.now, onupdate=datetime.now)
-
+from models import Profile, Base
 
 class ProfileManager:
     def __init__(self):

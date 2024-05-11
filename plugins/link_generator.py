@@ -7,7 +7,7 @@ from config import ADMINS
 from helper_func import encode, get_message_id, get_messages
 from pyrogram.errors import FloodWait
 import asyncio
-from managers.callback import CallbackDataManager
+from models.calling_back import CallbackDataManager
 from typing import Union
 
 
@@ -84,7 +84,7 @@ async def moveto_cloud(client: Client, message: Message):
 
     string = f"get-{converted_id}"
     base64_string = await encode(f"/retrieve_post {string}")
-    base64_string = cdm.generate_callback_data(base64_string)
+    base64_string = cdm.generate_callback_data(base64_string, message.from_user.id)
     link = f"https://t.me/{client.username}?start={base64_string}"
     share_link = f"https://telegram.me/share/url?url={link}"
     return True, link, share_link, post_message
