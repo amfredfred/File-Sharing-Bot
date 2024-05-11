@@ -124,3 +124,205 @@ https://t.me/stilloid
 Created by 
 https://t.me/stilloid
 [11-May-24 09:29:51 - INFO] - bot - Lets roll
+[11-May-24 09:45:11 - ERROR] - pyrogram.dispatcher - 'links'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\plugins\on_message.py", line 43, in handle_message
+    return await check_link_command(client, message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\plugins\check_link_command.py", line 28, in check_link_command
+    links = result["links"]
+            ~~~~~~^^^^^^^^^
+KeyError: 'links'
+[11-May-24 10:06:54 - ERROR] - pyrogram.dispatcher - 'NoneType' object has no attribute 'strip'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\plugins\on_message.py", line 46, in handle_message
+    response_message_markup = await rspmsg.response_when_plain_text(msg_text)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\responses\__init__.py", line 66, in response_when_plain_text
+    callback_data = await encode(f'/search {text.strip().replace(" ", "%20")}')
+                                            ^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'strip'
+[11-May-24 10:26:29 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[11-May-24 10:26:29 - INFO] - bot - Bot stopped.
+[11-May-24 10:26:40 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[11-May-24 10:26:40 - INFO] - bot - Lets roll
+[11-May-24 10:28:49 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[11-May-24 10:28:49 - INFO] - bot - Bot stopped.
+[11-May-24 10:28:58 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[11-May-24 10:28:58 - INFO] - bot - Lets roll
+[11-May-24 10:34:25 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[11-May-24 10:34:25 - INFO] - bot - Bot stopped.
+[11-May-24 10:34:34 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[11-May-24 10:34:34 - INFO] - bot - Lets roll
+[11-May-24 10:34:58 - ERROR] - pyrogram.dispatcher - 'NoneType' object has no attribute 'endswith'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\plugins\on_message.py", line 33, in handle_message
+    if is_question(msg_text):
+       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\helper_func.py", line 398, in is_question
+    if text.endswith("?"):
+       ^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'endswith'
+[11-May-24 10:36:21 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[11-May-24 10:36:21 - INFO] - bot - Bot stopped.
+[11-May-24 10:36:29 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[11-May-24 10:36:29 - INFO] - bot - Lets roll
+[11-May-24 10:37:04 - ERROR] - pyrogram.dispatcher - 'NoneType' object has no attribute 'strip'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\plugins\on_message.py", line 53, in handle_message
+    response_message_markup = await rspmsg.response_when_plain_text(msg_text)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\responses\__init__.py", line 66, in response_when_plain_text
+    callback_data = await encode(f'/search {text.strip().replace(" ", "%20")}')
+                                            ^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'strip'
+[11-May-24 10:38:28 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: Connection timed out
+[11-May-24 10:38:59 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[11-May-24 10:38:59 - INFO] - bot - Bot stopped.
+[11-May-24 10:39:08 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[11-May-24 10:39:08 - INFO] - bot - Lets roll
+[11-May-24 10:40:21 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[11-May-24 10:40:21 - INFO] - bot - Bot stopped.
+[11-May-24 10:40:30 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[11-May-24 10:40:30 - INFO] - bot - Lets roll
+[11-May-24 10:41:03 - ERROR] - pyrogram.dispatcher - 'NoneType' object has no attribute 'strip'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\plugins\on_message.py", line 56, in handle_message
+    response_message_markup = await rspmsg.response_when_plain_text(msg_text)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\responses\__init__.py", line 66, in response_when_plain_text
+    callback_data = await encode(f'/search {text.strip().replace(" ", "%20")}')
+                                            ^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'strip'
+[11-May-24 10:50:11 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[11-May-24 10:50:11 - INFO] - bot - Bot stopped.
+[11-May-24 10:50:20 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[11-May-24 10:50:20 - INFO] - bot - Lets roll
+[11-May-24 10:50:31 - ERROR] - pyrogram.dispatcher - 'NoneType' object has no attribute 'split'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\plugins\on_message.py", line 43, in handle_message
+    return await command_call(client, message, command_ext["name"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\managers\command\methods.py", line 12, in command_call
+    message.text = command_clean(message.text)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\managers\command\methods.py", line 19, in command_clean
+    words = text.split()
+            ^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'split'
+[11-May-24 10:52:53 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[11-May-24 10:52:53 - INFO] - bot - Bot stopped.
+[11-May-24 10:53:03 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[11-May-24 10:53:03 - INFO] - bot - Lets roll
+[11-May-24 10:53:32 - ERROR] - pyrogram.dispatcher - 'NoneType' object has no attribute 'split'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\plugins\on_message.py", line 45, in handle_message
+    return await command_call(client, message, command_ext["name"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\managers\command\methods.py", line 12, in command_call
+    message.text = command_clean(message.text)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\managers\command\methods.py", line 19, in command_clean
+    words = text.split()
+            ^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'split'
+[11-May-24 10:54:19 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[11-May-24 10:54:19 - INFO] - bot - Bot stopped.
+[11-May-24 10:54:27 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[11-May-24 10:54:27 - INFO] - bot - Lets roll
+[11-May-24 10:55:07 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[11-May-24 10:55:07 - INFO] - bot - Bot stopped.
+[11-May-24 10:55:15 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[11-May-24 10:55:15 - INFO] - bot - Lets roll
+[11-May-24 10:55:27 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[11-May-24 10:55:27 - INFO] - bot - Bot stopped.
+[11-May-24 10:55:35 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[11-May-24 10:55:35 - INFO] - bot - Lets roll
+[11-May-24 10:55:47 - ERROR] - pyrogram.dispatcher - 'NoneType' object has no attribute 'split'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\plugins\on_message.py", line 44, in handle_message
+    return await command_call(client, message, command_ext["name"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\managers\command\methods.py", line 12, in command_call
+    message.text = command_clean(message.text)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\managers\command\methods.py", line 19, in command_clean
+    words = text.split()
+            ^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'split'
+[11-May-24 10:56:37 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[11-May-24 10:56:37 - INFO] - bot - Bot stopped.
+[11-May-24 10:56:45 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[11-May-24 10:56:45 - INFO] - bot - Lets roll
+[11-May-24 11:13:47 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: Connection timed out
+[11-May-24 11:15:34 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: Connection timed out
+[11-May-24 11:21:18 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[11-May-24 11:21:18 - INFO] - bot - Bot stopped.

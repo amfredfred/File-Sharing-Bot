@@ -95,7 +95,6 @@ async def download_command(bot: Bot, message: Message):
             urls = link.get("urls")
             found, reply_markup = await response_msg.download_options(urls, expect_link)
             ressponse_text = "<b><u>🟢FOUND FEW STUFFS</u><b>"
-            print(f"found: {found} reply_markup: {reply_markup}")
             if not found:
                 ressponse_text = NO_DOWNLOADABLE_RESPONSE
             # else:

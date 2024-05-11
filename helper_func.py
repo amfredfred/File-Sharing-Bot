@@ -165,7 +165,6 @@ async def decode(base64_string:str):
     # Decode the base64 bytes
     compressed_bytes = base64.urlsafe_b64decode(base64_bytes)
     # Decompress the compressed bytes using gzip
-    print(f"compressed_bytes:   {compressed_bytes}")
     decompressed_string = gzip.decompress(compressed_bytes).decode("utf-8")
     return decompressed_string
 
@@ -393,3 +392,48 @@ def link_type(link: str):
         else:
             return "webpage"
     return "invalid"
+
+
+def is_question(text: str) -> bool:
+    
+    if not text:
+        return False  
+    
+    if text.endswith("?"):
+        return True
+    interrogative_words = [
+        "who",
+        "what",
+        "where",
+        "when",
+        "why",
+        "how",
+        "is",
+        "are",
+        "was",
+        "were",
+        "do",
+        "does",
+        "did",
+        "can",
+        "could",
+        "will",
+        "would",
+        "should",
+        "may",
+        "might",
+    ]
+    if any(text.lower().startswith(word) for word in interrogative_words):
+        if re.search(
+            rf'\b{"|".join(interrogative_words)}\b\s+\b(is|are|was|were|do|does|did|can|could|will|would|should|may|might)\b',
+            text.lower(),
+        ):
+            return True
+    if any(word in text.lower() for word in interrogative_words):
+        if re.search(
+            rf'\b{"|".join(interrogative_words)}\b\s+\b(is|are|was|were|do|does|did|can|could|will|would|should|may|might)\b',
+            text.lower(),
+        ):
+            return True
+        
+    return False

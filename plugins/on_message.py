@@ -1,10 +1,7 @@
-# (©)Codexbotz
-
 from pyrogram import filters, Client
 from pyrogram.types import Message
-
 from bot import Bot
-from helper_func import extract_url,subscribed
+from helper_func import extract_url,subscribed,is_question
 from responses import ResponseMessage
 from plugins.link_generator import moveto_cloud
 
@@ -25,9 +22,16 @@ rspmsg = ResponseMessage()
 
 @Bot.on_message((~filters.channel & ~filters.command(OFF_COMMANDS) & subscribed))
 async def handle_message(client: Client, message: Message):
-    msg_text = message.text if not None else " "
-    if msg_text:
-        msg_text = message.text.strip()
+
+    msg_text = message.text if not None else "_"
+    msg_text = message.text.strip() if msg_text is not None else " "
+
+    if message.media:
+        msg_text = f"/upload {msg_text}"
+        message.text = msg_text
+
+    if is_question(msg_text):
+        print(f"Text Is Message: {msg_text}")
 
     from managers.command.methods import command_extract, command_call
     command_ext = command_extract(msg_text)
@@ -37,7 +41,7 @@ async def handle_message(client: Client, message: Message):
         print("Invalid Command supplied")
     else:
         print(f"No Commadn Supplied, Proceed")
-        
+
     if extract_url(msg_text)[0]:
         from plugins.check_link_command import check_link_command
         return await check_link_command(client, message)
@@ -49,7 +53,4 @@ async def handle_message(client: Client, message: Message):
     isSuccess, cloudLink, share_link, post_message = await moveto_cloud(client, message)
     if not isSuccess:
         sorry_text = f"Sorry, could not upload your message to cloud. 😟"
-        print(sorry_text)
         pass
-        # return await message.edit_text(sorry_text)
-
