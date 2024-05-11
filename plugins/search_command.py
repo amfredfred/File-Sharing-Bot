@@ -4,7 +4,7 @@ from scrapers.scrape_the_web import ScrapeTheWeb
 from helper_func import subscribed, command_clean
 from bot import Bot
 from config import SEARCH_TEXT_EMPTY, LOOKING_UP_TEXT
-from models.searchings import Searching
+from models.searching import SearchingManager
 from responses import ResponseMessage
 
 
@@ -33,7 +33,7 @@ async def search_command(bot: Bot, message: Message):
                 query, matched_
             )
             await msg.edit_text(response_text, reply_markup=reply_markup)
-            _searching = Searching()
+            _searching = SearchingManager()
             _searching.insert_searching(msg.chat.id, query)
         else:
             await msg.edit_text(f"No Result For: <u>{query}</u>")

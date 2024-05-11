@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine, Column, Integer, String, Text, DateTime
+from sqlalchemy import BigInteger, Column, Integer, String, Text, DateTime, cast
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from datetime import datetime, timedelta
@@ -6,12 +6,13 @@ from database import engine as DBEngine
 
 Base = declarative_base()
 
+
 class Profile(Base):
     __tablename__ = "profiles"
 
     id = Column(Integer, primary_key=True)
-    chat_id = Column(Integer)
-    telegram_id = Column(String, unique=True)
+    chat_id = Column(BigInteger, unique=True)
+    telegram_id = Column(BigInteger, unique=True)
     username = Column(String, unique=True)
     first_name = Column(String)
     last_name = Column(String)
@@ -46,8 +47,8 @@ class ProfileManager:
         website=None,
     ):
         profile = Profile(
-            chat_id=chat_id,
-            telegram_id=telegram_id,
+            chat_id=int(chat_id),
+            telegram_id=int(telegram_id),
             username=username,
             first_name=first_name,
             last_name=last_name,
@@ -64,7 +65,7 @@ class ProfileManager:
     def get_profile_by_telegram_id(self, telegram_id):
         return (
             self.session.query(Profile)
-            .filter(Profile.telegram_id is telegram_id)
+            .filter(Profile.telegram_id == int(telegram_id))
             .first()
         )
 

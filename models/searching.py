@@ -12,7 +12,6 @@ class Searching(Base):
     id = Column(Integer, primary_key=True)
     chat_id = Column(Integer)
     searched_for = Column(String)
-    downloads = Column(Integer, default=0)
 
 
 class SearchingManager:
@@ -57,19 +56,6 @@ class SearchingManager:
             self.session.rollback()
             return 0
 
-    def increment_downloads(self, searched_for):
-        try:
-            result = (
-                self.session.query(Searching)
-                .filter(Searching.searched_for == searched_for)
-                .update({"downloads": Searching.downloads + 1})
-            )
-            self.session.commit()
-            return result
-        except Exception as e:
-            print(f"Exception: {e}")
-            self.session.rollback()
-            return 0
 
     def most_common_searched_word(self):
         searched_for_texts = [

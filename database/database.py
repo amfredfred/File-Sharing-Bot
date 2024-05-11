@@ -1,7 +1,7 @@
 # (©)CodeXBotz and @EditorFred on Telegram
 
 from models.profile import ProfileManager
-from models.wallet import Wallet
+from models.wallet import WalletManager
 
 async def present_user(telegram_id: int):
     _profile = ProfileManager()
@@ -11,7 +11,7 @@ async def present_user(telegram_id: int):
 
 async def add_user(tid: int, chat_id: int, username, first_name, last_name):
     _profile = ProfileManager()
-    _wallet = Wallet()
+    _wallet = WalletManager()
     user_account = _profile.insert_profile(
         tid, chat_id, username, first_name, last_name
     )

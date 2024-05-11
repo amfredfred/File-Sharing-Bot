@@ -4,8 +4,9 @@ from pyrogram import filters
 from config import ADMINS, BOT_STATS_TEXT, USER_REPLY_TEXT
 from datetime import datetime
 from helper_func import get_readable_time
-from models.profile import Profile
-from models.searchings import Searching
+from models.profile import ProfileManager
+from models.searching import SearchingManager
+from models.searching import Searching
 
 
 @Bot.on_message(filters.command("stats") & filters.user(ADMINS))
@@ -15,12 +16,12 @@ async def statistics_command(bot: Bot, message: Message):
     time = get_readable_time(delta.seconds)
 
     # Retrieve data from Profile model
-    _profile = Profile()
+    _profile = ProfileManager()
     users = _profile.get_all_users()
     get_active_users_last_24_hours = _profile.get_active_users_last_24_hours()
 
     # Retrieve data from Searching model
-    _searchings = Searching()
+    _searchings = SearchingManager()
     queries = _searchings.get_all_searchings()
     _common = _searchings.most_common_searched_word()
 

@@ -110,7 +110,8 @@ async def extract_ids(client, text: str):
 
 
 async def check_and_add_user(chat, msg_from):
-    if msg_from is not None and not await present_user(telegram_id=msg_from.id):
+    esixts_user = await present_user(telegram_id=msg_from.id)
+    if msg_from is not None and not esixts_user:
         try:
             await add_user(
                 tid=msg_from.id,
