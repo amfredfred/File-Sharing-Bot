@@ -59,6 +59,9 @@ async def callback_handler(client: Bot, query: CallbackQuery):
                     from plugins.on_message import handle_message
 
                     # HERE======================
+                    if message.outgoing:
+                        if query.from_user is not None:
+                            message.from_user = query.from_user
                     return await handle_message(client, message)
     except Exception as e:
         print(f"Exception In Callback_Handler: {e}")

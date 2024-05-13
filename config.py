@@ -96,7 +96,7 @@ PROTECT_CONTENT = True if os.getenv("PROTECT_CONTENT", "False") == "True" else F
 # Set true if you want Disable your Channel Posts Share button
 DISABLE_CHANNEL_BUTTON = os.getenv("DISABLE_CHANNEL_BUTTON", None) == "True"
 
-BOT_STATS_TEXT = "📊 <b>STATS & USAGE FOR YOU</b>"
+BOT_STATS_TEXT = "<b>STATS & USAGE FOR YOU</b>"
 USER_REPLY_TEXT = "❌Don't send me messages directly I'm only File Share bot!"
 
 NO_DOWNLOADABLE_RESPONSE = "<b>🔴 No downloadable items found.</b>\n"

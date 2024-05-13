@@ -11,8 +11,8 @@ class SearchingManager:
         Session = sessionmaker(bind=engine)
         self.session = Session()
 
-    def insert_searching(self, chat_id, searched_for):
-        searching = Searching(chat_id=chat_id, searched_for=searched_for)
+    def insert_searching(self, owner_id, searched_for):
+        searching = Searching(owner_id=owner_id, searched_for=searched_for)
         try:
             self.session.add(searching)
             self.session.commit()

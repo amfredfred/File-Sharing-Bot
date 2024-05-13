@@ -7,7 +7,6 @@ from pyrogram.types import (
     InlineKeyboardButton,
     InputMedia,
 )
-from pyrogram.errors import FloodWait, UserIsBlocked, InputUserDeactivated
 from helper_func import command_clean, decode
 
 from models.calling_back import CallbackDataManager

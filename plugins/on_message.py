@@ -4,6 +4,7 @@ from bot import Bot
 from helper_func import extract_url,subscribed,is_question
 from responses import ResponseMessage
 from plugins.link_generator import moveto_cloud
+from models.calling_back import hash_exists
 
 OFF_COMMANDS = [
     "start",
@@ -31,20 +32,25 @@ async def handle_message(client: Client, message: Message):
         message.text = msg_text
 
     if is_question(msg_text):
-        print(f"Text Is Message: {msg_text}")
+        pass
 
     from managers.command.methods import command_extract, command_call
     command_ext = command_extract(msg_text)
     if isinstance(command_ext, dict):
         return await command_call(client, message, command_ext["name"])
     elif command_ext == False:
-        print("Invalid Command supplied")
+        pass
     else:
-        print(f"No Commadn Supplied, Proceed")
+        pass
 
     if extract_url(msg_text)[0]:
         from plugins.check_link_command import check_link_command
         return await check_link_command(client, message)
+    
+    if hash_exists(msg_text):
+        from plugins.start_command import start_command
+        message.text = msg_text
+        return await start_command(client, message)
 
     reply_text = await message.reply_text("Please wait...", quote=True)
     response_message_markup = await rspmsg.response_when_plain_text(msg_text,message.from_user.id)

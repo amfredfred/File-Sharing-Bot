@@ -74,8 +74,11 @@ async def download_command(bot: Bot, message: Message):
     msg_text = message.text.strip()
     msg = await message.reply_text("<strong><u>Checking For Options...</ul></strong>", quote=True)
     expect_link, isDownloadable = extract_url(msg_text)
+
     if expect_link:
+        message.command_text = msg_text
         msg.command_text = msg_text
+        msg.from_user = message.from_user
         link = await dm.check_link_type(expect_link)
         url = link.get("url")
         link_type = link.get("type")

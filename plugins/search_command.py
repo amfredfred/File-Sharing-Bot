@@ -35,9 +35,9 @@ async def search_command(bot: Bot, message: Message):
             )
             await msg.edit_text(response_text, reply_markup=reply_markup)
             _searching = SearchingManager()
-            _searching.insert_searching(msg.chat.id, query)
+            _searching.insert_searching(message.from_user.id, query)
         else:
             await msg.edit_text(f"No Result For: <u>{query}</u>")
     except Exception as e:
         await msg.edit_text("Something went wrong: ")
-        print(f"Erro searching thins: {e}")
+        print(f"Error Searching Things In search_command: {e}")

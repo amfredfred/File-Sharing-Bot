@@ -2,15 +2,12 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from helper_func import (
     is_downloadable,
     extract_link_title,
-    has_path,
     encode,
     extract_link_title,
     get_extension,
 )
-from config import BOT_URL, BOT_USERNAME, TELEGRAM_SHARE_URL
-from urllib.parse import urlparse
+from config import BOT_URL,  TELEGRAM_SHARE_URL
 from models.calling_back import CallbackDataManager
-
 
 class ResponseMessage:
     def __init__(self) -> None:

@@ -19,7 +19,7 @@ from config import (
 from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant
 from pyrogram.errors import FloodWait
 from urllib.parse import urlparse, urljoin
-from database.database import present_user, add_user
+from database.database import present_user, add_user, update_profile
 from pyrogram.enums import ParseMode
 from models.calling_back import CallbackDataManager
 from pyrogram.types import (
@@ -110,8 +110,8 @@ async def extract_ids(client, text: str):
 
 
 async def check_and_add_user(chat, msg_from):
-    esixts_user = await present_user(telegram_id=msg_from.id)
-    if msg_from is not None and not esixts_user:
+    exists = await present_user(telegram_id=msg_from.id)
+    if msg_from is not None and not exists:
         try:
             await add_user(
                 tid=msg_from.id,
@@ -123,6 +123,8 @@ async def check_and_add_user(chat, msg_from):
         except Exception as e:
             print(f"Exception: {e}")
             pass
+    else:
+        await update_profile(msg_from.id)
 
 
 async def is_subscribed(filter, client, update):
@@ -159,7 +161,7 @@ async def encode(string):
     return base64_string
 
 
-async def decode(base64_string:str):
+async def decode(base64_string: str):
     # Decode the base64 string
     base64_string = base64_string.strip("=")
     base64_bytes = (base64_string + "=" * (-len(base64_string) % 4)).encode("ascii")
@@ -362,9 +364,11 @@ def get_extension(url: str):
     return extension.lower()
 
 
-async def make_share_handle(string: str, owner_id:int):
+async def make_share_handle(string: str, owner_id: int):
     encoded_query = await encode(string)
-    share_link = f"{BOT_URL}?start={cbm.generate_callback_data(encoded_query, owner_id)}"
+    share_link = (
+        f"{BOT_URL}?start={cbm.generate_callback_data(encoded_query, owner_id)}"
+    )
     tg_share = f"{TELEGRAM_SHARE_URL}{share_link}"
     return share_link, tg_share
 
@@ -381,10 +385,13 @@ def most_common_word(text: str):
     else:
         return None
 
+
 def link_type(link: str):
     parsed_url = urlparse(link)
     if parsed_url.scheme == "https":
-        if parsed_url.netloc.startswith("fb.watch") or parsed_url.netloc.endswith('facebook.com'):
+        if parsed_url.netloc.startswith("fb.watch") or parsed_url.netloc.endswith(
+            "facebook.com"
+        ):
             return "facebook_watch"
         elif parsed_url.netloc == "t.me":
             return "telegram"
@@ -396,10 +403,10 @@ def link_type(link: str):
 
 
 def is_question(text: str) -> bool:
-    
+
     if not text:
-        return False  
-    
+        return False
+
     if text.endswith("?"):
         return True
     interrogative_words = [
@@ -436,5 +443,5 @@ def is_question(text: str) -> bool:
             text.lower(),
         ):
             return True
-        
+
     return False

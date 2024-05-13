@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+    color: red;
+}
+
+.post-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    isolation: isolate;
+    background: black;
+    aspect-ratio: 16/9;
+    min-width: 100vw;
+}
+
+.post-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    isolation: isolate;
+    flex-grow: 1;
+    border-radius: 2px;
+}
+
+.content {
+    text-align: center;
+    flex-grow: 1;
+    padding: 1rem;
+    font-size: min(calc(1vw + 1vh), 5em);
+}
+
+.post-content::after {
+    content: attr(data-analyze-string);
+    position: absolute;
+    transform: translate(-50%, -50%) rotate(30deg);
+    left: 50%;
+    top: 50%;
+    /* Your desired background color with alpha for transparency */
+    font-size: 100px;
+    text-align: center;
+    vertical-align: middle;
+    opacity: .05;
+    z-index: 1;
+    max-height: 100%;
+    /* Ensure pseudo-element is behind content */
+}

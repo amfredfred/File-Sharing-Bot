@@ -26,8 +26,8 @@ class Bot(Client):
             bot_token=TG_BOT_TOKEN,
             
         )
-        self.add_handler(MessageHandler(ensure_user_indb), -2)
-        self.add_handler(MessageHandler(ensure_user_issubscribed_channel), -1)
+        self.add_handler(MessageHandler(ensure_user_indb), -1)
+        self.add_handler(MessageHandler(ensure_user_issubscribed_channel), -2)
         self.LOGGER = LOGGER
 
     async def start(self):

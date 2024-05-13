@@ -26,17 +26,17 @@ async def statistics_command(bot: Bot, message: Message):
     _common = _searchings.most_common_searched_word()
 
     # Format statistics text
-    stats_text = f"""╔═══════════════════════╗
+    stats_text = f"""╔═══════════════════╗
 ║{BOT_STATS_TEXT}
-╠═══════════════════════╣
+╠═══════════════════╣
 ║---⏳ <b>UpTime</b>: {time}
 ║---👥 <b>Daily Users</b>: {len(users)}
-║═══════════════════════
+║═══════════════════
 ║<b>SEARCH QUERIES</b>
-║═══════════════════════
+║═══════════════════
 ║---🔹 <b>Total</b>: {len(queries)}
 ║---🔍 <b>Popular Word</b>: {_common or 'N/A'}
-╚═══════════════════════╝"""
+╚═══════════════════╝"""
 
     # Reply with statistics
     msg = await message.reply_text(stats_text, quote=True)

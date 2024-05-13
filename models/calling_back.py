@@ -28,3 +28,5 @@ class CallbackDataManager:
         if callback_data:
             self.session.delete(callback_data)
             self.session.commit()
+            
+hash_exists = CallbackDataManager().get_data_from_callback

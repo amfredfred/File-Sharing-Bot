@@ -35,8 +35,7 @@ async def check_link_command(bot: client, message: Message):
             keyboard = InlineKeyboardMarkup(buttons)
             return await reply_text.edit_text(msg, reply_markup=keyboard)
     elif type_link == "telegram":
-        msg = "This is a Telegram link."
-        buttons = None  # No keyboard buttons needed for Telegram links
+        return await reply_text.edit_text("Sorry, telegram links are not supported yet")
     elif type_link == "media":
         from  plugins.download_command import download_command
         return await download_command(bot, message)

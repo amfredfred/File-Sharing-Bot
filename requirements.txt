@@ -20,3 +20,5 @@ python-dotenv==1.0.1
 metaphone==0.6
 # 
 SQLAlchemy==2.0.30
+# 
+html2image==2.0.4.3
