@@ -14,6 +14,8 @@ from pyrogram.types import (
     InlineKeyboardButton,
     CallbackQuery,
 )
+from injector import injector
+from models.profile import Profile
 
 
 ABOUT_TEXT = f"<b>○ Creator : <a href='tg://user?id={OWNER_ID}'>This Person</a>\n"
@@ -35,13 +37,17 @@ for command, details in command_list_public.items():
 HOW_TO_USE_TEXT += "That's it! Now you're ready to explore few of the features i can offer. Happy browsing!"
 
 
-DEFAULT_REPLY_MARKUP = [  [
-    InlineKeyboardButton("🔙 Back", callback_data="start"),
-    InlineKeyboardButton("🔒 Close", callback_data="close"),
-]]
+DEFAULT_REPLY_MARKUP = [
+    [
+        InlineKeyboardButton("🔙 Back", callback_data="start"),
+        InlineKeyboardButton("🔒 Close", callback_data="close"),
+    ]
+]
+
 
 @Bot.on_callback_query()
-async def callback_handler(client: Bot, query: CallbackQuery):
+@injector
+async def callback_handler(client: Bot, prfoile: Profile, query: CallbackQuery):
     data = query.data
     message = query.message
     try:
@@ -67,7 +73,7 @@ async def callback_handler(client: Bot, query: CallbackQuery):
         print(f"Exception In Callback_Handler: {e}")
         await query.message.edit_text("<b>SOMETHING UNUSUAL HAS HAPPENED</b>")
 
-    if data == "about": 
+    if data == "about":
         await query.message.edit_text(
             text=ABOUT_TEXT,
             disable_web_page_preview=True,
@@ -81,7 +87,7 @@ async def callback_handler(client: Bot, query: CallbackQuery):
             disable_web_page_preview=False,
         )
 
-    elif data == 'how_to_use_bot':
+    elif data == "how_to_use_bot":
         await query.message.edit_text(
             text=HOW_TO_USE_TEXT,
             disable_web_page_preview=True,

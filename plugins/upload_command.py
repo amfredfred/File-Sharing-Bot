@@ -3,13 +3,15 @@ from pyrogram import filters, Client
 from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
 from plugins.link_generator import moveto_cloud
 from config import TELEGRAM_SHARE_URL
-
+from injector import injector
+from models.profile import Profile
 
 @Bot.on_message(filters.forwarded)
-async def upload_command(client: Client, message: Message):
+@injector
+async def upload_command(client: Client, profile: Profile, message: Message):
 
     try:
-        isSuccess, link, share_link, post_message = await moveto_cloud(client, message)
+        isSuccess, link, share_link, post_message = await moveto_cloud(client, message,profile.id)
         if isSuccess:
             reply_text = await message.reply_text("Please wait...", quote=True)
             buttons = []

@@ -25,3 +25,4 @@ class DBConnection:
 
 
 engine = DBConnection().engine
+# engine.execute("CREATE SCHEMA IF NOT EXISTS sendbox_scheme;")

@@ -14,7 +14,7 @@ class CallbackDataManager:
 
     def generate_callback_data(self, data: str, owner_id):
         data_hash = hashlib.sha256(data.encode()).hexdigest()[:10]
-        callback_data = CallbackData(data_hash=data_hash, data=data, owner_id=int(owner_id))
+        callback_data = CallbackData(data_hash=data_hash, data=data, owner_id=str(owner_id))
         self.session.add(callback_data)
         self.session.commit()
         return data_hash

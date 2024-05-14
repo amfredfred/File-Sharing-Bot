@@ -1,18 +1,23 @@
 from database import engine as DBEngine
 from datetime import datetime
 from models import Transaction, Wallet, Base
+from sqlalchemy.orm import sessionmaker
 
 
 class WalletManager:
     def __init__(self):
-        Base.metadata.create_all(DBEngine)
+        engine = DBEngine
+        Base.metadata.create_all(engine)
+        Session = sessionmaker(bind=engine)
+        self.session = Session()
 
-    def create_wallet(self, telegram_id, name, currency="USD"):
-        wallet = Wallet(telegram_id=telegram_id, name=name, currency=currency)
+    def create_wallet(self, owner_id, name, currency="USD"):
+        wallet = Wallet(owner_id=owner_id, name=name, currency=currency)
         try:
             DBEngine.session.add(wallet)
             DBEngine.session.commit()
             print("Wallet created successfully.")
+            return wallet
         except Exception as e:
             print("Error creating wallet:", e)
             DBEngine.session.rollback()

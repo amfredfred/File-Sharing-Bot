@@ -29,7 +29,7 @@ class Bot(Client):
         self.add_handler(MessageHandler(ensure_user_indb), -1)
         self.add_handler(MessageHandler(ensure_user_issubscribed_channel), -2)
         self.LOGGER = LOGGER
-
+        
     async def start(self):
         await super().start()
         usr_bot_me = await self.get_me()

@@ -18,8 +18,10 @@ from config import (
 )
 
 from helper_func import subscribed
-from database.database import del_user, full_userbase
+from database.database import full_userbase
 from assets import ASSETS
+from injector import injector
+from models.profile import Profile
 
 command = "start"
 
@@ -62,7 +64,8 @@ async def send_start_message(message: Message):
 
 
 @Bot.on_message(filters.command(command) & ~filters.channel & subscribed)
-async def start_command(client: Client, message: Message):
+@injector
+async def start_command(client: Client, profile: Profile, message: Message):
     text = message.text
     comm_clean = command_clean(text)
     cdm = CallbackDataManager()
@@ -91,13 +94,10 @@ async def start_command(client: Client, message: Message):
 
 WAIT_MSG = """"<b>Processing ...</b>"""
 
-REPLY_ERROR = """<code>Use this command as a replay to any telegram message with out any spaces.</code>"""
-
-# =====================================================================================##
-
 
 @Bot.on_message(filters.command(command) & (filters.private or filters.group))
-async def not_joined(client: Client, message: Message):
+@injector
+async def not_joined(client: Client, profile: Profile, message: Message):
     buttons = [[InlineKeyboardButton("Join Channel", url=client.invitelink)]]
     try:
         buttons.append(
@@ -123,7 +123,8 @@ async def not_joined(client: Client, message: Message):
 
 
 @Bot.on_message(filters.command("users") & filters.private & filters.user(ADMINS))
-async def get_users(client: Bot, message: Message):
+@injector
+async def get_users(client: Bot, profile: Profile, message: Message):
     msg = await client.send_message(chat_id=message.chat.id, text=WAIT_MSG)
     users = await full_userbase()
     await msg.edit(f"{len(users)} users are using this bot")

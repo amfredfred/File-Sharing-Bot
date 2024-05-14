@@ -24,8 +24,8 @@ class ProfileManager:
         website=None,
     ):
         profile = Profile(
-            chat_id=int(chat_id),
-            telegram_id=int(telegram_id),
+            chat_id=str(chat_id),
+            telegram_id=str(telegram_id),
             username=username,
             first_name=first_name,
             last_name=last_name,
@@ -37,12 +37,12 @@ class ProfileManager:
         )
         self.session.add(profile)
         self.session.commit()
-        return True
+        return profile
 
     def get_profile_by_telegram_id(self, telegram_id):
         return (
             self.session.query(Profile)
-            .filter(Profile.telegram_id == int(telegram_id))
+            .filter(Profile.telegram_id == str(telegram_id))
             .first()
         )
 

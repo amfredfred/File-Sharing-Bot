@@ -5,11 +5,14 @@ from scrapers.facebook import FacebookVideoDownloader
 from models.calling_back import CallbackDataManager
 import json
 from bot import Bot
+from injector import injector
+from models.profile import Profile
+from config import FACEBOOK_DISCALIMER
 
-from  config import FACEBOOK_DISCALIMER
 
 @Bot.on_message(filters.command("check_link") & ~filters.channel)
-async def check_link_command(bot: client, message: Message):
+@injector
+async def check_link_command(bot: client, profile: Profile, message: Message):
     callable_m = CallbackDataManager()
     msg_text = message.text if not None else " "
     if msg_text:
@@ -26,9 +29,9 @@ async def check_link_command(bot: client, message: Message):
         if result["success"]:
             title = result["title"]
             links = result["links"]
-            msg = FACEBOOK_DISCALIMER+f"\n\nTitle: {title}\n\nDownload Options:"
+            msg = FACEBOOK_DISCALIMER + f"\n\nTitle: {title}\n\nDownload Options:"
             buttons = []
-            for key, value in links.items(): 
+            for key, value in links.items():
                 # callable_mdata = await encode(f"/download {value}")
                 # callable_mdata = callable_m.generate_callback_data(callable_mdata)
                 buttons.append([InlineKeyboardButton(text=key, url=value)])
@@ -37,10 +40,12 @@ async def check_link_command(bot: client, message: Message):
     elif type_link == "telegram":
         return await reply_text.edit_text("Sorry, telegram links are not supported yet")
     elif type_link == "media":
-        from  plugins.download_command import download_command
+        from plugins.download_command import download_command
+
         return await download_command(bot, message)
-    elif type_link == 'webpage':
-        from  plugins.download_command import download_command
+    elif type_link == "webpage":
+        from plugins.download_command import download_command
+
         return await download_command(bot, message)
     else:
         return await reply_text.edit("Hey, sorry i could not process your link")

@@ -8,15 +8,17 @@ _wallet = WalletManager()
 
 
 async def present_user(telegram_id: int):
+    if not telegram_id:
+        return None
     found = _profile.get_profile_by_telegram_id(telegram_id=telegram_id)
-    return bool(found)
+    return found
 
 
 async def add_user(tid: int, chat_id: int, username, first_name, last_name): 
     user_account = _profile.insert_profile(
         tid, chat_id, username, first_name, last_name
     )
-    user_wallet = _wallet.create_wallet(tid, f"{tid}_wallet")
+    user_wallet = _wallet.create_wallet(user_account.id, f"{tid}_wallet")
     return user_account, user_wallet
 
 

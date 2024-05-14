@@ -9,20 +9,20 @@ from sqlalchemy import (
     JSON,
     Float,
 )
-from sqlalchemy.orm import relationship, Mapped
+from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
 from datetime import datetime
-
 
 Base = declarative_base()
 
 
 class Profile(Base):
     __tablename__ = "profiles"
+    __table_args__ = {"schema": "sendbox_scheme"}
 
-    id = Column(BigInteger, autoincrement="auto")
-    telegram_id = Column(BigInteger, unique=True, primary_key=True)
-    chat_id = Column(BigInteger, unique=True)
+    id = Column(BigInteger, primary_key=True)
+    telegram_id = Column(String, unique=True)
+    chat_id = Column(String, unique=True)
     username = Column(String, unique=True)
     first_name = Column(String)
     last_name = Column(String)
@@ -33,26 +33,36 @@ class Profile(Base):
     website = Column(Text)
     created_at = Column(DateTime, default=datetime.now)
     updated_at = Column(DateTime, default=datetime.now, onupdate=datetime.now)
-    posts = relationship(back_populates="owner")
-    callbacks: Mapped["CallbackData"] = relationship(back_populates="owner")
-    posts: Mapped["Post"] = relationship(back_populates="owner")
-    searchings: Mapped["Searching"] = relationship(back_populates="owner")
-    conversations: Mapped["Conversation"] = relationship(back_populates="owner")
+
+    callbacks = relationship(
+        "CallbackData", back_populates="owner", cascade="all, delete"
+    )
+    posts = relationship("Post", back_populates="owner", cascade="all, delete")
+    searchings = relationship(
+        "Searching", back_populates="owner", cascade="all, delete"
+    )
+    conversations = relationship(
+        "Conversation", back_populates="owner", cascade="all, delete"
+    )
+    wallet = relationship("Wallet", back_populates="owner", cascade="all, delete")
+
 
 class CallbackData(Base):
     __tablename__ = "callback_data"
+    __table_args__ = {"schema": "sendbox_scheme"}
 
     id = Column(BigInteger, primary_key=True)
     data = Column(Text)
     data_hash = Column(Text)
     created_at = Column(DateTime, default=datetime.now)
     updated_at = Column(DateTime, default=datetime.now, onupdate=datetime.now)
-    owner_id = Column(BigInteger, ForeignKey("profiles.telegram_id"))
-    owner:Mapped['Profile'] = relationship(back_populates="callbacks")
+    owner_id = Column(BigInteger, ForeignKey("sendbox_scheme.profiles.id"))
+    owner = relationship("Profile", back_populates="callbacks")
 
 
 class Post(Base):
     __tablename__ = "posts"
+    __table_args__ = {"schema": "sendbox_scheme"}
 
     id = Column(BigInteger, primary_key=True)
     content = Column(Text)
@@ -62,59 +72,65 @@ class Post(Base):
     text_style = Column(JSON, nullable=True)
     post_type = Column(String, default="default")
     settings = Column(JSON, nullable=True)
-    owner_id = Column(Integer)
-    created_at = Column(DateTime, default=datetime.now)
-    updated_at = Column(DateTime, default=datetime.now, onupdate=datetime.now)
-    owner_id = Column(Integer, ForeignKey("profiles.telegram_id"))
-    owner: Mapped["Profile"] = relationship(back_populates="posts")
+    owner_id = Column(BigInteger, ForeignKey("sendbox_scheme.profiles.id"))
+    owner = relationship("Profile", back_populates="posts")
 
 
 class Searching(Base):
     __tablename__ = "searchings"
+    __table_args__ = {"schema": "sendbox_scheme"}
 
     id = Column(BigInteger, primary_key=True)
     created_at = Column(DateTime, default=datetime.now)
     updated_at = Column(DateTime, default=datetime.now, onupdate=datetime.now)
-    owner_id = Column(BigInteger, ForeignKey("profiles.telegram_id"))
-    owner: Mapped["Profile"] = relationship(back_populates="searchings")
+    owner_id = Column(BigInteger, ForeignKey("sendbox_scheme.profiles.id"))
+    owner = relationship("Profile", back_populates="searchings")
     searched_for = Column(String)
 
 
 class Wallet(Base):
     __tablename__ = "wallets"
+    __table_args__ = {"schema": "sendbox_scheme"}
 
     id = Column(BigInteger, primary_key=True)
-    telegram_id = Column(BigInteger, ForeignKey("profiles.telegram_id"))
     name = Column(String)
     balance = Column(Float, default=0)
     currency = Column(String)
     created_at = Column(DateTime, default=datetime.now)
     updated_at = Column(DateTime, default=datetime.now, onupdate=datetime.now)
-    transactions: Mapped["Transaction"] = relationship(back_populates="wallet")
+    transactions = relationship(
+        "Transaction", back_populates="wallet", cascade="all, delete"
+    )
+    owner_id = Column(BigInteger, ForeignKey("sendbox_scheme.profiles.id"))
+    owner = relationship("Profile", back_populates="wallet")
 
 
 class Transaction(Base):
     __tablename__ = "transactions"
+    __table_args__ = {"schema": "sendbox_scheme"}
 
     id = Column(BigInteger, primary_key=True)
-    wallet_id = Column(BigInteger, ForeignKey("wallets.id"))
+    wallet_id = Column(BigInteger, ForeignKey("sendbox_scheme.wallets.id"))
     amount = Column(Float)
     type = Column(String)
     status = Column(String)
     created_at = Column(DateTime, default=datetime.now)
     updated_at = Column(DateTime, default=datetime.now, onupdate=datetime.now)
-    wallet: Mapped["Wallet"] = relationship(back_populates="transactions")
+    wallet = relationship("Wallet", back_populates="transactions")
 
 
 class Conversation(Base):
     __tablename__ = "conversations"
+    __table_args__ = {"schema": "sendbox_scheme"}
 
     id = Column(Integer, primary_key=True)
     current_step = Column(String)
     next_step = Column(String)
     prev_step = Column(String)
-    owner_id = Column(Integer, ForeignKey("profiles.telegram_id"))
-    owner: Mapped["Profile"] = relationship(back_populates="conversations")
+    owner_id = Column(BigInteger, ForeignKey("sendbox_scheme.profiles.id"))
+    owner = relationship(
+        "Profile", back_populates="conversations", cascade="all, delete"
+    )
 
     def __repr__(self):
         return f"<Conversation(chat_id={self.chat_id}, current_step={self.current_step}, next_step={self.next_step}, prev_step={self.prev_step})>"

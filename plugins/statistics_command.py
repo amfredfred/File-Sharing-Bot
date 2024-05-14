@@ -7,10 +7,13 @@ from helper_func import get_readable_time
 from models.profile import ProfileManager
 from models.searching import SearchingManager
 from models.searching import Searching
+from injector import injector
+from models.profile import Profile
 
 
 @Bot.on_message(filters.command("stats") & filters.user(ADMINS))
-async def statistics_command(bot: Bot, message: Message):
+@injector
+async def statistics_command(bot: Bot, profile: Profile, message: Message):
     now = datetime.now()
     delta = now - bot.uptime
     time = get_readable_time(delta.seconds)

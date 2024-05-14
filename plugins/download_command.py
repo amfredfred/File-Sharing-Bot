@@ -7,6 +7,9 @@ from helper_func import extract_url, make_share_handle, subscribed
 from config import INVALID_URL_TEXT, NO_DOWNLOADABLE_RESPONSE
 from responses import ResponseMessage
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from injector import injector
+from models.profile import Profile
+
 
 dm = DownloadManager()
 
@@ -17,7 +20,7 @@ COMMAND_END = "cancel_download"
 
 async def on_success(msg: Message, media_url: str, file_name: str, caption=""):
     media = InputMedia(file_name).media
-    _IShare, _iTGSgare = await make_share_handle(msg.command_text, msg.from_user.id)
+    _IShare, _iTGSgare = await make_share_handle(msg.command_text, msg.profile.id)
     buttons = [[InlineKeyboardButton("📤Share📤", url=_iTGSgare)]]
     reply_markup = InlineKeyboardMarkup(buttons)
 
@@ -70,10 +73,12 @@ response_msg = ResponseMessage()
 
 
 @Bot.on_message(~filters.channel and filters.command(COMMAND_START) & subscribed)
-async def download_command(bot: Bot, message: Message):
+@injector
+async def download_command(bot: Bot,profile:Profile, message: Message):
     msg_text = message.text.strip()
     msg = await message.reply_text("<strong><u>Checking For Options...</ul></strong>", quote=True)
     expect_link, isDownloadable = extract_url(msg_text)
+    msg.profile = profile
 
     if expect_link:
         message.command_text = msg_text
@@ -83,7 +88,6 @@ async def download_command(bot: Bot, message: Message):
         url = link.get("url")
         link_type = link.get("type")
         if link_type == "telegram":
-            print("TELEGRAAM LINK")
             return await msg.edit_text(
                 "<b><u>Telegram link is not supported yet</u></b>"
             )
@@ -96,7 +100,7 @@ async def download_command(bot: Bot, message: Message):
                 await msg.delete()
         elif link_type == "webpage":
             urls = link.get("urls")
-            found, reply_markup = await response_msg.download_options(urls,message.from_user.id, expect_link)
+            found, reply_markup = await response_msg.download_options(urls,profile.id, expect_link)
             ressponse_text = "<b><u>🟢FOUND FEW STUFFS</u><b>"
             if not found:
                 ressponse_text = NO_DOWNLOADABLE_RESPONSE

@@ -6,6 +6,8 @@ from bot import Bot
 from config import SEARCH_TEXT_EMPTY, LOOKING_UP_TEXT
 from models.searching import SearchingManager
 from responses import ResponseMessage
+from injector import injector
+from models.profile import Profile
 
 
 async def search(query):
@@ -18,7 +20,8 @@ respond = ResponseMessage()
 
 
 @Bot.on_message(filters.command("search") & ~filters.channel & subscribed)
-async def search_command(bot: Bot, message: Message):
+@injector
+async def search_command(bot: Bot, profile: Profile, message: Message):
     message.text = command_clean(message.text)
     query = message.text
     if not query:
@@ -31,11 +34,11 @@ async def search_command(bot: Bot, message: Message):
         if len(matched_) > 0:
             matched_ = matched_[:10]
             response_text, reply_markup = await respond.response_search_result(
-                query, message.from_user.id, matched_
+                query, profile.id, matched_
             )
             await msg.edit_text(response_text, reply_markup=reply_markup)
             _searching = SearchingManager()
-            _searching.insert_searching(message.from_user.id, query)
+            _searching.insert_searching(profile.id, query)
         else:
             await msg.edit_text(f"No Result For: <u>{query}</u>")
     except Exception as e:
