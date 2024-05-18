@@ -6,8 +6,9 @@ from helper_func import (
     extract_link_title,
     get_extension,
 )
-from config import BOT_URL,  TELEGRAM_SHARE_URL
+from config import BOT_URL, TELEGRAM_SHARE_URL
 from models.calling_back import CallbackDataManager
+
 
 class ResponseMessage:
     def __init__(self) -> None:
@@ -43,19 +44,38 @@ class ResponseMessage:
         return response, reply_markup
 
     async def response_when_plain_text(self, text: str, owner_id):
-        callback_data = await encode(f'/search {text.strip().replace(" ", "%20")}')
-        callback_data = self.callback.generate_callback_data(callback_data, owner_id)
-        deep_link_search = f"{BOT_URL}?start={callback_data}"
+        search_callback_data = await encode(
+            f'/search {text.strip().replace(" ", "%20")}'
+        )
+        search_callback_data = self.callback.generate_callback_data(
+            search_callback_data, owner_id
+        )
+
+        create_post_callback = await encode(
+            f'/create_post {text.strip().replace(" ", "%20")}'
+        )
+        create_post_callback = self.callback.generate_callback_data(
+            create_post_callback, owner_id
+        )
+
+        deep_link_search = f"{BOT_URL}?start={search_callback_data}"
         share_link = f"{TELEGRAM_SHARE_URL}{deep_link_search}"
-        reply_markup = InlineKeyboardMarkup(
+
+        buttons = []
+        buttons.append(
             [
-                [InlineKeyboardButton("🔍 Search 🔎", callback_data=callback_data)],
-                [InlineKeyboardButton("📤 Share 📤", url=share_link)],
+                InlineKeyboardButton("🔍🔎", callback_data=search_callback_data),
+                InlineKeyboardButton(
+                    "Anon Question", callback_data=create_post_callback
+                ),
             ]
         )
+        buttons.append([InlineKeyboardButton("📤 Share 📤", url=share_link)])
+
+        reply_markup = InlineKeyboardMarkup(buttons)
         return reply_markup
 
-    async def download_options(self, urls,owner_id, query: str = ""):
+    async def download_options(self, urls, owner_id, query: str = ""):
         cdm = CallbackDataManager()
         buttons = []
         is_seen = set()

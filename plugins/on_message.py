@@ -49,7 +49,7 @@ async def handle_message(client: Client,profile:Profile, message: Message):
     if extract_url(msg_text)[0]:
         from plugins.check_link_command import check_link_command
         return await check_link_command(client, message)
-    
+
     if hash_exists(msg_text):
         from plugins.start_command import start_command
         message.text = msg_text
@@ -57,7 +57,8 @@ async def handle_message(client: Client,profile:Profile, message: Message):
 
     reply_text = await message.reply_text("Please wait...", quote=True)
     response_message_markup = await rspmsg.response_when_plain_text(msg_text,profile.id)
-    respond_text = f"<b><u>What do you want me to do with this text?</u></b>\n\n<code>{msg_text}</code>\n\n"
+    respond_text = f"<b><u>WHAT TO DO? 🤔</u></b>\n\n<code>{msg_text}</code>\n"
+    respond_text += f"\n @{profile.username if not None else profile.first_name}"
     await reply_text.edit_text( respond_text, reply_markup=response_message_markup )
     isSuccess, cloudLink, share_link, post_message = await moveto_cloud(client, message, profile.id)
     if not isSuccess:

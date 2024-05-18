@@ -33,3 +33,516 @@ https://t.me/stilloid
 Created by 
 https://t.me/stilloid
 [14-May-24 11:51:38 - INFO] - bot - Lets roll
+[15-May-24 16:07:58 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: [WinError 1232] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+[15-May-24 16:07:59 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: [WinError 1232] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+[15-May-24 16:08:00 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: [WinError 1232] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+[15-May-24 16:08:01 - WARNING] - pyrogram.connection.connection - Connection failed! Trying again...
+[15-May-24 16:08:01 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: [WinError 1232] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+[15-May-24 16:08:02 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: [WinError 1232] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+[15-May-24 17:44:25 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[15-May-24 17:44:25 - INFO] - bot - Bot stopped.
+[15-May-24 17:50:10 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[15-May-24 17:50:10 - INFO] - bot - Lets roll
+[15-May-24 18:17:20 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: [WinError 1232] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+[15-May-24 18:17:21 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: [WinError 1232] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+[15-May-24 18:17:22 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: [WinError 1232] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+[15-May-24 18:17:23 - WARNING] - pyrogram.connection.connection - Connection failed! Trying again...
+[15-May-24 18:17:23 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: [WinError 1232] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+[15-May-24 18:17:24 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: [WinError 1232] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+[15-May-24 18:17:25 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: [WinError 1232] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+[15-May-24 18:17:26 - WARNING] - pyrogram.connection.connection - Connection failed! Trying again...
+[15-May-24 18:17:26 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: [WinError 1232] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+[15-May-24 18:17:27 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: [WinError 1232] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+[15-May-24 20:47:42 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: Connection timed out
+[15-May-24 20:47:53 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: Connection timed out
+[15-May-24 20:48:04 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: Connection timed out
+[15-May-24 20:48:05 - WARNING] - pyrogram.connection.connection - Connection failed! Trying again...
+[16-May-24 08:21:36 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: [WinError 1231] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+[16-May-24 08:24:03 - ERROR] - pyrogram.dispatcher - 'NoneType' object has no attribute 'id'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\middlewares\__init__.py", line 9, in ensure_user_indb
+    await check_and_add_user(msg.chat, msg.from_user)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\helper_func.py", line 113, in check_and_add_user
+    exists = await present_user(telegram_id=msg_from.id)
+                                            ^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'id'
+[16-May-24 08:24:43 - ERROR] - pyrogram.dispatcher - 'NoneType' object has no attribute 'id'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\middlewares\__init__.py", line 9, in ensure_user_indb
+    await check_and_add_user(msg.chat, msg.from_user)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\helper_func.py", line 113, in check_and_add_user
+    exists = await present_user(telegram_id=msg_from.id)
+                                            ^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'id'
+[16-May-24 08:49:00 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: [WinError 1236] The network connection was aborted by the local system
+[16-May-24 10:01:15 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: Connection timed out
+[16-May-24 10:01:26 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: Connection timed out
+[16-May-24 13:32:40 - ERROR] - pyrogram.dispatcher - 'NoneType' object has no attribute 'id'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\middlewares\__init__.py", line 9, in ensure_user_indb
+    await check_and_add_user(msg.chat, msg.from_user)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\helper_func.py", line 113, in check_and_add_user
+    exists = await present_user(telegram_id=msg_from.id)
+                                            ^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'id'
+[16-May-24 13:33:59 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: Connection timed out
+[16-May-24 14:15:33 - ERROR] - pyrogram.dispatcher - 'NoneType' object has no attribute 'id'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\middlewares\__init__.py", line 9, in ensure_user_indb
+    await check_and_add_user(msg.chat, msg.from_user)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\helper_func.py", line 113, in check_and_add_user
+    exists = await present_user(telegram_id=msg_from.id)
+                                            ^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'id'
+[16-May-24 14:29:06 - ERROR] - pyrogram.dispatcher - 'NoneType' object has no attribute 'id'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\middlewares\__init__.py", line 9, in ensure_user_indb
+    await check_and_add_user(msg.chat, msg.from_user)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\helper_func.py", line 113, in check_and_add_user
+    exists = await present_user(telegram_id=msg_from.id)
+                                            ^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'id'
+[16-May-24 14:32:20 - ERROR] - pyrogram.dispatcher - 'NoneType' object has no attribute 'id'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\middlewares\__init__.py", line 9, in ensure_user_indb
+    await check_and_add_user(msg.chat, msg.from_user)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\helper_func.py", line 113, in check_and_add_user
+    exists = await present_user(telegram_id=msg_from.id)
+                                            ^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'id'
+[16-May-24 15:20:33 - ERROR] - pyrogram.dispatcher - 'NoneType' object has no attribute 'id'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\middlewares\__init__.py", line 9, in ensure_user_indb
+    await check_and_add_user(msg.chat, msg.from_user)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\helper_func.py", line 113, in check_and_add_user
+    exists = await present_user(telegram_id=msg_from.id)
+                                            ^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'id'
+[16-May-24 15:43:50 - ERROR] - pyrogram.dispatcher - 'NoneType' object has no attribute 'id'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\middlewares\__init__.py", line 9, in ensure_user_indb
+    await check_and_add_user(msg.chat, msg.from_user)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\helper_func.py", line 113, in check_and_add_user
+    exists = await present_user(telegram_id=msg_from.id)
+                                            ^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'id'
+[16-May-24 16:05:45 - ERROR] - pyrogram.dispatcher - 'NoneType' object has no attribute 'id'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\middlewares\__init__.py", line 9, in ensure_user_indb
+    await check_and_add_user(msg.chat, msg.from_user)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\helper_func.py", line 113, in check_and_add_user
+    exists = await present_user(telegram_id=msg_from.id)
+                                            ^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'id'
+[16-May-24 17:01:59 - ERROR] - pyrogram.dispatcher - 'NoneType' object has no attribute 'id'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\middlewares\__init__.py", line 9, in ensure_user_indb
+    await check_and_add_user(msg.chat, msg.from_user)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\helper_func.py", line 113, in check_and_add_user
+    exists = await present_user(telegram_id=msg_from.id)
+                                            ^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'id'
+[16-May-24 17:02:24 - ERROR] - pyrogram.dispatcher - 'NoneType' object has no attribute 'id'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\middlewares\__init__.py", line 9, in ensure_user_indb
+    await check_and_add_user(msg.chat, msg.from_user)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\helper_func.py", line 113, in check_and_add_user
+    exists = await present_user(telegram_id=msg_from.id)
+                                            ^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'id'
+[16-May-24 17:02:39 - ERROR] - pyrogram.dispatcher - 'NoneType' object has no attribute 'id'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\middlewares\__init__.py", line 9, in ensure_user_indb
+    await check_and_add_user(msg.chat, msg.from_user)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\helper_func.py", line 113, in check_and_add_user
+    exists = await present_user(telegram_id=msg_from.id)
+                                            ^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'id'
+[16-May-24 17:13:55 - ERROR] - pyrogram.dispatcher - 'NoneType' object has no attribute 'id'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\middlewares\__init__.py", line 9, in ensure_user_indb
+    await check_and_add_user(msg.chat, msg.from_user)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\helper_func.py", line 113, in check_and_add_user
+    exists = await present_user(telegram_id=msg_from.id)
+                                            ^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'id'
+[16-May-24 17:16:01 - ERROR] - pyrogram.dispatcher - 'NoneType' object has no attribute 'id'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\middlewares\__init__.py", line 9, in ensure_user_indb
+    await check_and_add_user(msg.chat, msg.from_user)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\helper_func.py", line 113, in check_and_add_user
+    exists = await present_user(telegram_id=msg_from.id)
+                                            ^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'id'
+[16-May-24 17:17:08 - ERROR] - pyrogram.dispatcher - 'NoneType' object has no attribute 'id'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\middlewares\__init__.py", line 9, in ensure_user_indb
+    await check_and_add_user(msg.chat, msg.from_user)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\helper_func.py", line 113, in check_and_add_user
+    exists = await present_user(telegram_id=msg_from.id)
+                                            ^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'id'
+[16-May-24 17:22:27 - ERROR] - pyrogram.dispatcher - 'NoneType' object has no attribute 'id'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\middlewares\__init__.py", line 9, in ensure_user_indb
+    await check_and_add_user(msg.chat, msg.from_user)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\helper_func.py", line 113, in check_and_add_user
+    exists = await present_user(telegram_id=msg_from.id)
+                                            ^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'id'
+[16-May-24 17:23:09 - ERROR] - pyrogram.dispatcher - 'NoneType' object has no attribute 'id'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\middlewares\__init__.py", line 9, in ensure_user_indb
+    await check_and_add_user(msg.chat, msg.from_user)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\helper_func.py", line 113, in check_and_add_user
+    exists = await present_user(telegram_id=msg_from.id)
+                                            ^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'id'
+[16-May-24 17:40:46 - ERROR] - pyrogram.dispatcher - 'NoneType' object has no attribute 'id'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\middlewares\__init__.py", line 9, in ensure_user_indb
+    await check_and_add_user(msg.chat, msg.from_user)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\helper_func.py", line 113, in check_and_add_user
+    exists = await present_user(telegram_id=msg_from.id)
+                                            ^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'id'
+[16-May-24 17:41:28 - ERROR] - pyrogram.dispatcher - 'NoneType' object has no attribute 'id'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\middlewares\__init__.py", line 9, in ensure_user_indb
+    await check_and_add_user(msg.chat, msg.from_user)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\helper_func.py", line 113, in check_and_add_user
+    exists = await present_user(telegram_id=msg_from.id)
+                                            ^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'id'
+[16-May-24 18:20:42 - ERROR] - pyrogram.dispatcher - 'NoneType' object has no attribute 'id'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\middlewares\__init__.py", line 9, in ensure_user_indb
+    await check_and_add_user(msg.chat, msg.from_user)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\helper_func.py", line 113, in check_and_add_user
+    exists = await present_user(telegram_id=msg_from.id)
+                                            ^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'id'
+[17-May-24 11:31:37 - ERROR] - pyrogram.dispatcher - 'NoneType' object has no attribute 'id'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\middlewares\__init__.py", line 9, in ensure_user_indb
+    await check_and_add_user(msg.chat, msg.from_user)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\helper_func.py", line 113, in check_and_add_user
+    exists = await present_user(telegram_id=msg_from.id)
+                                            ^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'id'
+[17-May-24 13:29:27 - ERROR] - pyrogram.dispatcher - 'NoneType' object has no attribute 'id'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\middlewares\__init__.py", line 9, in ensure_user_indb
+    await check_and_add_user(msg.chat, msg.from_user)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\helper_func.py", line 113, in check_and_add_user
+    exists = await present_user(telegram_id=msg_from.id)
+                                            ^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'id'
+[17-May-24 13:30:08 - ERROR] - pyrogram.dispatcher - 'NoneType' object has no attribute 'id'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\middlewares\__init__.py", line 9, in ensure_user_indb
+    await check_and_add_user(msg.chat, msg.from_user)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\helper_func.py", line 113, in check_and_add_user
+    exists = await present_user(telegram_id=msg_from.id)
+                                            ^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'id'
+[17-May-24 13:37:28 - ERROR] - pyrogram.dispatcher - 'NoneType' object has no attribute 'id'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\middlewares\__init__.py", line 9, in ensure_user_indb
+    await check_and_add_user(msg.chat, msg.from_user)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\helper_func.py", line 113, in check_and_add_user
+    exists = await present_user(telegram_id=msg_from.id)
+                                            ^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'id'
+[17-May-24 15:32:50 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: Connection timed out
+[17-May-24 15:33:01 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: Connection timed out
+[17-May-24 15:33:12 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: Connection timed out
+[17-May-24 15:33:13 - WARNING] - pyrogram.connection.connection - Connection failed! Trying again...
+[17-May-24 15:47:08 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: Connection timed out
+[17-May-24 15:47:19 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: Connection timed out
+[17-May-24 15:47:59 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: Connection timed out
+[17-May-24 15:48:10 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: Connection timed out
+[17-May-24 15:51:27 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: Connection timed out
+[17-May-24 15:51:38 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: Connection timed out
+[17-May-24 15:55:24 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: Connection timed out
+[17-May-24 16:02:35 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: Connection timed out
+[17-May-24 16:02:46 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: Connection timed out
+[17-May-24 16:02:57 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: Connection timed out
+[17-May-24 16:02:58 - WARNING] - pyrogram.connection.connection - Connection failed! Trying again...
+[17-May-24 16:03:08 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: Connection timed out
+[17-May-24 16:03:16 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: [WinError 1231] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+[17-May-24 16:03:17 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: [WinError 1231] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+[17-May-24 16:03:18 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: [WinError 1231] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+[17-May-24 16:03:19 - WARNING] - pyrogram.connection.connection - Connection failed! Trying again...
+[17-May-24 16:03:19 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: [WinError 1231] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+[17-May-24 16:08:28 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: Connection timed out
+[17-May-24 16:08:39 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: Connection timed out
+[17-May-24 16:08:50 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: Connection timed out
+[17-May-24 16:08:51 - WARNING] - pyrogram.connection.connection - Connection failed! Trying again...
+[17-May-24 16:09:01 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: Connection timed out
+[17-May-24 16:09:09 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: [WinError 1236] The network connection was aborted by the local system
+[17-May-24 16:09:10 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: [WinError 1231] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+[17-May-24 16:09:11 - WARNING] - pyrogram.connection.connection - Connection failed! Trying again...
+[17-May-24 16:09:11 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: [WinError 1231] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+[17-May-24 16:09:12 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: [WinError 1231] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+[17-May-24 16:25:27 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: Connection timed out
+[17-May-24 16:25:38 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: Connection timed out
+[17-May-24 16:25:50 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: Connection timed out
+[17-May-24 16:25:51 - WARNING] - pyrogram.connection.connection - Connection failed! Trying again...
+[17-May-24 16:26:01 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: Connection timed out
+[17-May-24 16:26:09 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: [WinError 1231] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+[17-May-24 16:26:10 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: [WinError 1231] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+[17-May-24 16:26:11 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: [WinError 1231] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+[17-May-24 16:26:12 - WARNING] - pyrogram.connection.connection - Connection failed! Trying again...
+[17-May-24 16:26:12 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: [WinError 1231] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+[17-May-24 18:41:37 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: Connection timed out
+[17-May-24 19:47:09 - ERROR] - pyrogram.dispatcher - 'NoneType' object has no attribute 'id'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\middlewares\__init__.py", line 9, in ensure_user_indb
+    await check_and_add_user(msg.chat, msg.from_user)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\helper_func.py", line 113, in check_and_add_user
+    exists = await present_user(telegram_id=msg_from.id)
+                                            ^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'id'
+[17-May-24 19:47:55 - ERROR] - pyrogram.dispatcher - 'NoneType' object has no attribute 'id'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\middlewares\__init__.py", line 9, in ensure_user_indb
+    await check_and_add_user(msg.chat, msg.from_user)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\helper_func.py", line 113, in check_and_add_user
+    exists = await present_user(telegram_id=msg_from.id)
+                                            ^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'id'
+[17-May-24 21:08:58 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: Connection timed out
+[17-May-24 21:09:09 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: Connection timed out
+[17-May-24 21:09:20 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: Connection timed out
+[17-May-24 21:09:21 - WARNING] - pyrogram.connection.connection - Connection failed! Trying again...
+[17-May-24 21:10:26 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: Connection timed out
+[17-May-24 21:10:45 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: Connection timed out
+[17-May-24 21:50:25 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: Connection timed out
+[17-May-24 21:52:05 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: Connection timed out
+[17-May-24 21:52:16 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: Connection timed out
+[17-May-24 21:52:27 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: Connection timed out
+[17-May-24 21:52:28 - WARNING] - pyrogram.connection.connection - Connection failed! Trying again...
+[17-May-24 21:52:38 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: Connection timed out
+[17-May-24 21:52:49 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: Connection timed out
+[17-May-24 21:52:54 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: [WinError 1236] The network connection was aborted by the local system
+[17-May-24 21:52:55 - WARNING] - pyrogram.connection.connection - Connection failed! Trying again...
+[17-May-24 21:52:55 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: [WinError 1231] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+[17-May-24 21:52:56 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: [WinError 1231] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+[17-May-24 21:52:57 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: [WinError 1231] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+[17-May-24 21:52:58 - WARNING] - pyrogram.connection.connection - Connection failed! Trying again...
+[17-May-24 21:53:08 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: Connection timed out
+[17-May-24 21:55:23 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: Connection timed out
+[17-May-24 21:55:34 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: Connection timed out
+[18-May-24 06:44:04 - ERROR] - pyrogram.dispatcher - 'NoneType' object has no attribute 'id'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\middlewares\__init__.py", line 9, in ensure_user_indb
+    await check_and_add_user(msg.chat, msg.from_user)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\helper_func.py", line 113, in check_and_add_user
+    exists = await present_user(telegram_id=msg_from.id)
+                                            ^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'id'
+[18-May-24 07:17:03 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: [WinError 1231] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+[18-May-24 07:30:07 - ERROR] - pyrogram.dispatcher - 'NoneType' object has no attribute 'id'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\middlewares\__init__.py", line 9, in ensure_user_indb
+    await check_and_add_user(msg.chat, msg.from_user)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\helper_func.py", line 113, in check_and_add_user
+    exists = await present_user(telegram_id=msg_from.id)
+                                            ^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'id'
+[18-May-24 07:32:04 - ERROR] - pyrogram.dispatcher - 'NoneType' object has no attribute 'id'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\middlewares\__init__.py", line 9, in ensure_user_indb
+    await check_and_add_user(msg.chat, msg.from_user)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\helper_func.py", line 113, in check_and_add_user
+    exists = await present_user(telegram_id=msg_from.id)
+                                            ^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'id'
+[18-May-24 08:15:53 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: Connection timed out
+[18-May-24 08:19:39 - INFO] - aiohttp.access - 127.0.0.1 [18/May/2024:07:19:39 +0000] "GET /favicon.ico HTTP/1.1" 404 173 "http://localhost:8080/de" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+[18-May-24 08:19:41 - INFO] - aiohttp.access - 127.0.0.1 [18/May/2024:07:19:41 +0000] "GET /de HTTP/1.1" 200 169 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+[18-May-24 08:19:42 - INFO] - aiohttp.access - 127.0.0.1 [18/May/2024:07:19:42 +0000] "GET /de HTTP/1.1" 200 169 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+[18-May-24 08:19:43 - INFO] - aiohttp.access - 127.0.0.1 [18/May/2024:07:19:43 +0000] "GET /de HTTP/1.1" 200 169 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+[18-May-24 08:19:43 - INFO] - aiohttp.access - 127.0.0.1 [18/May/2024:07:19:43 +0000] "GET /de HTTP/1.1" 200 169 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+[18-May-24 08:19:43 - INFO] - aiohttp.access - 127.0.0.1 [18/May/2024:07:19:43 +0000] "GET /de HTTP/1.1" 200 169 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+[18-May-24 08:19:43 - INFO] - aiohttp.access - 127.0.0.1 [18/May/2024:07:19:43 +0000] "GET /de HTTP/1.1" 200 169 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+[18-May-24 08:19:44 - INFO] - aiohttp.access - 127.0.0.1 [18/May/2024:07:19:44 +0000] "GET /de HTTP/1.1" 200 169 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+[18-May-24 08:19:44 - INFO] - aiohttp.access - 127.0.0.1 [18/May/2024:07:19:44 +0000] "GET /de HTTP/1.1" 200 169 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+[18-May-24 08:19:44 - INFO] - aiohttp.access - 127.0.0.1 [18/May/2024:07:19:44 +0000] "GET /de HTTP/1.1" 200 169 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+[18-May-24 08:19:44 - INFO] - aiohttp.access - 127.0.0.1 [18/May/2024:07:19:44 +0000] "GET /de HTTP/1.1" 200 169 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+[18-May-24 08:37:51 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[18-May-24 08:37:51 - INFO] - bot - Bot stopped.
+[18-May-24 08:43:24 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[18-May-24 08:43:24 - INFO] - bot - Lets roll
+[18-May-24 08:47:27 - ERROR] - pyrogram.dispatcher - 'InlineKeyboardButton' object is not iterable
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\injector\__init__.py", line 20, in wrapper
+    return await func(client, profile, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\plugins\on_message.py", line 61, in handle_message
+    await reply_text.edit_text( respond_text, reply_markup=response_message_markup )
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\types\messages_and_media\message.py", line 2803, in edit_text
+    return await self._client.edit_message_text(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\methods\messages\edit_message_text.py", line 87, in edit_message_text
+    reply_markup=await reply_markup.write(self) if reply_markup else None,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\types\bots_and_keyboards\inline_keyboard_markup.py", line 62, in write
+    for b in r:
+TypeError: 'InlineKeyboardButton' object is not iterable
+[18-May-24 08:47:45 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[18-May-24 08:47:45 - INFO] - bot - Bot stopped.
+[18-May-24 08:47:57 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[18-May-24 08:47:57 - INFO] - bot - Lets roll
+[18-May-24 08:48:59 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: [WinError 1236] The network connection was aborted by the local system
+[18-May-24 09:21:19 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[18-May-24 09:21:19 - INFO] - bot - Bot stopped.
+[18-May-24 09:21:28 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[18-May-24 09:21:28 - INFO] - bot - Lets roll
+[18-May-24 09:32:25 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[18-May-24 09:32:25 - INFO] - bot - Bot stopped.
+[18-May-24 09:32:35 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[18-May-24 09:32:35 - INFO] - bot - Lets roll
+[18-May-24 09:43:10 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[18-May-24 09:43:10 - INFO] - bot - Bot stopped.
+[18-May-24 09:43:20 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[18-May-24 09:43:20 - INFO] - bot - Lets roll
