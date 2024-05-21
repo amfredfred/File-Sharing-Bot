@@ -5,6 +5,7 @@ from plugins.statistics_command import statistics_command
 from plugins.check_link_command import check_link_command
 from plugins.retrieve_post_command import retrieve_post_command
 from plugins.upload_command import upload_command
+from plugins.create_post_command import create_post_command
 
 # Define command names
 command_names = {
@@ -15,6 +16,7 @@ command_names = {
     "check_link": "check_link",
     "retrieve_post": "retrieve_post",
     "upload": "upload",
+    "create_post": "create_post",
 }
 
 command_list_public = {
@@ -64,6 +66,12 @@ command_list = {
         "desc": "",
         "command": f"/{command_names['upload']}",
         "method": upload_command,
+    },
+    "create_post": {
+        "name": command_names["create_post"],
+        "desc": "",
+        "command": f"/{command_names['create_post']}",
+        "method": create_post_command,
     },
 }
 

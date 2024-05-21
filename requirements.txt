@@ -22,3 +22,7 @@ metaphone==0.6
 SQLAlchemy==2.0.30
 # 
 html2image==2.0.4.3
+#
+geographiclib==2.0 
+geopy==2.4.1 
+pycountry==23.12.11

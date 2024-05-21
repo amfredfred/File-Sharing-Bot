@@ -3,7 +3,6 @@ import hashlib
 from database.connection import engine as db_engine
 from models import CallbackData, Base
 
-
 class CallbackDataManager:
 
     def __init__(self):

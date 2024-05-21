@@ -8,6 +8,7 @@ from sqlalchemy import (
     ForeignKey,
     JSON,
     Float,
+    Boolean,
 )
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
@@ -127,7 +128,10 @@ class Conversation(Base):
     current_step = Column(String)
     next_step = Column(String)
     prev_step = Column(String)
+    ended = Column(Boolean, default=False)
+    conversation_channel = Column(String)
     owner_id = Column(BigInteger, ForeignKey("sendbox_scheme.profiles.id"))
+
     owner = relationship(
         "Profile", back_populates="conversations", cascade="all, delete"
     )
