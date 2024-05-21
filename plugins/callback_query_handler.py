@@ -101,6 +101,13 @@ async def callback_handler(client: Bot, prfoile: Profile, query: CallbackQuery):
         except:
             pass
 
+    elif data == "remove":
+        await query.message.delete()
+        try:
+            await query.message.reply_to_message.delete()
+        except:
+            pass
+
     # # # # # # # # # # # # # # # # # # # # # # # # # #
     #
     # # # # # # # # # # # # # # # # # # # # # # # # # #

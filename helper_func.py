@@ -358,6 +358,10 @@ def command_clean(text: str):
     return result
 
 
+def headline_text(text: str) -> str:
+    formatted_text = f"<b>{text.upper()}</b>"
+    return formatted_text
+
 def get_extension(url: str):
     filename = os.path.basename(clean_file_url(url))
     _, extension = os.path.splitext(filename)

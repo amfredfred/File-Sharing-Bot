@@ -5,6 +5,7 @@ from helper_func import (
     encode,
     extract_link_title,
     get_extension,
+    headline_text,
 )
 from config import BOT_URL, TELEGRAM_SHARE_URL
 from models.calling_back import CallbackDataManager
@@ -51,13 +52,6 @@ class ResponseMessage:
             search_callback_data, owner_id
         )
 
-        create_post_callback = await encode(
-            f'/create_post {text.strip().replace(" ", "%20")}'
-        )
-        create_post_callback = self.callback.generate_callback_data(
-            create_post_callback, owner_id
-        )
-
         deep_link_search = f"{BOT_URL}?start={search_callback_data}"
         share_link = f"{TELEGRAM_SHARE_URL}{deep_link_search}"
 
@@ -65,9 +59,6 @@ class ResponseMessage:
         buttons.append(
             [
                 InlineKeyboardButton("🔍🔎", callback_data=search_callback_data),
-                InlineKeyboardButton(
-                    "Anon Question", callback_data=create_post_callback
-                ),
             ]
         )
         buttons.append([InlineKeyboardButton("📤 Share 📤", url=share_link)])
@@ -102,3 +93,36 @@ class ResponseMessage:
         buttons.append([InlineKeyboardButton("📤VISIT WEBPAGE📤", url=query)])
         reply_markup = InlineKeyboardMarkup(buttons) if buttons else None
         return bool(buttons) and bool(reply_markup), reply_markup
+
+    async def response_when_is_question(self, text: str, owner_id):
+        buttons = []
+        ask_comm_cb = await encode(f"/ask_community {text.strip()}")
+        ask_comm_cb = self.callback.generate_callback_data(ask_comm_cb, owner_id)
+        ask_admi_cb = await encode(f"/ask_admin {text.strip()}")
+        ask_admi_cb = self.callback.generate_callback_data(ask_admi_cb, owner_id)
+        search_wbcb = await encode(f"/search {text.strip().replace(' ', '%20')}")
+        search_wbcb = self.callback.generate_callback_data(search_wbcb, owner_id)
+        do_nothincb = await encode(f"remove")
+        do_nothincb = self.callback.generate_callback_data(do_nothincb, owner_id)
+        deep_linkcb = await encode(f"{text.strip()}")
+        deep_link_search = f"{BOT_URL}?start={self.callback.generate_callback_data(deep_linkcb, owner_id)}"
+        share_link = f"{TELEGRAM_SHARE_URL}{deep_link_search}"
+        buttons.append(
+            [
+                InlineKeyboardButton("🙋‍♂️Admin", callback_data=ask_admi_cb),
+                InlineKeyboardButton("🤝Community", callback_data=ask_comm_cb),
+            ]
+        )
+        buttons.append(
+            [
+                InlineKeyboardButton("🔍🔎", callback_data=search_wbcb),
+                InlineKeyboardButton("❌", callback_data=do_nothincb),
+                InlineKeyboardButton("📤", url=share_link),
+            ]
+        )
+        headline = headline_text(
+            "\n<code>Where to direct your questions?</code>\n"
+        )
+        headline += f"\n\n<b><code>{text}</code></b>\n\n- - - - -"
+        reply_markup = InlineKeyboardMarkup(buttons)
+        return headline, reply_markup

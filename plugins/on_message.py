@@ -34,8 +34,9 @@ async def handle_message(client: Client,profile:Profile, message: Message):
         msg_text = f"/upload {msg_text}"
         message.text = msg_text
 
-    if is_question(msg_text):
-        pass
+    if is_question(msg_text) and not message.outgoing:
+        headline, reply_markup = await rspmsg.response_when_is_question(msg_text, profile.id)
+        return await message.reply_text(headline, reply_markup=reply_markup, quote=True)
 
     from managers.command.methods import command_extract, command_call
     command_ext = command_extract(msg_text)

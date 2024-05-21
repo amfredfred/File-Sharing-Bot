@@ -6,12 +6,15 @@ from config import TELEGRAM_SHARE_URL
 from injector import injector
 from models.profile import Profile
 
+
 @Bot.on_message(filters.forwarded)
 @injector
 async def upload_command(client: Client, profile: Profile, message: Message):
 
     try:
-        isSuccess, link, share_link, post_message = await moveto_cloud(client, message,profile.id)
+        isSuccess, link, share_link, post_message = await moveto_cloud(
+            client, message, profile.id
+        )
         if isSuccess:
             reply_text = await message.reply_text("Please wait...", quote=True)
             buttons = []
