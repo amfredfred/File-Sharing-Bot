@@ -64,7 +64,7 @@ class ProfileManager:
             .filter(Profile.updated_at >= twenty_four_hours_ago)
             .all()
         )
-        
+
     def update_profile(
         self,
         telegram_id,
@@ -97,6 +97,6 @@ class ProfileManager:
                 profile.website = website
 
             self.session.commit()
-            return True
+            return profile
         else:
             return False

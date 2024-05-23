@@ -7,7 +7,8 @@ from plugins.link_generator import moveto_cloud
 from models.calling_back import hash_exists
 from injector import injector
 from models.profile import Profile
-from models.conversation import ConversationManager
+
+from conversations.profile_update_conversations import UpdateAccountConversation
 
 OFF_COMMANDS = [
     "start",
@@ -27,11 +28,6 @@ rspmsg = ResponseMessage()
 @Bot.on_message((~filters.channel & ~filters.command(OFF_COMMANDS) & subscribed))
 @injector
 async def handle_message(client: Client, profile: Profile, message: Message):
-
-    conversation = ConversationManager()
-    conversation = conversation.get_session(profile.id)
-
-    print(f"Convesation {conversation}")
 
     msg_text = message.text if not None else "_"
     msg_text = message.text.strip() if msg_text is not None else " "

@@ -1,5 +1,7 @@
 from helper_func import present_user
 from pyrogram.types import Message, CallbackQuery
+from conversations import conversate
+from models.conversation import ConversationManager
 
 
 def injector(func):
@@ -17,6 +19,13 @@ def injector(func):
             raise ValueError("No arguments provided")
 
         profile = await present_user(telegram_id)
-        return await func(client, profile, *args, **kwargs)
+
+        if profile:
+            conversation = ConversationManager()
+            conversation = conversation.get_session(profile.id)
+            print(f"conversation: {conversation}")
+            if conversation:
+                return await conversate(client, profile, conversation, *args, **kwargs)
+            return await func(client, profile, *args, **kwargs)
 
     return wrapper

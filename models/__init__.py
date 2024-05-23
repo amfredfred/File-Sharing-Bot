@@ -137,4 +137,4 @@ class Conversation(Base):
     )
 
     def __repr__(self):
-        return f"<Conversation(chat_id={self.chat_id}, current_step={self.current_step}, next_step={self.next_step}, prev_step={self.prev_step})>"
+        return f"<Conversation(owner_id={self.owner_id}, current_step={self.current_step}, next_step={self.next_step}, prev_step={self.prev_step})>"
