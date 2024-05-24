@@ -25,7 +25,9 @@ def injector(func):
             conversation = conversation.get_session(profile.id)
             print(f"conversation: {conversation}")
             if conversation:
-                return await conversate(client, profile, conversation, *args, **kwargs)
+                # conversation = conversation.to_dict()
+                if not conversation.ended:
+                   return await conversate(client, profile, conversation, *args, **kwargs)
             return await func(client, profile, *args, **kwargs)
 
     return wrapper

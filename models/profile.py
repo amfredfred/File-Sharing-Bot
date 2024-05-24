@@ -65,37 +65,13 @@ class ProfileManager:
             .all()
         )
 
-    def update_profile(
-        self,
-        telegram_id,
-        username=None,
-        first_name=None,
-        last_name=None,
-        level=None,
-        bio=None,
-        location=None,
-        avatar=None,
-        website=None,
-    ):
+
+    def update_profile(self, telegram_id, **kwargs):
         profile = self.get_profile_by_telegram_id(telegram_id)
         if profile:
-            if username is not None:
-                profile.username = username
-            if first_name is not None:
-                profile.first_name = first_name
-            if last_name is not None:
-                profile.last_name = last_name
-            if level is not None:
-                profile.level = level
-            if bio is not None:
-                profile.bio = bio
-            if location is not None:
-                profile.location = location
-            if avatar is not None:
-                profile.avatar = avatar
-            if website is not None:
-                profile.website = website
-
+            for key, value in kwargs.items():
+                if hasattr(profile, key):
+                    setattr(profile, key, value)
             self.session.commit()
             return profile
         else:

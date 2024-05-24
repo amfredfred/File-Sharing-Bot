@@ -32,6 +32,9 @@ async def handle_message(client: Client, profile: Profile, message: Message):
     msg_text = message.text if not None else "_"
     msg_text = message.text.strip() if msg_text is not None else " "
 
+    conversate = UpdateAccountConversation(profile, message)
+    return await conversate.start()
+
     if message.media:
         msg_text = f"/upload {msg_text}"
         message.text = msg_text

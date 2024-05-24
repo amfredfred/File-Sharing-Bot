@@ -1,14 +1,949 @@
-[23-May-24 01:11:49 - INFO] - root - Stop signal received (SIGINT). Exiting...
-[23-May-24 01:11:49 - INFO] - bot - Bot stopped.
-[23-May-24 01:12:01 - INFO] - bot - Bot Running..!
+[23-May-24 01:26:00 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[23-May-24 01:26:00 - INFO] - bot - Bot stopped.
+[23-May-24 01:26:21 - INFO] - bot - Bot Running..!
 
 Created by 
 https://t.me/stilloid
-[23-May-24 01:12:01 - INFO] - bot - Lets roll
-[23-May-24 01:14:27 - INFO] - root - Stop signal received (SIGINT). Exiting...
-[23-May-24 01:14:27 - INFO] - bot - Bot stopped.
-[23-May-24 01:14:41 - INFO] - bot - Bot Running..!
+[23-May-24 01:26:21 - INFO] - bot - Lets roll
+[23-May-24 01:28:07 - ERROR] - pyrogram.dispatcher - 'Conversation' object is not subscriptable
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\injector\__init__.py", line 26, in wrapper
+    if conversation and not conversation["ended"]:
+                            ~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'Conversation' object is not subscriptable
+[23-May-24 01:28:27 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[23-May-24 01:28:27 - INFO] - bot - Bot stopped.
+[23-May-24 01:28:38 - INFO] - bot - Bot Running..!
 
 Created by 
 https://t.me/stilloid
-[23-May-24 01:14:41 - INFO] - bot - Lets roll
+[23-May-24 01:28:38 - INFO] - bot - Lets roll
+[23-May-24 01:28:46 - ERROR] - pyrogram.dispatcher - 'Conversation' object is not subscriptable
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\injector\__init__.py", line 27, in wrapper
+    if conversation and not conversation["ended"]:
+                            ~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'Conversation' object is not subscriptable
+[23-May-24 01:30:21 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[23-May-24 01:30:21 - INFO] - bot - Bot stopped.
+[23-May-24 01:30:36 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[23-May-24 01:30:36 - INFO] - bot - Lets roll
+[23-May-24 01:30:40 - ERROR] - pyrogram.dispatcher - 'Conversation' object is not subscriptable
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\injector\__init__.py", line 27, in wrapper
+    if conversation and not conversation["ended"]:
+                            ~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'Conversation' object is not subscriptable
+[23-May-24 01:32:18 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[23-May-24 01:32:18 - INFO] - bot - Bot stopped.
+[23-May-24 01:32:30 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[23-May-24 01:32:30 - INFO] - bot - Lets roll
+[23-May-24 01:32:34 - ERROR] - pyrogram.dispatcher - 'Conversation' object is not subscriptable
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\injector\__init__.py", line 27, in wrapper
+    if conversation and not conversation["ended"]:
+                            ~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'Conversation' object is not subscriptable
+[23-May-24 01:35:31 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[23-May-24 01:35:31 - INFO] - bot - Bot stopped.
+[23-May-24 01:35:43 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[23-May-24 01:35:43 - INFO] - bot - Lets roll
+[23-May-24 01:35:58 - ERROR] - pyrogram.dispatcher - 'dict' object has no attribute 'conversation_channel'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\injector\__init__.py", line 28, in wrapper
+    return await conversate(client, profile, conversation, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\conversations\__init__.py", line 8, in conversate
+    if conversation.conversation_channel == conversation_channels["uac"]:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'conversation_channel'
+[23-May-24 01:36:51 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[23-May-24 01:36:51 - INFO] - bot - Bot stopped.
+[23-May-24 01:37:01 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[23-May-24 01:37:01 - INFO] - bot - Lets roll
+[23-May-24 01:37:10 - ERROR] - pyrogram.dispatcher - 'dict' object has no attribute 'next_step'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\injector\__init__.py", line 28, in wrapper
+    return await conversate(client, profile, conversation, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\conversations\__init__.py", line 10, in conversate
+    return await conv.initialize()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\conversations\profile_update_conversations.py", line 21, in initialize
+    await self.handle_response(self.message.text.strip())
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\conversations\profile_update_conversations.py", line 152, in handle_response
+    if self.conversation.next_step in step_handlers:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'next_step'
+[23-May-24 01:38:37 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[23-May-24 01:38:37 - INFO] - bot - Bot stopped.
+[23-May-24 01:38:46 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[23-May-24 01:38:46 - INFO] - bot - Lets roll
+[23-May-24 01:38:55 - ERROR] - pyrogram.dispatcher - 'dict' object has no attribute 'current_step'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\injector\__init__.py", line 28, in wrapper
+    return await conversate(client, profile, conversation, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\conversations\__init__.py", line 10, in conversate
+    return await conv.initialize()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\conversations\profile_update_conversations.py", line 21, in initialize
+    await self.handle_response(self.message.text.strip())
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\conversations\profile_update_conversations.py", line 154, in handle_response
+    await step_handlers[self.conversation["next_step"]]()
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\conversations\profile_update_conversations.py", line 59, in prompt_last_name
+    self.conversation.current_step = "last_name"
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'current_step'
+[23-May-24 01:39:56 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[23-May-24 01:39:56 - INFO] - bot - Bot stopped.
+[23-May-24 01:40:08 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[23-May-24 01:40:08 - INFO] - bot - Lets roll
+[23-May-24 01:41:02 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[23-May-24 01:41:02 - INFO] - bot - Bot stopped.
+[23-May-24 01:41:12 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[23-May-24 01:41:12 - INFO] - bot - Lets roll
+[23-May-24 01:41:30 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[23-May-24 01:41:30 - INFO] - bot - Bot stopped.
+[23-May-24 01:41:40 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[23-May-24 01:41:40 - INFO] - bot - Lets roll
+[23-May-24 01:43:29 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[23-May-24 01:43:29 - INFO] - bot - Bot stopped.
+[23-May-24 01:43:40 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[23-May-24 01:43:40 - INFO] - bot - Lets roll
+[23-May-24 01:44:14 - ERROR] - pyrogram.dispatcher - 'NoneType' object has no attribute 'to_dict'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\injector\__init__.py", line 26, in wrapper
+    conversation = conversation.to_dict()
+                   ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'to_dict'
+[23-May-24 01:44:51 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[23-May-24 01:44:51 - INFO] - bot - Bot stopped.
+[23-May-24 01:45:01 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[23-May-24 01:45:01 - INFO] - bot - Lets roll
+[23-May-24 01:45:13 - ERROR] - pyrogram.dispatcher - 'NoneType' object has no attribute 'to_dict'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\injector\__init__.py", line 26, in wrapper
+    conversation = conversation.to_dict() if not None else None
+                   ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'to_dict'
+[23-May-24 01:48:08 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[23-May-24 01:48:08 - INFO] - bot - Bot stopped.
+[23-May-24 01:48:20 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[23-May-24 01:48:20 - INFO] - bot - Lets roll
+[23-May-24 01:48:24 - ERROR] - pyrogram.dispatcher - 'Conversation' object does not support item assignment
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\injector\__init__.py", line 31, in wrapper
+    return await func(client, profile, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\plugins\on_message.py", line 36, in handle_message
+    return await conversate.start()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\conversations\profile_update_conversations.py", line 33, in start
+    await self.prompt_username()
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\conversations\profile_update_conversations.py", line 44, in prompt_username
+    await self.prompt_first_name()
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\conversations\profile_update_conversations.py", line 55, in prompt_first_name
+    await self.prompt_last_name()
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\conversations\profile_update_conversations.py", line 59, in prompt_last_name
+    self.conversation['current_step'] = "last_name"
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+TypeError: 'Conversation' object does not support item assignment
+[23-May-24 01:49:13 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[23-May-24 01:49:13 - INFO] - bot - Bot stopped.
+[23-May-24 01:49:25 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[23-May-24 01:49:25 - INFO] - bot - Lets roll
+[23-May-24 01:49:28 - ERROR] - pyrogram.dispatcher - 'dict' object has no attribute 'current_step'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\injector\__init__.py", line 30, in wrapper
+    return await conversate(client, profile, conversation, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\conversations\__init__.py", line 10, in conversate
+    return await conv.initialize()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\conversations\profile_update_conversations.py", line 21, in initialize
+    await self.handle_response(self.message.text.strip())
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\conversations\profile_update_conversations.py", line 157, in handle_response
+    await step_handlers[self.conversation["next_step"]]()
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\conversations\profile_update_conversations.py", line 55, in prompt_first_name
+    await self.prompt_last_name()
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\conversations\profile_update_conversations.py", line 59, in prompt_last_name
+    self.conversation.current_step = "last_name"
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'current_step'
+[23-May-24 01:50:09 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[23-May-24 01:50:09 - INFO] - bot - Bot stopped.
+[23-May-24 01:50:21 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[23-May-24 01:50:21 - INFO] - bot - Lets roll
+[23-May-24 01:50:27 - ERROR] - pyrogram.dispatcher - 'dict' object has no attribute 'next_step'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\injector\__init__.py", line 30, in wrapper
+    return await conversate(client, profile, conversation, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\conversations\__init__.py", line 10, in conversate
+    return await conv.initialize()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\conversations\profile_update_conversations.py", line 21, in initialize
+    await self.handle_response(self.message.text.strip())
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\conversations\profile_update_conversations.py", line 152, in handle_response
+    if self.conversation.next_step in step_handlers:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'next_step'
+[23-May-24 01:51:00 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[23-May-24 01:51:00 - INFO] - bot - Bot stopped.
+[23-May-24 01:51:14 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[23-May-24 01:51:14 - INFO] - bot - Lets roll
+[23-May-24 01:51:23 - ERROR] - pyrogram.dispatcher - 'Conversation' object is not subscriptable
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\injector\__init__.py", line 29, in wrapper
+    if not conversation['ended']:
+           ~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'Conversation' object is not subscriptable
+[23-May-24 01:52:08 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[23-May-24 01:52:08 - INFO] - bot - Bot stopped.
+[23-May-24 01:52:22 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[23-May-24 01:52:22 - INFO] - bot - Lets roll
+[23-May-24 01:52:25 - ERROR] - pyrogram.dispatcher - 'Conversation' object is not subscriptable
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\injector\__init__.py", line 29, in wrapper
+    if not conversation['ended']:
+           ~~~~~~~~~~~~^^^^^^^^^
+TypeError: 'Conversation' object is not subscriptable
+[23-May-24 01:52:37 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[23-May-24 01:52:37 - INFO] - bot - Bot stopped.
+[23-May-24 01:52:51 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[23-May-24 01:52:51 - INFO] - bot - Lets roll
+[23-May-24 01:53:39 - ERROR] - pyrogram.dispatcher - 'Conversation' object is not subscriptable
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\injector\__init__.py", line 30, in wrapper
+    return await conversate(client, profile, conversation, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\conversations\__init__.py", line 8, in conversate
+    if conversation['conversation_channel'] == conversation_channels["uac"]:
+       ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'Conversation' object is not subscriptable
+[23-May-24 01:54:43 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[23-May-24 01:54:44 - INFO] - bot - Bot stopped.
+[23-May-24 01:55:08 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[23-May-24 01:55:08 - INFO] - bot - Lets roll
+[23-May-24 01:58:27 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[23-May-24 01:58:27 - INFO] - bot - Bot stopped.
+[23-May-24 01:58:38 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[23-May-24 01:58:38 - INFO] - bot - Lets roll
+[23-May-24 02:04:42 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[23-May-24 02:04:42 - INFO] - bot - Lets roll
+[23-May-24 02:11:44 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[23-May-24 02:11:44 - INFO] - bot - Lets roll
+[23-May-24 02:14:57 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[23-May-24 02:14:57 - INFO] - bot - Bot stopped.
+[23-May-24 02:15:06 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[23-May-24 02:15:06 - INFO] - bot - Lets roll
+[23-May-24 02:21:11 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[23-May-24 02:21:11 - INFO] - bot - Bot stopped.
+[23-May-24 02:21:21 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[23-May-24 02:21:21 - INFO] - bot - Lets roll
+[23-May-24 02:21:51 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[23-May-24 02:21:51 - INFO] - bot - Bot stopped.
+[23-May-24 02:22:18 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[23-May-24 02:22:18 - INFO] - bot - Lets roll
+[23-May-24 02:25:06 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[23-May-24 02:25:06 - INFO] - bot - Bot stopped.
+[23-May-24 02:25:14 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[23-May-24 02:25:14 - INFO] - bot - Lets roll
+[23-May-24 02:25:52 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[23-May-24 02:25:53 - INFO] - bot - Bot stopped.
+[23-May-24 02:26:02 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[23-May-24 02:26:02 - INFO] - bot - Lets roll
+[23-May-24 02:29:16 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[23-May-24 02:29:16 - INFO] - bot - Bot stopped.
+[23-May-24 02:29:31 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[23-May-24 02:29:31 - INFO] - bot - Lets roll
+[23-May-24 02:48:14 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[23-May-24 02:48:14 - INFO] - bot - Bot stopped.
+[23-May-24 02:48:22 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[23-May-24 02:48:22 - INFO] - bot - Lets roll
+[23-May-24 02:52:46 - ERROR] - pyrogram.dispatcher - 'NoneType' object does not support item assignment
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\injector\__init__.py", line 30, in wrapper
+    return await conversate(client, profile, conversation, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\conversations\__init__.py", line 10, in conversate
+    return await conv.initialize()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\conversations\profile_update_conversations.py", line 20, in initialize
+    await self.handle_response(self.message.text.strip())
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\conversations\profile_update_conversations.py", line 143, in handle_response
+    self.conversation.json_data[self.conversation.current_step] = message
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object does not support item assignment
+[23-May-24 02:59:43 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[23-May-24 02:59:43 - INFO] - bot - Bot stopped.
+[23-May-24 02:59:52 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[23-May-24 02:59:52 - INFO] - bot - Lets roll
+[23-May-24 03:01:54 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[23-May-24 03:01:54 - INFO] - bot - Bot stopped.
+[23-May-24 03:02:04 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[23-May-24 03:02:04 - INFO] - bot - Lets roll
+[23-May-24 03:02:38 - ERROR] - pyrogram.dispatcher - models.conversation.ConversationManager.update_session() argument after ** must be a mapping, not Conversation
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\injector\__init__.py", line 30, in wrapper
+    return await conversate(client, profile, conversation, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\conversations\__init__.py", line 10, in conversate
+    return await conv.initialize()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\conversations\profile_update_conversations.py", line 20, in initialize
+    await self.handle_response(self.message.text.strip())
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\conversations\profile_update_conversations.py", line 133, in handle_response
+    self.manager.update_session(self.profile.id, **self.conversation)
+TypeError: models.conversation.ConversationManager.update_session() argument after ** must be a mapping, not Conversation
+[23-May-24 03:03:35 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[23-May-24 03:03:35 - INFO] - bot - Bot stopped.
+[23-May-24 03:03:45 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[23-May-24 03:03:45 - INFO] - bot - Lets roll
+[23-May-24 03:03:50 - ERROR] - pyrogram.dispatcher - models.conversation.ConversationManager.update_session() argument after ** must be a mapping, not Conversation
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\injector\__init__.py", line 30, in wrapper
+    return await conversate(client, profile, conversation, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\conversations\__init__.py", line 10, in conversate
+    return await conv.initialize()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\conversations\profile_update_conversations.py", line 20, in initialize
+    await self.handle_response(self.message.text.strip())
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\conversations\profile_update_conversations.py", line 133, in handle_response
+    self.manager.update_session(self.profile.id, **self.conversation)
+TypeError: models.conversation.ConversationManager.update_session() argument after ** must be a mapping, not Conversation
+[23-May-24 03:05:50 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[23-May-24 03:05:50 - INFO] - bot - Bot stopped.
+[23-May-24 03:05:59 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[23-May-24 03:05:59 - INFO] - bot - Lets roll
+[23-May-24 03:06:14 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[23-May-24 03:06:14 - INFO] - bot - Bot stopped.
+[23-May-24 03:06:22 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[23-May-24 03:06:22 - INFO] - bot - Lets roll
+[23-May-24 03:06:26 - ERROR] - pyrogram.dispatcher - models.conversation.ConversationManager.update_session() argument after ** must be a mapping, not Conversation
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\injector\__init__.py", line 30, in wrapper
+    return await conversate(client, profile, conversation, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\conversations\__init__.py", line 10, in conversate
+    return await conv.initialize()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\conversations\profile_update_conversations.py", line 20, in initialize
+    await self.handle_response(self.message.text.strip())
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\conversations\profile_update_conversations.py", line 133, in handle_response
+    self.manager.update_session(self.profile.id, **self.conversation)
+TypeError: models.conversation.ConversationManager.update_session() argument after ** must be a mapping, not Conversation
+[23-May-24 03:07:35 - ERROR] - pyrogram.dispatcher - models.conversation.ConversationManager.update_session() argument after ** must be a mapping, not Conversation
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\injector\__init__.py", line 30, in wrapper
+    return await conversate(client, profile, conversation, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\conversations\__init__.py", line 10, in conversate
+    return await conv.initialize()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\conversations\profile_update_conversations.py", line 20, in initialize
+    await self.handle_response(self.message.text.strip())
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\conversations\profile_update_conversations.py", line 133, in handle_response
+    self.manager.update_session(self.profile.id, **self.conversation)
+TypeError: models.conversation.ConversationManager.update_session() argument after ** must be a mapping, not Conversation
+[23-May-24 03:07:52 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[23-May-24 03:07:52 - INFO] - bot - Bot stopped.
+[23-May-24 03:08:01 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[23-May-24 03:08:01 - INFO] - bot - Lets roll
+[23-May-24 03:08:05 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[23-May-24 03:08:05 - INFO] - bot - Bot stopped.
+[23-May-24 03:08:15 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[23-May-24 03:08:15 - INFO] - bot - Lets roll
+[23-May-24 03:08:33 - ERROR] - pyrogram.dispatcher - ConversationManager.update_session() got multiple values for argument 'owner_id'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\injector\__init__.py", line 30, in wrapper
+    return await conversate(client, profile, conversation, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\conversations\__init__.py", line 10, in conversate
+    return await conv.initialize()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\conversations\profile_update_conversations.py", line 20, in initialize
+    await self.handle_response(self.message.text.strip())
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\conversations\profile_update_conversations.py", line 133, in handle_response
+    self.manager.update_session(self.profile.id, **self.conversation.to_dict())
+TypeError: ConversationManager.update_session() got multiple values for argument 'owner_id'
+[23-May-24 03:11:43 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[23-May-24 03:11:43 - INFO] - bot - Bot stopped.
+[23-May-24 03:11:53 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[23-May-24 03:11:53 - INFO] - bot - Lets roll
+[23-May-24 03:12:25 - ERROR] - pyrogram.dispatcher - 'NoneType' object has no attribute 'to_dict'
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\injector\__init__.py", line 30, in wrapper
+    return await conversate(client, profile, conversation, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\conversations\__init__.py", line 10, in conversate
+    return await conv.initialize()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\conversations\profile_update_conversations.py", line 20, in initialize
+    await self.handle_response(self.message.text.strip())
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\conversations\profile_update_conversations.py", line 133, in handle_response
+    self.manager.update_session(self.profile.id, **self.conversation.to_dict())
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\models\conversation.py", line 19, in update_session
+    print(conv_session.to_dict())
+          ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'to_dict'
+[23-May-24 03:13:09 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[23-May-24 03:13:09 - INFO] - bot - Bot stopped.
+[23-May-24 03:13:18 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[23-May-24 03:13:18 - INFO] - bot - Lets roll
+[23-May-24 03:24:29 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[23-May-24 03:24:29 - INFO] - bot - Bot stopped.
+[23-May-24 03:24:39 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[23-May-24 03:24:39 - INFO] - bot - Lets roll
+[23-May-24 03:24:40 - ERROR] - pyrogram.dispatcher - (psycopg2.errors.UndefinedColumn) column conversations.message_id does not exist
+LINE 1: ...endbox_scheme_conversations_conversation_channel, sendbox_sc...
+                                                             ^
+
+[SQL: SELECT sendbox_scheme.conversations.id AS sendbox_scheme_conversations_id, sendbox_scheme.conversations.current_step AS sendbox_scheme_conversations_current_step, sendbox_scheme.conversations.next_step AS sendbox_scheme_conversations_next_step, sendbox_scheme.conversations.prev_step AS sendbox_scheme_conversations_prev_step, sendbox_scheme.conversations.ended AS sendbox_scheme_conversations_ended, sendbox_scheme.conversations.json_data AS sendbox_scheme_conversations_json_data, sendbox_scheme.conversations.conversation_channel AS sendbox_scheme_conversations_conversation_channel, sendbox_scheme.conversations.message_id AS sendbox_scheme_conversations_message_id, sendbox_scheme.conversations.owner_id AS sendbox_scheme_conversations_owner_id 
+FROM sendbox_scheme.conversations 
+WHERE sendbox_scheme.conversations.owner_id = %(owner_id_1)s AND sendbox_scheme.conversations.ended = false 
+ LIMIT %(param_1)s]
+[parameters: {'owner_id_1': 3, 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedColumn: column conversations.message_id does not exist
+LINE 1: ...endbox_scheme_conversations_conversation_channel, sendbox_sc...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\injector\__init__.py", line 25, in wrapper
+    conversation = conversation.get_session(profile.id)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\models\conversation.py", line 14, in get_session
+    conv_session = self.session.query(Conversation).filter_by(owner_id=owner_id, ended=False).first()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\query.py", line 2728, in first
+    return self.limit(1)._iter().first()  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\query.py", line 2827, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 2351, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 2236, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\context.py", line 293, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 2353, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedColumn) column conversations.message_id does not exist
+LINE 1: ...endbox_scheme_conversations_conversation_channel, sendbox_sc...
+                                                             ^
+
+[SQL: SELECT sendbox_scheme.conversations.id AS sendbox_scheme_conversations_id, sendbox_scheme.conversations.current_step AS sendbox_scheme_conversations_current_step, sendbox_scheme.conversations.next_step AS sendbox_scheme_conversations_next_step, sendbox_scheme.conversations.prev_step AS sendbox_scheme_conversations_prev_step, sendbox_scheme.conversations.ended AS sendbox_scheme_conversations_ended, sendbox_scheme.conversations.json_data AS sendbox_scheme_conversations_json_data, sendbox_scheme.conversations.conversation_channel AS sendbox_scheme_conversations_conversation_channel, sendbox_scheme.conversations.message_id AS sendbox_scheme_conversations_message_id, sendbox_scheme.conversations.owner_id AS sendbox_scheme_conversations_owner_id 
+FROM sendbox_scheme.conversations 
+WHERE sendbox_scheme.conversations.owner_id = %(owner_id_1)s AND sendbox_scheme.conversations.ended = false 
+ LIMIT %(param_1)s]
+[parameters: {'owner_id_1': 3, 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+[23-May-24 03:24:49 - ERROR] - pyrogram.dispatcher - (psycopg2.errors.UndefinedColumn) column conversations.message_id does not exist
+LINE 1: ...endbox_scheme_conversations_conversation_channel, sendbox_sc...
+                                                             ^
+
+[SQL: SELECT sendbox_scheme.conversations.id AS sendbox_scheme_conversations_id, sendbox_scheme.conversations.current_step AS sendbox_scheme_conversations_current_step, sendbox_scheme.conversations.next_step AS sendbox_scheme_conversations_next_step, sendbox_scheme.conversations.prev_step AS sendbox_scheme_conversations_prev_step, sendbox_scheme.conversations.ended AS sendbox_scheme_conversations_ended, sendbox_scheme.conversations.json_data AS sendbox_scheme_conversations_json_data, sendbox_scheme.conversations.conversation_channel AS sendbox_scheme_conversations_conversation_channel, sendbox_scheme.conversations.message_id AS sendbox_scheme_conversations_message_id, sendbox_scheme.conversations.owner_id AS sendbox_scheme_conversations_owner_id 
+FROM sendbox_scheme.conversations 
+WHERE sendbox_scheme.conversations.owner_id = %(owner_id_1)s AND sendbox_scheme.conversations.ended = false 
+ LIMIT %(param_1)s]
+[parameters: {'owner_id_1': 3, 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedColumn: column conversations.message_id does not exist
+LINE 1: ...endbox_scheme_conversations_conversation_channel, sendbox_sc...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\injector\__init__.py", line 25, in wrapper
+    conversation = conversation.get_session(profile.id)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\models\conversation.py", line 14, in get_session
+    conv_session = self.session.query(Conversation).filter_by(owner_id=owner_id, ended=False).first()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\query.py", line 2728, in first
+    return self.limit(1)._iter().first()  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\query.py", line 2827, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 2351, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 2236, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\context.py", line 293, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 2353, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedColumn) column conversations.message_id does not exist
+LINE 1: ...endbox_scheme_conversations_conversation_channel, sendbox_sc...
+                                                             ^
+
+[SQL: SELECT sendbox_scheme.conversations.id AS sendbox_scheme_conversations_id, sendbox_scheme.conversations.current_step AS sendbox_scheme_conversations_current_step, sendbox_scheme.conversations.next_step AS sendbox_scheme_conversations_next_step, sendbox_scheme.conversations.prev_step AS sendbox_scheme_conversations_prev_step, sendbox_scheme.conversations.ended AS sendbox_scheme_conversations_ended, sendbox_scheme.conversations.json_data AS sendbox_scheme_conversations_json_data, sendbox_scheme.conversations.conversation_channel AS sendbox_scheme_conversations_conversation_channel, sendbox_scheme.conversations.message_id AS sendbox_scheme_conversations_message_id, sendbox_scheme.conversations.owner_id AS sendbox_scheme_conversations_owner_id 
+FROM sendbox_scheme.conversations 
+WHERE sendbox_scheme.conversations.owner_id = %(owner_id_1)s AND sendbox_scheme.conversations.ended = false 
+ LIMIT %(param_1)s]
+[parameters: {'owner_id_1': 3, 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+[23-May-24 03:26:03 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[23-May-24 03:26:03 - INFO] - bot - Bot stopped.
+[23-May-24 03:26:11 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[23-May-24 03:26:11 - INFO] - bot - Lets roll
+[23-May-24 03:26:30 - ERROR] - pyrogram.dispatcher - (psycopg2.errors.UndefinedColumn) column conversations.message_id does not exist
+LINE 1: ...endbox_scheme_conversations_conversation_channel, sendbox_sc...
+                                                             ^
+
+[SQL: SELECT sendbox_scheme.conversations.id AS sendbox_scheme_conversations_id, sendbox_scheme.conversations.current_step AS sendbox_scheme_conversations_current_step, sendbox_scheme.conversations.next_step AS sendbox_scheme_conversations_next_step, sendbox_scheme.conversations.prev_step AS sendbox_scheme_conversations_prev_step, sendbox_scheme.conversations.ended AS sendbox_scheme_conversations_ended, sendbox_scheme.conversations.json_data AS sendbox_scheme_conversations_json_data, sendbox_scheme.conversations.conversation_channel AS sendbox_scheme_conversations_conversation_channel, sendbox_scheme.conversations.message_id AS sendbox_scheme_conversations_message_id, sendbox_scheme.conversations.owner_id AS sendbox_scheme_conversations_owner_id 
+FROM sendbox_scheme.conversations 
+WHERE sendbox_scheme.conversations.owner_id = %(owner_id_1)s AND sendbox_scheme.conversations.ended = false 
+ LIMIT %(param_1)s]
+[parameters: {'owner_id_1': 3, 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedColumn: column conversations.message_id does not exist
+LINE 1: ...endbox_scheme_conversations_conversation_channel, sendbox_sc...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\injector\__init__.py", line 25, in wrapper
+    conversation = conversation.get_session(profile.id)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\models\conversation.py", line 14, in get_session
+    conv_session = self.session.query(Conversation).filter_by(owner_id=owner_id, ended=False).first()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\query.py", line 2728, in first
+    return self.limit(1)._iter().first()  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\query.py", line 2827, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 2351, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 2236, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\context.py", line 293, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 2353, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedColumn) column conversations.message_id does not exist
+LINE 1: ...endbox_scheme_conversations_conversation_channel, sendbox_sc...
+                                                             ^
+
+[SQL: SELECT sendbox_scheme.conversations.id AS sendbox_scheme_conversations_id, sendbox_scheme.conversations.current_step AS sendbox_scheme_conversations_current_step, sendbox_scheme.conversations.next_step AS sendbox_scheme_conversations_next_step, sendbox_scheme.conversations.prev_step AS sendbox_scheme_conversations_prev_step, sendbox_scheme.conversations.ended AS sendbox_scheme_conversations_ended, sendbox_scheme.conversations.json_data AS sendbox_scheme_conversations_json_data, sendbox_scheme.conversations.conversation_channel AS sendbox_scheme_conversations_conversation_channel, sendbox_scheme.conversations.message_id AS sendbox_scheme_conversations_message_id, sendbox_scheme.conversations.owner_id AS sendbox_scheme_conversations_owner_id 
+FROM sendbox_scheme.conversations 
+WHERE sendbox_scheme.conversations.owner_id = %(owner_id_1)s AND sendbox_scheme.conversations.ended = false 
+ LIMIT %(param_1)s]
+[parameters: {'owner_id_1': 3, 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+[23-May-24 03:27:40 - ERROR] - pyrogram.dispatcher - (psycopg2.errors.UndefinedColumn) column conversations.message_id does not exist
+LINE 1: ...endbox_scheme_conversations_conversation_channel, sendbox_sc...
+                                                             ^
+
+[SQL: SELECT sendbox_scheme.conversations.id AS sendbox_scheme_conversations_id, sendbox_scheme.conversations.current_step AS sendbox_scheme_conversations_current_step, sendbox_scheme.conversations.next_step AS sendbox_scheme_conversations_next_step, sendbox_scheme.conversations.prev_step AS sendbox_scheme_conversations_prev_step, sendbox_scheme.conversations.ended AS sendbox_scheme_conversations_ended, sendbox_scheme.conversations.json_data AS sendbox_scheme_conversations_json_data, sendbox_scheme.conversations.conversation_channel AS sendbox_scheme_conversations_conversation_channel, sendbox_scheme.conversations.message_id AS sendbox_scheme_conversations_message_id, sendbox_scheme.conversations.owner_id AS sendbox_scheme_conversations_owner_id 
+FROM sendbox_scheme.conversations 
+WHERE sendbox_scheme.conversations.owner_id = %(owner_id_1)s AND sendbox_scheme.conversations.ended = false 
+ LIMIT %(param_1)s]
+[parameters: {'owner_id_1': 1, 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedColumn: column conversations.message_id does not exist
+LINE 1: ...endbox_scheme_conversations_conversation_channel, sendbox_sc...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyrogram\dispatcher.py", line 240, in handler_worker
+    await handler.callback(self.client, *args)
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\pyromod\listen\listen.py", line 93, in resolve_listener
+    await self.user_callback(client, message, *args)
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\injector\__init__.py", line 25, in wrapper
+    conversation = conversation.get_session(profile.id)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\WorkSpace\Apps\Bots\File-Sharing-Bot\models\conversation.py", line 14, in get_session
+    conv_session = self.session.query(Conversation).filter_by(owner_id=owner_id, ended=False).first()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\query.py", line 2728, in first
+    return self.limit(1)._iter().first()  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\query.py", line 2827, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 2351, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 2236, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\context.py", line 293, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 2353, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\manfr\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedColumn) column conversations.message_id does not exist
+LINE 1: ...endbox_scheme_conversations_conversation_channel, sendbox_sc...
+                                                             ^
+
+[SQL: SELECT sendbox_scheme.conversations.id AS sendbox_scheme_conversations_id, sendbox_scheme.conversations.current_step AS sendbox_scheme_conversations_current_step, sendbox_scheme.conversations.next_step AS sendbox_scheme_conversations_next_step, sendbox_scheme.conversations.prev_step AS sendbox_scheme_conversations_prev_step, sendbox_scheme.conversations.ended AS sendbox_scheme_conversations_ended, sendbox_scheme.conversations.json_data AS sendbox_scheme_conversations_json_data, sendbox_scheme.conversations.conversation_channel AS sendbox_scheme_conversations_conversation_channel, sendbox_scheme.conversations.message_id AS sendbox_scheme_conversations_message_id, sendbox_scheme.conversations.owner_id AS sendbox_scheme_conversations_owner_id 
+FROM sendbox_scheme.conversations 
+WHERE sendbox_scheme.conversations.owner_id = %(owner_id_1)s AND sendbox_scheme.conversations.ended = false 
+ LIMIT %(param_1)s]
+[parameters: {'owner_id_1': 1, 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+[23-May-24 03:29:29 - INFO] - root - Stop signal received (SIGINT). Exiting...
+[23-May-24 03:29:29 - INFO] - bot - Bot stopped.
+[23-May-24 03:30:02 - INFO] - bot - Bot Running..!
+
+Created by 
+https://t.me/stilloid
+[23-May-24 03:30:02 - INFO] - bot - Lets roll
+[23-May-24 06:41:23 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: [WinError 1232] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+[23-May-24 20:58:16 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: [WinError 1232] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+[23-May-24 20:58:17 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: [WinError 1232] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+[23-May-24 20:58:18 - WARNING] - pyrogram.connection.connection - Connection failed! Trying again...
+[23-May-24 20:58:19 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: [WinError 1232] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+[23-May-24 20:58:20 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: [WinError 1232] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+[23-May-24 20:58:21 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: [WinError 1232] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+[23-May-24 20:58:22 - WARNING] - pyrogram.connection.connection - Connection failed! Trying again...
+[23-May-24 20:58:22 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: [WinError 1232] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+[23-May-24 20:58:23 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: [WinError 1232] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+[23-May-24 20:58:24 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: [WinError 1232] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+[23-May-24 20:58:25 - WARNING] - pyrogram.connection.connection - Connection failed! Trying again...
+[23-May-24 20:58:25 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: [WinError 1232] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+[23-May-24 20:58:26 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: [WinError 1232] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+[23-May-24 20:58:27 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: [WinError 1232] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+[23-May-24 20:58:28 - WARNING] - pyrogram.connection.connection - Connection failed! Trying again...
+[23-May-24 20:58:28 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: [WinError 1232] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+[23-May-24 20:58:29 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: [WinError 1232] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+[23-May-24 20:58:30 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: [WinError 1232] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+[23-May-24 20:58:31 - WARNING] - pyrogram.connection.connection - Connection failed! Trying again...
+[23-May-24 20:58:31 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: [WinError 1232] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+[23-May-24 20:58:32 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: [WinError 1232] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+[23-May-24 20:58:33 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: [WinError 1232] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+[23-May-24 20:58:34 - WARNING] - pyrogram.connection.connection - Connection failed! Trying again...
+[23-May-24 20:58:34 - WARNING] - pyrogram.connection.connection - Unable to connect due to network issues: [WinError 1232] The network location cannot be reached. For information about network troubleshooting, see Windows Help

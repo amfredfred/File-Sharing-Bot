@@ -10,7 +10,7 @@ from sqlalchemy import (
     Float,
     Boolean,
 )
-from sqlalchemy.orm import relationship
+from sqlalchemy.orm import relationship, class_mapper
 from sqlalchemy.ext.declarative import declarative_base
 from datetime import datetime
 
@@ -46,6 +46,14 @@ class Profile(Base):
         "Conversation", back_populates="owner", cascade="all, delete"
     )
     wallet = relationship("Wallet", back_populates="owner", cascade="all, delete")
+
+    def to_dict(self):
+        return {
+            c.key: getattr(self, c.key) for c in class_mapper(self.__class__).columns
+        }
+
+    def __repr__(self):
+        return f"<Profile(id={self.id}, username={self.username})>"
 
 
 class CallbackData(Base):
@@ -129,12 +137,32 @@ class Conversation(Base):
     next_step = Column(String)
     prev_step = Column(String)
     ended = Column(Boolean, default=False)
+    json_data = Column(JSON, default={})
     conversation_channel = Column(String)
+    message_id = Column(BigInteger)
     owner_id = Column(BigInteger, ForeignKey("sendbox_scheme.profiles.id"))
 
     owner = relationship(
         "Profile", back_populates="conversations", cascade="all, delete"
     )
 
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "current_step": self.current_step,
+            "next_step": self.next_step,
+            "prev_step": self.prev_step,
+            "ended": self.ended,
+            "conversation_channel": self.conversation_channel,
+            "owner_id": self.owner_id,
+            "json_data": self.json_data,
+        }
+
     def __repr__(self):
-        return f"<Conversation(owner_id={self.owner_id}, current_step={self.current_step}, next_step={self.next_step}, prev_step={self.prev_step})>"
+        return (
+            f"<Conversation(id={self.id}, owner_id={self.owner_id}, "
+            f"current_step={self.current_step}, next_step={self.next_step}, "
+            f"prev_step={self.prev_step}, ended={self.ended}, "
+            f"conversation_channel={self.conversation_channel})>"
+            f"json_data={self.json_data}"
+        )
